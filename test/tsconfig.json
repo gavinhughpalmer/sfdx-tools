@@ -1,4 +1,12 @@
 {
-  "extends": "../tsconfig"
+  "extends": "../tsconfig",
+  "include": [
+    "src/*",
+    "test/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib/*"
+  ]
 }
 

@@ -10,7 +10,12 @@
     "@oclif/errors": "1",
     "@salesforce/command": "^1.0.1",
     "@salesforce/core": "^1.0.1",
-    "tslib": "1"
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "rimraf": "^2.6.3",
+    "simple-git": "^1.107.0",
+    "tslib": "1",
+    "util": "^0.11.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",

@@ -22,7 +22,7 @@ $ npm install -g sfdx-git
 $ sfdx-git COMMAND
 running command...
 $ sfdx-git (-v|--version|version)
-sfdx-git/0.0.0 darwin-x64 node-v8.11.3
+sfdx-git/0.0.0 darwin-x64 node-v8.9.4
 $ sfdx-git --help [COMMAND]
 USAGE
   $ sfdx-git COMMAND
@@ -30,35 +30,72 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-git hello:org [FILE]`](#sfdx-git-helloorg-file)
+* [`sfdx-git gpalm:org:create [FILE]`](#sfdx-git-gpalmorgcreate-file)
+* [`sfdx-git gpalm:source:deploy:diff [FILE]`](#sfdx-git-gpalmsourcedeploydiff-file)
 
-## `sfdx-git hello:org [FILE]`
+## `sfdx-git gpalm:org:create [FILE]`
 
-print a greeting and your org IDs
+List the changes that have occured in an SFDX repository
 
 ```
 USAGE
-  $ sfdx-git hello:org [FILE]
+  $ sfdx-git gpalm:org:create [FILE]
 
 OPTIONS
-  -f, --force                                      example boolean flag
-  -n, --name=name                                  name to print
-  -u, --targetusername=targetusername              username or alias for the target org; overrides default target org
+  -a, --setalias=setalias                          set an alias for for the created scratch org
+
+  -d, --durationdays=durationdays                  [default: 7] duration of the scratch org (in days) (default:7, min:1,
+                                                   max:30)
+
+  -f, --definitionfile=definitionfile              [default: config/project-scratch-def.json] path to a scratch org
+                                                   definition file
+
   -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
+
   --apiversion=apiversion                          override the api version used for api requests made by this command
+
   --json                                           format output as json
+
   --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
 
-EXAMPLES
-  $ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
+EXAMPLE
+  $ sfdx source:org:create --targetdevhubusername devhub@org.com --setalias ScratchOrg
      Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
      My hub org id is: 00Dxx000000001234
-  
-  $ sfdx hello:org --name myname --targetusername myOrg@example.com
-     Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/hello/org.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/hello/org.ts)_
+_See code: [src/commands/gpalm/org/create.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/org/create.ts)_
+
+## `sfdx-git gpalm:source:deploy:diff [FILE]`
+
+Deploy only the meta data that has changed between 2 commits from SFDX source into a Sandbox or production
+
+```
+USAGE
+  $ sfdx-git gpalm:source:deploy:diff [FILE]
+
+OPTIONS
+  -f, --finalcommit=finalcommit                   The final commit that we want to find the diff of
+  -i, --initialcommit=initialcommit               (required) The initial commit that we want to find the diff of
+
+  -n, --includedelete=includedelete               [default: true] Flag to determine if delete should be included in the
+                                                  deployment, this will generate a destructive change package xml in the
+                                                  metadata deployment
+
+  -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
+
+  --apiversion=apiversion                         override the api version used for api requests made by this command
+
+  --json                                          format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+
+EXAMPLE
+  $ sfdx gplam:source:deploy:diff --initialcommit arqergs --finalcommit asdfw4t --targetusername myOrg@example.com
+     Files moved successfully
+```
+
+_See code: [src/commands/gpalm/source/deploy/diff.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/source/deploy/diff.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
