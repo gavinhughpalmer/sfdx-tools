@@ -30,41 +30,7 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-git gpalm:org:create [FILE]`](#sfdx-git-gpalmorgcreate-file)
 * [`sfdx-git gpalm:source:deploy:diff [FILE]`](#sfdx-git-gpalmsourcedeploydiff-file)
-
-## `sfdx-git gpalm:org:create [FILE]`
-
-List the changes that have occured in an SFDX repository
-
-```
-USAGE
-  $ sfdx-git gpalm:org:create [FILE]
-
-OPTIONS
-  -a, --setalias=setalias                          set an alias for for the created scratch org
-
-  -d, --durationdays=durationdays                  [default: 7] duration of the scratch org (in days) (default:7, min:1,
-                                                   max:30)
-
-  -f, --definitionfile=definitionfile              [default: config/project-scratch-def.json] path to a scratch org
-                                                   definition file
-
-  -v, --targetdevhubusername=targetdevhubusername  username or alias for the dev hub org; overrides default dev hub org
-
-  --apiversion=apiversion                          override the api version used for api requests made by this command
-
-  --json                                           format output as json
-
-  --loglevel=(trace|debug|info|warn|error|fatal)   logging level for this command invocation
-
-EXAMPLE
-  $ sfdx source:org:create --targetdevhubusername devhub@org.com --setalias ScratchOrg
-     Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-     My hub org id is: 00Dxx000000001234
-```
-
-_See code: [src/commands/gpalm/org/create.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/org/create.ts)_
 
 ## `sfdx-git gpalm:source:deploy:diff [FILE]`
 

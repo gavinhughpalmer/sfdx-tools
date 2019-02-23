@@ -101,7 +101,7 @@ export default class Diff extends SfdxCommand {
             // const retrieveResult = await exec(`sfdx force:mdapi:retrieve -s -k ${pkgDir}/package.xml -r ./${tmpDir} -w 30 -u ${this.org.getUsername()}`, { maxBuffer: 1000000 * 1024 });
             results["message"] = "Files moved successfully";
         } catch (error) {
-            this.ux.error(error);
+            this.ux.error(error.getMessage());
             results["message"] = "Files have not been able to move";
         }
         return results;

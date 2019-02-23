@@ -68,10 +68,10 @@ export class DiffEngine {
                 this.moveFiles(options.deletedFilesDir, filesDiff.deletedFiles);
             }
         } catch (error) {
-            throw error;
+            console.log(error);
         } finally {
             if (finalCommitIsNotHead || options.includeDelete) {
-                await this.repo.checkout("-");
+                await this.repo.checkout(head);
             }
         }
     }
