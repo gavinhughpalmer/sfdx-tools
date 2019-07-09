@@ -38,8 +38,13 @@ export default class Diff extends SfdxCommand {
         }),
         includedelete: flags.string({
             char: "n",
-            default: "true",
+            default: "false",
             description: messages.getMessage("includeDeleteDescription")
+        }),
+        checkonly: flags.string({
+            char: "c",
+            default: "false",
+            description: "Check only deployment"
         })
     };
 
@@ -47,6 +52,7 @@ export default class Diff extends SfdxCommand {
     protected static requiresUsername = true;
 
     // TODO refactor to simplify this method
+    // TODO Move the logic to happen in a temp directory rather than the users working directory
     public async run(): Promise<AnyJson> {
         let options = {
             initialCommit: this.flags.initialcommit,
@@ -56,6 +62,7 @@ export default class Diff extends SfdxCommand {
             includeDelete: this.flags.includedelete === "true"
         };
         const results = {};
+        const sfdxConfig = new SfdxConfig(".");
         try {
             const diffEngine = new DiffEngine(".");
             this.ux.log("Finding file diffs...");
@@ -64,15 +71,17 @@ export default class Diff extends SfdxCommand {
             const modifiedMdtDir = options.modifiedFilesDir + "--mdt";
             const modifiedFilesDir = options.modifiedFilesDir + "/force-app";
             const deletedFilesDir = options.deletedFilesDir + "/force-app";
-            const sfdxConfig = new SfdxConfig(".");
             sfdxConfig.addPackageDir(modifiedFilesDir);
-            sfdxConfig.addPackageDir(deletedFilesDir);
+            if (options.includeDelete) {
+                sfdxConfig.addPackageDir(deletedFilesDir);
+            }
             sfdxConfig.write();
             await execute(
                 // TODO -r needs to be the force-app folder will need to append this, may need to find a way to work out what folder the source is stored in, could interegate the sfdx-project.json, need to work out how to deal with multiple directories... (maybe ignore this for a phase one implementation)
                 `sfdx force:source:convert -r ${modifiedFilesDir} -d ${modifiedMdtDir} --json`
             );
             this.ux.log("Modified source converted!");
+            // TODO investigate: including delete throws an error at the moment
             if (options.includeDelete) {
                 this.ux.log("Converting deleted files into metadata format");
                 const deletedMdtDir = options.deletedFilesDir + "--mdt";
@@ -90,19 +99,22 @@ export default class Diff extends SfdxCommand {
             }
             this.ux.stopSpinner();
             rmdir.sync(options.modifiedFilesDir);
-            sfdxConfig.reset();
+            
             this.ux.startSpinner("Deploying to target org...");
-            // TODO should pass through parameters from parent
-            const retrieveResult = await execute(
-                `SFDX force:mdapi:retrieve -u ${this.org.getUsername()} -d ${modifiedMdtDir}`
-            );
-            console.log(retrieveResult);
+            // TODO should pass through parameters from parent, and allow for the output to be pushed to the console so that standard output still comes out
+            let deployCommand = `sfdx force:mdapi:deploy -u ${this.org.getUsername()} -d ${modifiedMdtDir}`
+            deployCommand += this.flags.checkonly === "true" ? ' -c' : '';
+            const deployResult = await execute(deployCommand);
+            console.log(deployResult);
+            rmdir.sync(modifiedMdtDir);
             this.ux.stopSpinner("Deployed changes");
             // const retrieveResult = await exec(`sfdx force:mdapi:retrieve -s -k ${pkgDir}/package.xml -r ./${tmpDir} -w 30 -u ${this.org.getUsername()}`, { maxBuffer: 1000000 * 1024 });
             results["message"] = "Files moved successfully";
         } catch (error) {
-            this.ux.error(error.getMessage());
+            this.ux.error(error);
             results["message"] = "Files have not been able to move";
+        } finally {
+            sfdxConfig.reset();
         }
         return results;
     }

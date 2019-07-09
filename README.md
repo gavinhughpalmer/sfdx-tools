@@ -22,7 +22,7 @@ $ npm install -g sfdx-git
 $ sfdx-git COMMAND
 running command...
 $ sfdx-git (-v|--version|version)
-sfdx-git/0.0.0 darwin-x64 node-v8.9.4
+sfdx-git/0.0.0 darwin-x64 node-v10.15.3
 $ sfdx-git --help [COMMAND]
 USAGE
   $ sfdx-git COMMAND
@@ -41,6 +41,7 @@ USAGE
   $ sfdx-git gpalm:source:deploy:diff [FILE]
 
 OPTIONS
+  -c, --checkonly=checkonly                       [default: false] Check only deployment
   -f, --finalcommit=finalcommit                   The final commit that we want to find the diff of
   -i, --initialcommit=initialcommit               (required) The initial commit that we want to find the diff of
 

@@ -64,6 +64,9 @@ export class DiffEngine {
             const filesDiff = await this.diff(options.initialCommit, finalCommit);
             this.moveFiles(options.modifiedFilesDir, filesDiff.modifiedFiles);
             if (options.includeDelete) {
+                if (finalCommitIsNotHead) {
+                    await this.repo.checkout("-");
+                }
                 await this.repo.checkout(options.initialCommit);
                 this.moveFiles(options.deletedFilesDir, filesDiff.deletedFiles);
             }
@@ -71,7 +74,7 @@ export class DiffEngine {
             console.log(error);
         } finally {
             if (finalCommitIsNotHead || options.includeDelete) {
-                await this.repo.checkout(head);
+                await this.repo.checkout("-");
             }
         }
     }
