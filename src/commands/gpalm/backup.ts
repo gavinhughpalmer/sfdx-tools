@@ -8,7 +8,7 @@ core.Messages.importMessagesDirectory(__dirname);
 // or any library that is using the messages framework can also be loaded this way.
 const messages = core.Messages.loadMessages('sfdx-git', 'org');
 
-export default class Org extends SfdxCommand {
+export default class Backup extends SfdxCommand {
 
   public static description = messages.getMessage('commandDescription');
 
