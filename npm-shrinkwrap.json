@@ -1286,6 +1286,9 @@
         "map-cache": "0.2.2"
       }
     },
+    "fs": {
+      "version": "0.0.1-security"
+    },
     "fs-constants": {
       "version": "1.0.0",
       "dev": true
@@ -4495,6 +4498,9 @@
         "sort-keys": "2.0.0",
         "write-file-atomic": "2.3.0"
       }
+    },
+    "xml-writer": {
+      "version": "1.7.0"
     },
     "xml2js": {
       "version": "0.4.19",

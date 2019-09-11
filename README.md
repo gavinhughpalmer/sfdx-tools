@@ -30,15 +30,15 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-git hello:org [FILE]`](#sfdx-git-helloorg-file)
+* [`sfdx-git gpalm:backup [FILE]`](#sfdx-git-gpalmbackup-file)
 
-## `sfdx-git hello:org [FILE]`
+## `sfdx-git gpalm:backup [FILE]`
 
 print a greeting and your org IDs
 
 ```
 USAGE
-  $ sfdx-git hello:org [FILE]
+  $ sfdx-git gpalm:backup [FILE]
 
 OPTIONS
   -f, --force                                      example boolean flag
@@ -58,7 +58,7 @@ EXAMPLES
      Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
 ```
 
-_See code: [src/commands/hello/org.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/hello/org.ts)_
+_See code: [src/commands/gpalm/backup.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/backup.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin

@@ -1,88 +1,174 @@
-import {core, flags, SfdxCommand} from '@salesforce/command';
-import {AnyJson} from '@salesforce/ts-types';
+import { core, flags, SfdxCommand } from '@salesforce/command';
+import { AnyJson } from '@salesforce/ts-types';
+import { XMLWriter } from 'xml-writer';
+import * as fileSystem from 'fs';
+import * as types from './types.json';
 
 // Initialize Messages with the current plugin directory
 core.Messages.importMessagesDirectory(__dirname);
 
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
-const messages = core.Messages.loadMessages('sfdx-git', 'org');
+// const messages = core.Messages.loadMessages('sfdx-git', 'org');
 
 export default class Backup extends SfdxCommand {
 
-  public static description = messages.getMessage('commandDescription');
+    public static description = 'This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder';
 
-  public static examples = [
-  `$ sfdx hello:org --targetusername myOrg@example.com --targetdevhubusername devhub@org.com
-  Hello world! This is org: MyOrg and I will be around until Tue Mar 20 2018!
-  My hub org id is: 00Dxx000000001234
-  `,
-  `$ sfdx hello:org --name myname --targetusername myOrg@example.com
-  Hello myname! This is org: MyOrg and I will be around until Tue Mar 20 2018!
+    public static examples = [
+        `$ sfdx gpalm:source:backup --targetusername myOrg@example.com
+  Backup completed!
   `
-  ];
+    ];
 
-  public static args = [{name: 'file'}];
+    protected static flagsConfig = {
+        packageversion: flags.string({ char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: '42.0' })
+    };
+    protected static requiresUsername = true;
+    protected static supportsDevhubUsername = false;
+    protected static requiresProject = true;
+    private connection: core.Connection;
+    private packageVersion: string;
 
-  protected static flagsConfig = {
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: messages.getMessage('nameFlagDescription')}),
-    force: flags.boolean({char: 'f', description: messages.getMessage('forceFlagDescription')})
-  };
-
-  // Comment this out if your command does not require an org username
-  protected static requiresUsername = true;
-
-  // Comment this out if your command does not support a hub org username
-  protected static supportsDevhubUsername = true;
-
-  // Set this to true if your command requires a project workspace; 'requiresProject' is false by default
-  protected static requiresProject = false;
-
-  public async run(): Promise<AnyJson> {
-    const name = this.flags.name || 'world';
-
-    // this.org is guaranteed because requiresUsername=true, as opposed to supportsUsername
-    const conn = this.org.getConnection();
-    const query = 'Select Name, TrialExpirationDate from Organization';
-
-    // The type we are querying for
-    interface Organization {
-      Name: string;
-      TrialExpirationDate: string;
+    public async run(): Promise<AnyJson> {
+        this.connection = this.org.getConnection();
+        this.packageVersion = this.flags.packageversion;
+        if (isNaN(Number(this.packageVersion))) {
+            throw new core.SfdxError('Package version must be numeric');
+        }
+        this.buildPackage();
+        // this.ux.log(outputString);
+        
+        // TODO what should be returned...
+        return {};
     }
 
-    // Query the org
-    const result = await conn.query<Organization>(query);
+    private async buildPackage(): Promise<void> {
+        // TODO Get below dirs from somewhere appropriate
+        const packageDirectory = './temp';
+        const wildcardTypes = new Set(types.wildcard);
+        const ignoreTypes = new Set(types.ignore);
 
-    // Organization will always return one result, but this is an example of throwing an error
-    // The output and --json will automatically be handled for you.
-    if (!result.records || result.records.length <= 0) {
-      throw new core.SfdxError(messages.getMessage('errorNoOrgResults', [this.org.getOrgId()]));
+        const metadataDescribe = await this.connection.metadata.describe(this.packageVersion);
+        const packageXml = new XMLWriter();
+        packageXml.startDocument();
+        packageXml.startElement('Package');
+        packageXml.writeAttribute('xmlns', 'http://soap.sforce.com/2006/04/metadata');
+        const packageMap = {};
+        const metadataList = metadataDescribe.metadataObjects;
+        const promises = [];
+        for (let index in metadataList) {
+            const metadataComponent = metadataList[index];
+            const metadataTypeName = metadataComponent.xmlName.toLowerCase();
+            if (ignoreTypes.has(metadataTypeName)) {
+                continue;
+            }
+            if (wildcardTypes.has(metadataTypeName)) {
+                this.addWildcardMember(packageMap, metadataComponent.xmlName);
+            } else if (metadataTypeName === 'standardvalueset') {
+                packageMap['StandardValueSet'] = types.standardValueSet;
+            } else {
+                promises.push(this.addComponent(packageMap, metadataComponent));
+            }
+        }
+        await Promise.all(promises);
+        this.buildPackageFromMap(packageXml, packageMap);
+        packageXml.writeElement('version', this.packageVersion);
+        packageXml.endDocument();
+        this.createDir(packageDirectory);
+        fileSystem.writeFile(packageDirectory + '/package.xml', packageXml.toString(), function (
+            error
+        ) {
+            if (error) {
+                return console.log(error);
+            }
+            console.log('The package has been generated!');
+        });
     }
 
-    // Organization always only returns one result
-    const orgName = result.records[0].Name;
-    const trialExpirationDate = result.records[0].TrialExpirationDate;
-
-    let outputString = `Hello ${name}! This is org: ${orgName}`;
-    if (trialExpirationDate) {
-      const date = new Date(trialExpirationDate).toDateString();
-      outputString = `${outputString} and I will be around until ${date}!`;
-    }
-    this.ux.log(outputString);
-
-    // this.hubOrg is NOT guaranteed because supportsHubOrgUsername=true, as opposed to requiresHubOrgUsername.
-    if (this.hubOrg) {
-      const hubOrgId = this.hubOrg.getOrgId();
-      this.ux.log(`My hub org id is: ${hubOrgId}`);
+    private createDir(path: string): void {
+        if (!fileSystem.existsSync(path)) {
+            fileSystem.mkdirSync(path);
+        }
     }
 
-    if (this.flags.force && this.args.file) {
-      this.ux.log(`You input --force and a file: ${this.args.file}`);
+    private buildPackageFromMap(packageXml: XMLWriter, packageMap: object): void {
+        for (let typeName in packageMap) {
+            packageXml.startElement('types');
+            const members = packageMap[typeName];
+            for (let index in members) {
+                packageXml.writeElement('members', members[index]);
+            }
+            packageXml.writeElement('name', typeName);
+            packageXml.endElement();
+        }
     }
 
-    // Return an object to be displayed with --json
-    return { orgId: this.org.getOrgId(), outputString };
-  }
+    private addWildcardMember(packageMap: object, typeName: string): void {
+        packageMap[typeName] = ['*'];
+        console.log('Adding ' + typeName + ' to package');
+    }
+
+    private async addComponent(packageMap: object, metadataComponent): Promise<void> {
+        let typeName = metadataComponent.xmlName;
+
+        if (metadataComponent.inFolder) {
+            typeName =
+                typeName === 'EmailTemplate' ? 'EmailFolder' : typeName + 'Folder';
+        }
+        // TODO type accepts a list so could group these up and send as one
+        const types = [{ type: typeName, folder: null }];
+
+        const metadataMembers = await this.connection.metadata.list(types, this.packageVersion);
+
+        if (metadataMembers) {
+            console.log('Adding ' + metadataComponent.xmlName + ' to package');
+            const members = packageMap[metadataComponent.xmlName] || [];
+            const promises = [];
+            if (metadataMembers.constructor === Array) {
+                for (let index in metadataMembers) {
+                    const member = metadataMembers[index];
+                    if (member.fullName && !metadataComponent.inFolder) {
+                        members.push(member.fullName);
+                    } else if (member.fullName && metadataComponent.inFolder) {
+                        promises.push(
+                            this.listFolder(packageMap, metadataComponent.xmlName, member.fullName)
+                        );
+                    }
+                }
+            } else if (metadataMembers.fullName && !metadataComponent.inFolder) {
+                members.push(metadataMembers.fullName);
+            } else if (metadataMembers.fullName && metadataComponent.inFolder) {
+                promises.push(
+                    this.listFolder(
+                        packageMap,
+                        metadataComponent.xmlName,
+                        metadataMembers.fullName
+                    )
+                );
+            }
+            packageMap[metadataComponent.xmlName] = members;
+            if (promises.length !== 0) {
+                await Promise.all(promises);
+            }
+        }
+    }
+
+    private async listFolder(packageMap: object, typeName: string, folderName: string): Promise<void> {
+        const types = [{ type: typeName, folder: folderName }];
+        const metadataMembers = await this.connection.metadata.list(types, this.packageVersion);
+        if (!metadataMembers) return;
+        const members = packageMap[typeName] || [];
+        members.push(folderName);
+        if (metadataMembers.constructor === Array) {
+            for (let index in metadataMembers) {
+                if (metadataMembers[index].fullName) {
+                    members.push(metadataMembers[index].fullName);
+                }
+            }
+        } else if (metadataMembers.fullName) {
+            members.push(metadataMembers.fullName);
+        }
+        packageMap[typeName] = members;
+    }
 }
