@@ -125,27 +125,15 @@ export default class Backup extends SfdxCommand {
             console.log('Adding ' + metadataComponent.xmlName + ' to package');
             const members = packageMap[metadataComponent.xmlName] || [];
             const promises = [];
-            if (metadataMembers.constructor === Array) {
-                for (let index in metadataMembers) {
-                    const member = metadataMembers[index];
-                    if (member.fullName && !metadataComponent.inFolder) {
-                        members.push(member.fullName);
-                    } else if (member.fullName && metadataComponent.inFolder) {
-                        promises.push(
-                            this.listFolder(packageMap, metadataComponent.xmlName, member.fullName)
-                        );
-                    }
+            for (let index in metadataMembers) {
+                const member = metadataMembers[index];
+                if (member.fullName && !metadataComponent.inFolder) {
+                    members.push(member.fullName);
+                } else if (member.fullName && metadataComponent.inFolder) {
+                    promises.push(
+                        this.listFolder(packageMap, metadataComponent.xmlName, member.fullName)
+                    );
                 }
-            } else if (metadataMembers.fullName && !metadataComponent.inFolder) {
-                members.push(metadataMembers.fullName);
-            } else if (metadataMembers.fullName && metadataComponent.inFolder) {
-                promises.push(
-                    this.listFolder(
-                        packageMap,
-                        metadataComponent.xmlName,
-                        metadataMembers.fullName
-                    )
-                );
             }
             packageMap[metadataComponent.xmlName] = members;
             if (promises.length !== 0) {
@@ -160,14 +148,10 @@ export default class Backup extends SfdxCommand {
         if (!metadataMembers) return;
         const members = packageMap[typeName] || [];
         members.push(folderName);
-        if (metadataMembers.constructor === Array) {
-            for (let index in metadataMembers) {
-                if (metadataMembers[index].fullName) {
-                    members.push(metadataMembers[index].fullName);
-                }
+        for (let index in metadataMembers) {
+            if (metadataMembers[index].fullName) {
+                members.push(metadataMembers[index].fullName);
             }
-        } else if (metadataMembers.fullName) {
-            members.push(metadataMembers.fullName);
         }
         packageMap[typeName] = members;
     }
