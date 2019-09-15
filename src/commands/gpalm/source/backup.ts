@@ -1,15 +1,15 @@
 import { core, flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
-import { XMLWriter } from 'xml-writer';
-import * as fileSystem from 'fs';
 import * as types from './types.json';
+import {tmpdir} from 'os';
+const decompress = require('decompress');
+import * as child from 'child_process';
+import * as util from 'util';
+import * as fs from 'fs';
+const exec = util.promisify(child.exec);
 
 // Initialize Messages with the current plugin directory
 core.Messages.importMessagesDirectory(__dirname);
-
-// Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
-// or any library that is using the messages framework can also be loaded this way.
-// const messages = core.Messages.loadMessages('sfdx-git', 'org');
 
 export default class Backup extends SfdxCommand {
 
@@ -22,13 +22,16 @@ export default class Backup extends SfdxCommand {
     ];
 
     protected static flagsConfig = {
-        packageversion: flags.string({ char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: '42.0' })
+        packageversion: flags.string({ char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: '42.0' }),
+        outputdir: flags.string({ char: 'd', description: 'The directory where the source format should be output to', default: 'force-app' }),
+        waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 })
     };
     protected static requiresUsername = true;
     protected static supportsDevhubUsername = false;
     protected static requiresProject = true;
     private connection: core.Connection;
     private packageVersion: string;
+    private retrieveFolder = tmpdir() + '/retrieve';
 
     public async run(): Promise<AnyJson> {
         this.connection = this.org.getConnection();
@@ -36,24 +39,55 @@ export default class Backup extends SfdxCommand {
         if (isNaN(Number(this.packageVersion))) {
             throw new core.SfdxError('Package version must be numeric');
         }
-        this.buildPackage();
+        // TODO Occational error with: ERROR running Backup:  getaddrinfo ENOTFOUND nccgroup.my.salesforce.com nccgroup.my.salesforce.com:443
         // this.ux.log(outputString);
+        this.ux.log('Generating package...');
+        const retrieveRequest = {
+            unpackaged: await this.buildPackage()
+        };
+        // TODO Error handling and check it is done earlier on...
+        this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
+            if (error) throw new core.SfdxError(error.message);
+            const checkStatus = async (error: Error, retrieveResult: any) => {
+                if (error) throw new core.SfdxError(error.message);
+                if (retrieveResult.done === 'true') {
+                    this.ux.log(retrieveResult.status);
+                    decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
+                        map: function (file) {
+                          const filePaths = file.path.split('/');
+                          file.path = filePaths.join('/');
+                          return file;
+                        }
+                    });
+                    this.mkdir(this.flags.outputdir);
+                    await exec(
+                        `sfdx force:mdapi:convert -d ${this.flags.outputdir} -r ${this.retrieveFolder + '/unpackaged/'} --json`,
+                        {maxBuffer: Infinity}
+                    );
+                } else {
+                    this.ux.log(retrieveResult.status);
+                    setTimeout(() => {
+                        this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus)
+                    }, this.flags.waittimemillis)
+                }
+            }
+            this.ux.log(`Job Id: ${asyncResult.id}`);
+            this.connection.metadata.checkRetrieveStatus(asyncResult.id, checkStatus);
+        });
         
         // TODO what should be returned...
         return {};
     }
 
-    private async buildPackage(): Promise<void> {
-        // TODO Get below dirs from somewhere appropriate
-        const packageDirectory = './temp';
+    private async buildPackage(): Promise<object> {
         const wildcardTypes = new Set(types.wildcard);
         const ignoreTypes = new Set(types.ignore);
 
         const metadataDescribe = await this.connection.metadata.describe(this.packageVersion);
-        const packageXml = new XMLWriter();
-        packageXml.startDocument();
-        packageXml.startElement('Package');
-        packageXml.writeAttribute('xmlns', 'http://soap.sforce.com/2006/04/metadata');
+        const metadataPackage = {
+            version: this.packageVersion,
+            types: []
+        };
         const packageMap = {};
         const metadataList = metadataDescribe.metadataObjects;
         const promises = [];
@@ -64,49 +98,31 @@ export default class Backup extends SfdxCommand {
                 continue;
             }
             if (wildcardTypes.has(metadataTypeName)) {
-                this.addWildcardMember(packageMap, metadataComponent.xmlName);
+                metadataPackage.types.push({
+                    name: metadataComponent.xmlName,
+                    members: '*'
+                });
             } else if (metadataTypeName === 'standardvalueset') {
-                packageMap['StandardValueSet'] = types.standardValueSet;
+                metadataPackage.types.push({
+                    name: 'StandardValueSet',
+                    members: types.standardValueSet
+                });
             } else {
                 promises.push(this.addComponent(packageMap, metadataComponent));
             }
         }
         await Promise.all(promises);
-        this.buildPackageFromMap(packageXml, packageMap);
-        packageXml.writeElement('version', this.packageVersion);
-        packageXml.endDocument();
-        this.createDir(packageDirectory);
-        fileSystem.writeFile(packageDirectory + '/package.xml', packageXml.toString(), function (
-            error
-        ) {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('The package has been generated!');
-        });
+        this.buildPackageFromMap(metadataPackage, packageMap);
+        return metadataPackage;
     }
 
-    private createDir(path: string): void {
-        if (!fileSystem.existsSync(path)) {
-            fileSystem.mkdirSync(path);
-        }
-    }
-
-    private buildPackageFromMap(packageXml: XMLWriter, packageMap: object): void {
+    private buildPackageFromMap(metadataPackage, packageMap: object): void {
         for (let typeName in packageMap) {
-            packageXml.startElement('types');
-            const members = packageMap[typeName];
-            for (let index in members) {
-                packageXml.writeElement('members', members[index]);
-            }
-            packageXml.writeElement('name', typeName);
-            packageXml.endElement();
+            metadataPackage.types.push({
+                name: typeName,
+                members: packageMap[typeName]
+            });
         }
-    }
-
-    private addWildcardMember(packageMap: object, typeName: string): void {
-        packageMap[typeName] = ['*'];
-        console.log('Adding ' + typeName + ' to package');
     }
 
     private async addComponent(packageMap: object, metadataComponent): Promise<void> {
@@ -122,7 +138,6 @@ export default class Backup extends SfdxCommand {
         const metadataMembers = await this.connection.metadata.list(types, this.packageVersion);
 
         if (metadataMembers) {
-            console.log('Adding ' + metadataComponent.xmlName + ' to package');
             const members = packageMap[metadataComponent.xmlName] || [];
             const promises = [];
             for (let index in metadataMembers) {
@@ -154,5 +169,11 @@ export default class Backup extends SfdxCommand {
             }
         }
         packageMap[typeName] = members;
+    }
+
+    private mkdir(path: string) {
+        if (!fs.existsSync(path)) {
+            fs.mkdirSync(path);
+        }
     }
 }
