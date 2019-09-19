@@ -11,6 +11,8 @@ const exec = util.promisify(child.exec);
 // Initialize Messages with the current plugin directory
 core.Messages.importMessagesDirectory(__dirname);
 
+// TODO Refactoring and test classes...
+
 export default class Backup extends SfdxCommand {
 
     public static description = 'This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder';
@@ -60,10 +62,12 @@ export default class Backup extends SfdxCommand {
                         }
                     });
                     this.mkdir(this.flags.outputdir);
+                    this.ux.startSpinner('Converting to source format...');
                     await exec(
                         `sfdx force:mdapi:convert -d ${this.flags.outputdir} -r ${this.retrieveFolder + '/unpackaged/'} --json`,
                         {maxBuffer: Infinity}
                     );
+                    this.ux.stopSpinner('Completed!');
                 } else {
                     this.ux.log(retrieveResult.status);
                     setTimeout(() => {
