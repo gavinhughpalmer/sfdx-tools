@@ -24,16 +24,18 @@ export default class Backup extends SfdxCommand {
     ];
 
     protected static flagsConfig = {
+        // TODO add flag for adding additional types to ignore
         packageversion: flags.string({ char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: '42.0' }),
         outputdir: flags.string({ char: 'd', description: 'The directory where the source format should be output to', default: 'force-app' }),
-        waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 })
+        waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 }),
+        ignoretypes: flags.string({ char: 'i', description: 'Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is recieved'})
     };
     protected static requiresUsername = true;
     protected static supportsDevhubUsername = false;
     protected static requiresProject = true;
     private connection: core.Connection;
     private packageVersion: string;
-    private retrieveFolder = tmpdir() + '/retrieve';
+    private retrieveFolder = tmpdir() + '/retrieve' + Date.now();
 
     public async run(): Promise<AnyJson> {
         this.connection = this.org.getConnection();
@@ -41,12 +43,14 @@ export default class Backup extends SfdxCommand {
         if (isNaN(Number(this.packageVersion))) {
             throw new core.SfdxError('Package version must be numeric');
         }
+        types.ignore.push(...this.flags.ignoretypes.split(','));
         // TODO Occational error with: ERROR running Backup:  getaddrinfo ENOTFOUND nccgroup.my.salesforce.com nccgroup.my.salesforce.com:443
         // this.ux.log(outputString);
         this.ux.log('Generating package...');
         const retrieveRequest = {
             unpackaged: await this.buildPackage()
         };
+        console.log('Package to retrieve: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
         // TODO Error handling and check it is done earlier on...
         this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
             if (error) throw new core.SfdxError(error.message);
