@@ -11,6 +11,7 @@
     "@salesforce/command": "^1.0.1",
     "@salesforce/core": "^1.0.1",
     "decompress": "^4.2.0",
+    "fast-glob": "^3.1.1",
     "fs": "^0.0.1-security",
     "tslib": "1"
   },

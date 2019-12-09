@@ -30,7 +30,36 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
+* [`sfdx-git gpalm:config:check`](#sfdx-git-gpalmconfigcheck)
 * [`sfdx-git gpalm:source:backup`](#sfdx-git-gpalmsourcebackup)
+
+## `sfdx-git gpalm:config:check`
+
+This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder
+
+```
+USAGE
+  $ sfdx-git gpalm:config:check
+
+OPTIONS
+  -d, --outputdir=outputdir                       [default: force-app] The directory where the source format should be
+                                                  output to
+
+  -v, --packageversion=packageversion             [default: 42.0] Version number that the package.xml should use in the
+                                                  retrieve call
+
+  -w, --waittimemillis=waittimemillis             [default: 1000] The wait time between retrieve checks
+
+  --json                                          format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+
+EXAMPLE
+  $ sfdx gpalm:source:backup --targetusername myOrg@example.com
+     Backup completed!
+```
+
+_See code: [src/commands/gpalm/config/check.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/config/check.ts)_
 
 ## `sfdx-git gpalm:source:backup`
 
@@ -48,6 +77,8 @@ OPTIONS
 
   -v, --packageversion=packageversion             [default: 42.0] Version number that the package.xml should use in the
                                                   retrieve call
+
+  -w, --waittimemillis=waittimemillis             [default: 1000] The wait time between retrieve checks
 
   --apiversion=apiversion                         override the api version used for api requests made by this command
 
