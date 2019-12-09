@@ -44,13 +44,14 @@ export default class Backup extends SfdxCommand {
             throw new core.SfdxError('Package version must be numeric');
         }
         types.ignore.push(...this.flags.ignoretypes.split(','));
+        this.ux.log('Ignoring: ' + types.ignore + ' from the deployment');
         // TODO Occational error with: ERROR running Backup:  getaddrinfo ENOTFOUND nccgroup.my.salesforce.com nccgroup.my.salesforce.com:443
         // this.ux.log(outputString);
         this.ux.log('Generating package...');
         const retrieveRequest = {
             unpackaged: await this.buildPackage()
         };
-        console.log('Package to retrieve: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
+        this.ux.log('Package built: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
         // TODO Error handling and check it is done earlier on...
         this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
             if (error) throw new core.SfdxError(error.message);
@@ -73,7 +74,7 @@ export default class Backup extends SfdxCommand {
                     );
                     this.ux.stopSpinner('Completed!');
                 } else if (retrieveResult.done === 'true' && retrieveResult.status === 'Failed') {
-                    this.ux.log(retrieveResult);
+                    this.ux.log('An error has occured: ' + retrieveResult.errorMessage);
                 } else {
                     setTimeout(() => {
                         this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus)
@@ -89,8 +90,9 @@ export default class Backup extends SfdxCommand {
     }
 
     private async buildPackage(): Promise<object> {
-        const wildcardTypes = new Set(types.wildcard);
-        const ignoreTypes = new Set(types.ignore);
+        const makeLowerCase = (value: string) => value.toLowerCase();
+        const wildcardTypes = new Set(types.wildcard.map(makeLowerCase));
+        const ignoreTypes = new Set(types.ignore.map(makeLowerCase));
 
         const metadataDescribe = await this.connection.metadata.describe(this.packageVersion);
         const metadataPackage = {
