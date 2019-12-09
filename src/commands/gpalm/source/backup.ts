@@ -52,8 +52,8 @@ export default class Backup extends SfdxCommand {
             if (error) throw new core.SfdxError(error.message);
             const checkStatus = async (error: Error, retrieveResult: any) => {
                 if (error) throw new core.SfdxError(error.message);
-                if (retrieveResult.done === 'true') {
-                    this.ux.log(retrieveResult.status);
+                this.ux.log(retrieveResult.status);
+                if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
                     decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
                         map: function (file) {
                           const filePaths = file.path.split('/');
@@ -68,8 +68,9 @@ export default class Backup extends SfdxCommand {
                         {maxBuffer: Infinity}
                     );
                     this.ux.stopSpinner('Completed!');
+                } else if (retrieveResult.done === 'true' && retrieveResult.status === 'Failed') {
+                    this.ux.log(retrieveResult);
                 } else {
-                    this.ux.log(retrieveResult.status);
                     setTimeout(() => {
                         this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus)
                     }, this.flags.waittimemillis)
@@ -78,7 +79,7 @@ export default class Backup extends SfdxCommand {
             this.ux.log(`Job Id: ${asyncResult.id}`);
             this.connection.metadata.checkRetrieveStatus(asyncResult.id, checkStatus);
         });
-        
+
         // TODO what should be returned...
         return {};
     }
