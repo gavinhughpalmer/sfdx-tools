@@ -13,6 +13,15 @@ core.Messages.importMessagesDirectory(__dirname);
 
 // TODO Refactoring and test classes...
 
+interface MetadataType {
+    name: string,
+    members: string[]
+}
+interface Package {
+    version: string,
+    types: MetadataType[]
+}
+
 export default class Backup extends SfdxCommand {
 
     public static description = 'This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder';
@@ -43,13 +52,30 @@ export default class Backup extends SfdxCommand {
         if (isNaN(Number(this.packageVersion))) {
             throw new core.SfdxError('Package version must be numeric');
         }
-        types.ignore.push(...this.flags.ignoretypes.split(','));
+        if (this.flags.ignoretypes) {
+            types.ignore.push(...this.flags.ignoretypes.split(','));
+        }
         this.ux.log('Ignoring: ' + types.ignore + ' from the deployment');
         // TODO Occational error with: ERROR running Backup:  getaddrinfo ENOTFOUND nccgroup.my.salesforce.com nccgroup.my.salesforce.com:443
         // this.ux.log(outputString);
         this.ux.log('Generating package...');
+        const fullPackage = await this.buildPackage();
+        await this.retrievePackage(fullPackage);
+        // const firstPart = {...fullPackage};
+        // firstPart.types = fullPackage.types.splice(0, fullPackage.types.length / 2);
+        // await this.retrievePackage(firstPart);
+
+        // const secondPart = {...fullPackage};
+        // secondPart.types = fullPackage.types.splice(fullPackage.types.length / 2, fullPackage.types.length);
+        // await this.retrievePackage(secondPart);
+
+        // TODO what should be returned...
+        return {};
+    }
+
+    private async retrievePackage(retrievePackage: Package) {
         const retrieveRequest = {
-            unpackaged: await this.buildPackage()
+            unpackaged: retrievePackage
         };
         this.ux.log('Package built: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
         // TODO Error handling and check it is done earlier on...
@@ -84,12 +110,9 @@ export default class Backup extends SfdxCommand {
             this.ux.log(`Job Id: ${asyncResult.id}`);
             this.connection.metadata.checkRetrieveStatus(asyncResult.id, checkStatus);
         });
-
-        // TODO what should be returned...
-        return {};
     }
 
-    private async buildPackage(): Promise<object> {
+    private async buildPackage(): Promise<Package> {
         const makeLowerCase = (value: string) => value.toLowerCase();
         const wildcardTypes = new Set(types.wildcard.map(makeLowerCase));
         const ignoreTypes = new Set(types.ignore.map(makeLowerCase));
