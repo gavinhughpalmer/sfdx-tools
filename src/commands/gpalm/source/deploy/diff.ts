@@ -36,9 +36,9 @@ export default class Diff extends SfdxCommand {
             char: "f",
             description: messages.getMessage("finalCommitDescription")
         }),
-        includedelete: flags.string({
+        includedelete: flags.boolean({
             char: "n",
-            default: "false",
+            default: false,
             description: messages.getMessage("includeDeleteDescription")
         }),
         checkonly: flags.string({
@@ -59,7 +59,7 @@ export default class Diff extends SfdxCommand {
             finalCommit: this.flags.finalcommit,
             modifiedFilesDir: Diff.MODIFIED_FILES_DIR,
             deletedFilesDir: Diff.DELETED_FILES_DIR,
-            includeDelete: this.flags.includedelete === "true"
+            includeDelete: this.flags.includedelete
         };
         const results = {};
         const sfdxConfig = new SfdxConfig(".");
@@ -99,7 +99,7 @@ export default class Diff extends SfdxCommand {
             }
             this.ux.stopSpinner();
             rmdir.sync(options.modifiedFilesDir);
-            
+
             this.ux.startSpinner("Deploying to target org...");
             // TODO should pass through parameters from parent, and allow for the output to be pushed to the console so that standard output still comes out
             let deployCommand = `sfdx force:mdapi:deploy -u ${this.org.getUsername()} -d ${modifiedMdtDir}`
