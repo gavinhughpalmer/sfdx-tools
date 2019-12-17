@@ -7,7 +7,7 @@ class MetadataScanner {
 
     private baseDir: string;
     private metadataFilePattern: string;
-    private rules: Array<Rule>;
+    protected rules: Array<Rule>;
 
     constructor(baseDir: string, metadataFilePattern: string) {
         this.baseDir = baseDir;
@@ -33,11 +33,14 @@ class MetadataScanner {
     }
 }
 
-class FlowScanner extends MetadataScanner {
+export class FlowScanner extends MetadataScanner {
 
-    private rules: Array<Rule> = [
+    protected rules: Array<Rule> = [
         new ProcessBuilderNamingRule(),
-        new SingleProcessBuilderPerObjectRule()
+        new SingleProcessBuilderPerObjectRule(),
+        new IncludesDescriptionRule(),
+        new FlowIncludesEqualsBooleanRule(),
+        new SkipProcessBuilderRule()
     ];
 
     constructor(baseDir: string) {
@@ -63,7 +66,7 @@ class ProcessBuilderNamingRule implements Rule {
 // TODO Could use a PB class that gives the isprocessbuilder method
 class SingleProcessBuilderPerObjectRule implements Rule {
     public errorMessage = 'There are multiple process builders for the objet '; //TODO how to add the object name here...
-    private processBuilderObjects: Set<string>;
+    private processBuilderObjects = new Set();
     public scan(metadata: MetadataFile): boolean {
         const isProcessBuilder = metadata.getContents().includes('<processType>Workflow</processType>');
         const matches = metadata.getContents().match(/<name>ObjectType<\/name>\s*<value>\s*<stringValue>(\w*)<\/stringValue>/);
@@ -74,6 +77,29 @@ class SingleProcessBuilderPerObjectRule implements Rule {
             return hasProcessForObject;
         }
         return true;
+    }
+}
+
+class IncludesDescriptionRule implements Rule {
+    public errorMessage = 'The metadata does not include a description';
+    public scan(metadata: MetadataFile): boolean {
+        return !metadata.isManagedMetadata() && !metadata.getContents().match(/<description>[^]*<\/description>/);
+    }
+}
+
+class FlowIncludesEqualsBooleanRule implements Rule {
+    public errorMessage = 'The process builder formula contains a comparison of a checkbox (boolean) to the keyword true or false, this is unnessisary as the boolean itself can be used';
+    public scan(metadata: MetadataFile): boolean {
+        return !!metadata.getContents().match(/<formulas>[^]+<expression>[^]+=\s*(false|true)[^]*<\/expression>[^]+<\/formulas>/i);
+    }
+}
+
+class SkipProcessBuilderRule implements Rule {
+    private static skipProcess = '$Setup.Configuration__c.Are_Processes_Off__c';
+    public errorMessage = 'The process builder does not include the line ' + SkipProcessBuilderRule.skipProcess;
+    public scan(metadata: MetadataFile): boolean {
+        const isProcessBuilder = metadata.getContents().includes('<processType>Workflow</processType>');
+        return isProcessBuilder && !metadata.getContents().includes(SkipProcessBuilderRule.skipProcess);
     }
 }
 

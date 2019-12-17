@@ -1,6 +1,7 @@
 import { core, flags, SfdxCommand } from '@salesforce/command';
 import * as fs from 'fs';
 import * as glob from 'fast-glob';
+import { FlowScanner } from '../../../scanner/metadataScanner';
 
 // Initialize Messages with the current plugin directory
 core.Messages.importMessagesDirectory(__dirname);
@@ -33,32 +34,9 @@ export default class Check extends SfdxCommand {
     public async run(): Promise<Array<FileError>> {
         const fileErrors : Array<FileError> = [];
         const targetDir = this.flags.targetdir;
-        const flowFilePaths = await glob([targetDir + '/**/*.flow-meta.xml']);
-
-        const processBuilderObjects = new Set();
-        for (let flowFilePath of flowFilePaths) {
-            const flowContents = fs.readFileSync(flowFilePath, 'utf8');
-            const isProcessBuilder = flowContents.includes('<processType>Workflow</processType>');
-            if (isProcessBuilder && !flowFilePath.includes('_Handler')) {
-                fileErrors.push({filePath: flowFilePath, errorMessage: 'The process builder does not follow the naming convention'});
-            }
-            const matches = flowContents.match(/<name>ObjectType<\/name>\s*<value>\s*<stringValue>(\w*)<\/stringValue>/);
-            if (matches && matches[1]) {
-                const objectName = matches[1].toLowerCase();
-                if (processBuilderObjects.has(objectName)) {
-                    fileErrors.push({filePath: flowFilePath, errorMessage: 'There are multiple process builders for the objet ' + objectName});
-                }
-                processBuilderObjects.add(objectName);
-            }
-            const skipProcess = '$Setup.Configuration__c.Are_Processes_Off__c';
-            // TODO could check that the initial node is setup correctly
-            if (isProcessBuilder && !flowContents.includes(skipProcess)) {
-                fileErrors.push({filePath: flowFilePath, errorMessage: 'The process builder does not include the line ' + skipProcess});
-            }
-            if (flowContents.match(/<formulas>[^]+<expression>[^]+=\s*(false|true)[^]*<\/expression>[^]+<\/formulas>/i)) {
-                fileErrors.push({filePath: flowFilePath, errorMessage: 'The process builder formula contains a comparison of a checkbox (boolean) to the keyword true or false, this is unnessisary as the boolean itself can be used'});
-            }
-        }
+        const flowScanner = new FlowScanner(targetDir);
+        const flowErrors = await flowScanner.run();
+        fileErrors.push(... flowErrors);
 
         const metadataFilesWithDescriptions = await glob([
             targetDir + '/**/*__c.object-meta.xml',
