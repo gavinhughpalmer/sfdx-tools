@@ -12,7 +12,7 @@ core.Messages.importMessagesDirectory(__dirname);
 // Load the specific messages for this file. Messages from @salesforce/command, @salesforce/core,
 // or any library that is using the messages framework can also be loaded this way.
 const messages = core.Messages.loadMessages("sfdx-git", "org");
-
+//TODO refactor to use temp dir instead of the current one to not modify its contents
 export default class Diff extends SfdxCommand {
     public static description = messages.getMessage("deployDiffCommand");
     private static MODIFIED_FILES_DIR = "modified";
