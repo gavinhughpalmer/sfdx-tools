@@ -22,7 +22,7 @@ $ npm install -g sfdx-git
 $ sfdx-git COMMAND
 running command...
 $ sfdx-git (-v|--version|version)
-sfdx-git/0.0.0 darwin-x64 node-v10.15.3
+sfdx-git/0.0.0 darwin-x64 node-v13.6.0
 $ sfdx-git --help [COMMAND]
 USAGE
   $ sfdx-git COMMAND
@@ -45,9 +45,9 @@ OPTIONS
   -f, --finalcommit=finalcommit                   The final commit that we want to find the diff of
   -i, --initialcommit=initialcommit               (required) The initial commit that we want to find the diff of
 
-  -n, --includedelete=includedelete               [default: true] Flag to determine if delete should be included in the
-                                                  deployment, this will generate a destructive change package xml in the
-                                                  metadata deployment
+  -n, --includedelete                             Flag to determine if delete should be included in the deployment, this
+                                                  will generate a destructive change package xml in the metadata
+                                                  deployment
 
   -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
 

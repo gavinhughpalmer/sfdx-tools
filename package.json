@@ -13,6 +13,7 @@
     "fs": "^0.0.1-security",
     "path": "^0.12.7",
     "rimraf": "^2.6.3",
+    "sfdx-node": "^2.0.1",
     "simple-git": "^1.107.0",
     "tslib": "1",
     "util": "^0.11.1"
