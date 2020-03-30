@@ -80,9 +80,9 @@ export default class Backup extends SfdxCommand {
         this.ux.log('Package built: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
         // TODO Error handling and check it is done earlier on...
         this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
-            if (error) throw new core.SfdxError(error.message);
+            if (error) this.ux.log('An error has occured: ' + error.message);
             const checkStatus = async (error: Error, retrieveResult: any) => {
-                if (error) throw new core.SfdxError(error.message);
+                if (error) this.ux.log('An error has occured: ' + error.message);
                 this.ux.log(retrieveResult.status);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
                     decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
@@ -94,11 +94,16 @@ export default class Backup extends SfdxCommand {
                     });
                     this.mkdir(this.flags.outputdir);
                     this.ux.startSpinner('Converting to source format...');
-                    await exec(
-                        `sfdx force:mdapi:convert -d ${this.flags.outputdir} -r ${this.retrieveFolder + '/unpackaged/'} --json`,
-                        {maxBuffer: Infinity}
-                    );
-                    this.ux.stopSpinner('Completed!');
+                    try {
+                        await exec(
+                            `sfdx force:mdapi:convert -d ${this.flags.outputdir} -r ${this.retrieveFolder + '/unpackaged/'} --json`,
+                            {maxBuffer: Infinity}
+                        );
+                        this.ux.stopSpinner('Completed!');
+                    } catch (error) {
+                        this.ux.stopSpinner('Error!');
+                        this.ux.log('An error has occured: ' + error.message);
+                    }
                 } else if (retrieveResult.done === 'true' && retrieveResult.status === 'Failed') {
                     this.ux.log('An error has occured: ' + retrieveResult.errorMessage);
                 } else {
