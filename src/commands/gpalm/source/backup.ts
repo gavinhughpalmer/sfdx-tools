@@ -85,7 +85,7 @@ export default class Backup extends SfdxCommand {
                 if (error) this.ux.log('An error has occured: ' + error.message);
                 this.ux.log(retrieveResult.status);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
-                    decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
+                    await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
                         map: function (file) {
                           const filePaths = file.path.split('/');
                           file.path = filePaths.join('/');
