@@ -2801,6 +2801,11 @@ redeyed@~2.1.0:
   dependencies:
     esprima "~4.0.0"
 
+reflect-metadata@^0.1.12:
+  version "0.1.13"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha512-Ts1Y/anZELhSsjMcU605fU9RE4Oi3p5ORujwbIKXfWa+0Zxs510Qrmrce5/Jowq3cHSZSJqBjypxmHarc+vEWg==
+
 regex-not@^1.0.0, regex-not@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/regex-not/-/regex-not-1.0.2.tgz#1f4ece27e00b0b65e0247a6810e6a85d83a5752c"
@@ -2982,6 +2987,14 @@ sfdx-faye@^1.0.9:
     faye-websocket "~0.9.1"
     tough-cookie "~2.4.3"
     tunnel-agent "~0.6.0"
+
+sfdx-js@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/sfdx-js/-/sfdx-js-4.5.0.tgz#12eef487a7232c685216188e93c29839f024038a"
+  integrity sha512-EkyKRhT7K+zkqNneLfG+bcdW08OnD03zWKFhLh/Fx8amQwGPL4ePstLYqZkJ+2GkLEhu/y9SAy3Hxsl5EZY7PQ==
+  dependencies:
+    reflect-metadata "^0.1.12"
+    underscore "^1.9.1"
 
 shebang-command@^1.2.0:
   version "1.2.0"
@@ -3490,6 +3503,11 @@ unbzip2-stream@^1.0.9:
   dependencies:
     buffer "^5.2.1"
     through "^2.3.8"
+
+underscore@^1.9.1:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.10.2.tgz#73d6aa3668f3188e4adb0f1943bd12cfd7efaaaf"
+  integrity sha512-N4P+Q/BuyuEKFJ43B9gYuOj4TQUHXX+j2FqguVOpjkssLUUrnJofCcBccJSCoeturDoZU6GorDTHSvUDlSQbTg==
 
 union-value@^1.0.0:
   version "1.0.0"

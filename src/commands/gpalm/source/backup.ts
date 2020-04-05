@@ -6,6 +6,7 @@ const decompress = require('decompress');
 import * as child from 'child_process';
 import * as util from 'util';
 import * as fs from 'fs';
+const sfdx = require('sfdx-js').Client.createUsingPath('sfdx');
 const exec = util.promisify(child.exec);
 
 // Initialize Messages with the current plugin directory
@@ -55,7 +56,7 @@ export default class Backup extends SfdxCommand {
         if (this.flags.ignoretypes) {
             types.ignore.push(...this.flags.ignoretypes.split(','));
         }
-        this.ux.log('Ignoring: ' + types.ignore + ' from the deployment');
+        this.ux.log('Ignoring: ' + types.ignore + ' from the backup job');
         // TODO Occational error with: ERROR running Backup:  getaddrinfo ENOTFOUND nccgroup.my.salesforce.com nccgroup.my.salesforce.com:443
         // this.ux.log(outputString);
         this.ux.log('Generating package...');
@@ -95,10 +96,11 @@ export default class Backup extends SfdxCommand {
                     this.mkdir(this.flags.outputdir);
                     this.ux.startSpinner('Converting to source format...');
                     try {
-                        await exec(
-                            `sfdx force:mdapi:convert -d ${this.flags.outputdir} -r ${this.retrieveFolder + '/unpackaged/'} --json`,
-                            {maxBuffer: Infinity}
-                        );
+                        await sfdx.mdapi.convert({
+                            outputdir: this.flags.outputdir,
+                            rootdir: this.retrieveFolder + '/unpackaged/',
+                            json: true
+                        });
                         this.ux.stopSpinner('Completed!');
                     } catch (error) {
                         this.ux.stopSpinner('Error!');

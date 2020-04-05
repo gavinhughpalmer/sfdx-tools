@@ -22,7 +22,7 @@ $ npm install -g sfdx-git
 $ sfdx-git COMMAND
 running command...
 $ sfdx-git (-v|--version|version)
-sfdx-git/0.0.0 darwin-x64 node-v8.11.3
+sfdx-git/0.0.0 darwin-x64 node-v13.7.0
 $ sfdx-git --help [COMMAND]
 USAGE
   $ sfdx-git COMMAND
@@ -44,10 +44,17 @@ OPTIONS
   -d, --outputdir=outputdir                       [default: force-app] The directory where the source format should be
                                                   output to
 
+  -i, --ignoretypes=ignoretypes                   Comma seperated list of any additional types that you wish to ignore
+                                                  from the retrieve process, this can be used if the error "The
+                                                  retrieved zip file exceeded the limit of 629145600 bytes. Total bytes
+                                                  retrieved: 629534861" is recieved
+
   -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
 
   -v, --packageversion=packageversion             [default: 42.0] Version number that the package.xml should use in the
                                                   retrieve call
+
+  -w, --waittimemillis=waittimemillis             [default: 1000] The wait time between retrieve checks
 
   --apiversion=apiversion                         override the api version used for api requests made by this command
 
