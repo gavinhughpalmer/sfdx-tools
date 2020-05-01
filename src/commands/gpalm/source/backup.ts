@@ -2,7 +2,7 @@ import { core, flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
 import * as types from './types.json';
 import {tmpdir} from 'os';
-const decompress = require('decompress');
+import decompress = require('decompress');
 import * as fs from 'fs';
 const sfdx = require('sfdx-js').Client.createUsingPath('sfdx');
 
