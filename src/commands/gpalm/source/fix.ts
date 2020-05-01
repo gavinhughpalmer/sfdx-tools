@@ -3,6 +3,7 @@ import { AnyJson } from '@salesforce/ts-types';
 import * as glob from 'glob-promise';
 import { readFileSync, renameSync, unlinkSync } from 'fs';
 
+// TODO Refactor...
 
 // Initialize Messages with the current plugin directory
 core.Messages.importMessagesDirectory(__dirname);
@@ -25,6 +26,7 @@ export default class Fix extends SfdxCommand {
             newFiles: []
         };
 
+        // Fix flows
         const flowDefinitions = await glob('**/*' + Fix.flowDefinitionExtention);
         for (let flowDefinitionPath of flowDefinitions) {
 
@@ -48,6 +50,13 @@ export default class Fix extends SfdxCommand {
             }
             unlinkSync(flowDefinitionPath);
             results.deletedFiles.push(flowDefinitionPath);
+        }
+
+        // remove duplicates
+        const duplicates = await glob('**/*.dup');
+        for (let duplicateFile of duplicates) {
+            const fileName = duplicateFile.replace('.dup', '');
+            renameSync(duplicateFile, fileName);
         }
         return results;
     }
