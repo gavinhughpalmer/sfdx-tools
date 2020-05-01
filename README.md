@@ -22,7 +22,7 @@ $ npm install -g sfdx-git
 $ sfdx-git COMMAND
 running command...
 $ sfdx-git (-v|--version|version)
-sfdx-git/0.0.0 darwin-x64 node-v13.7.0
+sfdx-git/0.0.0 darwin-x64 node-v10.15.3
 $ sfdx-git --help [COMMAND]
 USAGE
   $ sfdx-git COMMAND
@@ -30,37 +30,44 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-git gpalm:source:backup`](#sfdx-git-gpalmsourcebackup)
+* [`sfdx-git gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-git-gpalmsourcebackup--v-number--d-string--w-integer--i-string--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx-git gpalm:source:fix [-v <number>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-git-gpalmsourcefix--v-number---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx-git gpalm:source:backup`
+## `sfdx-git gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <string>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder
 
 ```
 USAGE
-  $ sfdx-git gpalm:source:backup
+  $ sfdx-git gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <string>] [-u <string>] [--apiversion 
+  <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
-  -d, --outputdir=outputdir                       [default: force-app] The directory where the source format should be
-                                                  output to
+  -d, --outputdir=outputdir
+      [default: force-app] The directory where the source format should be output to
 
-  -i, --ignoretypes=ignoretypes                   Comma seperated list of any additional types that you wish to ignore
-                                                  from the retrieve process, this can be used if the error "The
-                                                  retrieved zip file exceeded the limit of 629145600 bytes. Total bytes
-                                                  retrieved: 629534861" is recieved
+  -i, --ignoretypes=ignoretypes
+      Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if 
+      the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is 
+      recieved
 
-  -u, --targetusername=targetusername             username or alias for the target org; overrides default target org
+  -u, --targetusername=targetusername
+      username or alias for the target org; overrides default target org
 
-  -v, --packageversion=packageversion             [default: 42] Version number that the package.xml should use in the
-                                                  retrieve call
+  -v, --packageversion=packageversion
+      [default: 42] Version number that the package.xml should use in the retrieve call
 
-  -w, --waittimemillis=waittimemillis             [default: 1000] The wait time between retrieve checks
+  -w, --waittimemillis=waittimemillis
+      [default: 1000] The wait time between retrieve checks
 
-  --apiversion=apiversion                         override the api version used for api requests made by this command
+  --apiversion=apiversion
+      override the api version used for api requests made by this command
 
-  --json                                          format output as json
+  --json
+      format output as json
 
-  --loglevel=(trace|debug|info|warn|error|fatal)  logging level for this command invocation
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)
+      [default: warn] logging level for this command invocation
 
 EXAMPLE
   $ sfdx gpalm:source:backup --targetusername myOrg@example.com
@@ -68,6 +75,32 @@ EXAMPLE
 ```
 
 _See code: [src/commands/gpalm/source/backup.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/source/backup.ts)_
+
+## `sfdx-git gpalm:source:fix [-v <number>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder
+
+```
+USAGE
+  $ sfdx-git gpalm:source:fix [-v <number>] [--json] [--loglevel 
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -v, --packageversion=packageversion                                               [default: 42] Version number that
+                                                                                    the package.xml should use in the
+                                                                                    retrieve call
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+EXAMPLE
+  $ sfdx gpalm:source:backup --targetusername myOrg@example.com
+     Backup completed!
+```
+
+_See code: [src/commands/gpalm/source/fix.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/source/fix.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin
