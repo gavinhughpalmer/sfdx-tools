@@ -2,11 +2,9 @@ import { core, flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
 import * as types from './types.json';
 import {tmpdir} from 'os';
-const decompress = require('decompress');
-import * as child from 'child_process';
-import * as util from 'util';
+import decompress = require('decompress');
 import * as fs from 'fs';
-const exec = util.promisify(child.exec);
+const sfdx = require('sfdx-js').Client.createUsingPath('sfdx');
 
 // Initialize Messages with the current plugin directory
 core.Messages.importMessagesDirectory(__dirname);
@@ -33,8 +31,7 @@ export default class Backup extends SfdxCommand {
     ];
 
     protected static flagsConfig = {
-        // TODO add flag for adding additional types to ignore
-        packageversion: flags.string({ char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: '42.0' }),
+        packageversion: flags.number({char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: 42.0 }),
         outputdir: flags.string({ char: 'd', description: 'The directory where the source format should be output to', default: 'force-app' }),
         waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 }),
         ignoretypes: flags.string({ char: 'i', description: 'Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is recieved'})
@@ -48,14 +45,11 @@ export default class Backup extends SfdxCommand {
 
     public async run(): Promise<AnyJson> {
         this.connection = this.org.getConnection();
-        this.packageVersion = this.flags.packageversion;
-        if (isNaN(Number(this.packageVersion))) {
-            throw new core.SfdxError('Package version must be numeric');
-        }
+        this.packageVersion = this.flags.packageversion.toFixed(1);
         if (this.flags.ignoretypes) {
             types.ignore.push(...this.flags.ignoretypes.split(','));
         }
-        this.ux.log('Ignoring: ' + types.ignore + ' from the deployment');
+        this.ux.log('Ignoring: ' + types.ignore + ' from the backup job');
         // TODO Occational error with: ERROR running Backup:  getaddrinfo ENOTFOUND nccgroup.my.salesforce.com nccgroup.my.salesforce.com:443
         // this.ux.log(outputString);
         this.ux.log('Generating package...');
@@ -78,14 +72,13 @@ export default class Backup extends SfdxCommand {
             unpackaged: retrievePackage
         };
         this.ux.log('Package built: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
-        // TODO Error handling and check it is done earlier on...
         this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
-            if (error) throw new core.SfdxError(error.message);
+            if (error) this.ux.error('An error has occured: ' + error.message);
             const checkStatus = async (error: Error, retrieveResult: any) => {
-                if (error) throw new core.SfdxError(error.message);
+                if (error) this.ux.error('An error has occured: ' + error.message);
                 this.ux.log(retrieveResult.status);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
-                    decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
+                    await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
                         map: function (file) {
                           const filePaths = file.path.split('/');
                           file.path = filePaths.join('/');
@@ -94,13 +87,19 @@ export default class Backup extends SfdxCommand {
                     });
                     this.mkdir(this.flags.outputdir);
                     this.ux.startSpinner('Converting to source format...');
-                    await exec(
-                        `sfdx force:mdapi:convert -d ${this.flags.outputdir} -r ${this.retrieveFolder + '/unpackaged/'} --json`,
-                        {maxBuffer: Infinity}
-                    );
-                    this.ux.stopSpinner('Completed!');
+                    try {
+                        await sfdx.mdapi.convert({
+                            outputdir: this.flags.outputdir,
+                            rootdir: this.retrieveFolder + '/unpackaged/',
+                            json: true
+                        });
+                        this.ux.stopSpinner('Completed!');
+                    } catch (error) {
+                        this.ux.stopSpinner('Error!');
+                        this.ux.error('An error has occured: ' + error.message);
+                    }
                 } else if (retrieveResult.done === 'true' && retrieveResult.status === 'Failed') {
-                    this.ux.log('An error has occured: ' + retrieveResult.errorMessage);
+                    this.ux.error('An error has occured: ' + retrieveResult.errorMessage);
                 } else {
                     setTimeout(() => {
                         this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus)
@@ -166,7 +165,6 @@ export default class Backup extends SfdxCommand {
             typeName =
                 typeName === 'EmailTemplate' ? 'EmailFolder' : typeName + 'Folder';
         }
-        // TODO type accepts a list so could group these up and send as one
         const types = [{ type: typeName, folder: null }];
 
         const metadataMembers = await this.connection.metadata.list(types, this.packageVersion);
