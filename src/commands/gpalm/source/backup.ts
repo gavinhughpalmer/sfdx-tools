@@ -2,7 +2,7 @@ import { core, flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
 import * as types from './types.json';
 import {tmpdir} from 'os';
-const decompress = require('decompress');
+import decompress = require('decompress');
 import * as fs from 'fs';
 const sfdx = require('sfdx-js').Client.createUsingPath('sfdx');
 
@@ -73,9 +73,9 @@ export default class Backup extends SfdxCommand {
         };
         this.ux.log('Package built: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
         this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
-            if (error) this.ux.log('An error has occured: ' + error.message);
+            if (error) this.ux.error('An error has occured: ' + error.message);
             const checkStatus = async (error: Error, retrieveResult: any) => {
-                if (error) this.ux.log('An error has occured: ' + error.message);
+                if (error) this.ux.error('An error has occured: ' + error.message);
                 this.ux.log(retrieveResult.status);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
                     await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
@@ -96,10 +96,10 @@ export default class Backup extends SfdxCommand {
                         this.ux.stopSpinner('Completed!');
                     } catch (error) {
                         this.ux.stopSpinner('Error!');
-                        this.ux.log('An error has occured: ' + error.message);
+                        this.ux.error('An error has occured: ' + error.message);
                     }
                 } else if (retrieveResult.done === 'true' && retrieveResult.status === 'Failed') {
-                    this.ux.log('An error has occured: ' + retrieveResult.errorMessage);
+                    this.ux.error('An error has occured: ' + retrieveResult.errorMessage);
                 } else {
                     setTimeout(() => {
                         this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus)
