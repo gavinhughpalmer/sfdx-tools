@@ -7,5 +7,9 @@
 /tmp
 node_modules
 .vscode
+<<<<<<< HEAD
 coverage/
 npm-shrinkwrap.json
+=======
+coverage/
+>>>>>>> a6b2651042f6323b410691d27a6ac3f393f721f7
