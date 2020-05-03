@@ -20,6 +20,11 @@ interface Package {
     types: MetadataType[]
 }
 
+interface JobDetails {
+    totalJobs: number,
+    jobNumber: number
+}
+
 export default class Backup extends SfdxCommand {
 
     public static description = 'This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder';
@@ -34,7 +39,8 @@ export default class Backup extends SfdxCommand {
         packageversion: flags.number({char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: 42.0 }),
         outputdir: flags.string({ char: 'd', description: 'The directory where the source format should be output to', default: 'force-app' }),
         waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 }),
-        ignoretypes: flags.string({ char: 'i', description: 'Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is recieved'})
+        ignoretypes: flags.array({ char: 'i', description: 'Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is recieved'}),
+        secondaryretrieve: flags.array({ char: 's', description: 'Comma seperated list of values that should be included fro a secondary retrieve, useful if the retrieve is too large for a single retrieve job'})
     };
     protected static requiresUsername = true;
     protected static supportsDevhubUsername = false;
@@ -47,36 +53,46 @@ export default class Backup extends SfdxCommand {
         this.connection = this.org.getConnection();
         this.packageVersion = this.flags.packageversion.toFixed(1);
         if (this.flags.ignoretypes) {
-            types.ignore.push(...this.flags.ignoretypes.split(','));
+            types.ignore.push(...this.flags.ignoretypes);
         }
         this.ux.log('Ignoring: ' + types.ignore + ' from the backup job');
-        // TODO Occational error with: ERROR running Backup:  getaddrinfo ENOTFOUND nccgroup.my.salesforce.com nccgroup.my.salesforce.com:443
-        // this.ux.log(outputString);
         this.ux.log('Generating package...');
         const fullPackage = await this.buildPackage();
-        await this.retrievePackage(fullPackage);
-        // const firstPart = {...fullPackage};
-        // firstPart.types = fullPackage.types.splice(0, fullPackage.types.length / 2);
-        // await this.retrievePackage(firstPart);
-
-        // const secondPart = {...fullPackage};
-        // secondPart.types = fullPackage.types.splice(fullPackage.types.length / 2, fullPackage.types.length);
-        // await this.retrievePackage(secondPart);
-
-        // TODO what should be returned...
+        const secondaryRetrieveTypes = new Set(this.flags.secondaryretrieve.map((type : string) => type.toLowerCase()));
+        let splitTypes : any;
+        let secondaryJobDetails: JobDetails;
+        if (secondaryRetrieveTypes.size !== 0) {
+            splitTypes = fullPackage.types.reduce((result: any, type: MetadataType) => {
+                if (secondaryRetrieveTypes.has(type.name.toLowerCase())) {
+                    result.secondaryTypes.push(type);
+                } else {
+                    result.initialTypes.push(type);
+                }
+                return result;
+            }, { initialTypes: [], secondaryTypes: [] });
+            const firstPackage = {...fullPackage};
+            firstPackage.types = splitTypes.initialTypes;
+            await this.retrievePackage(firstPackage, {totalJobs: 2, jobNumber: 1});
+            secondaryJobDetails = {totalJobs: 2, jobNumber: 2};
+        }
+        const secondPackage = {...fullPackage};
+        secondPackage.types = splitTypes ? splitTypes.secondaryTypes : fullPackage.types;
+        secondaryJobDetails = secondaryJobDetails || {totalJobs: 1, jobNumber: 1};
+        await this.retrievePackage(secondPackage, secondaryJobDetails);
         return {};
     }
 
-    private async retrievePackage(retrievePackage: Package) {
+    private async retrievePackage(retrievePackage: Package, jobDetails: JobDetails): Promise<void> {
         const retrieveRequest = {
             unpackaged: retrievePackage
         };
-        this.ux.log('Package built: ' + JSON.stringify(retrieveRequest.unpackaged, null, 2));
+        const jobNumberString = `(${jobDetails.jobNumber} of ${jobDetails.totalJobs})`;
+        this.ux.log(`Retrieving package ${jobNumberString} contining: ` + JSON.stringify(retrieveRequest.unpackaged, null, 2));
         this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
-            if (error) this.ux.error('An error has occured: ' + error.message);
+            if (error) this.ux.error(`An error has occured for ${jobNumberString}: ` + error.message);
             const checkStatus = async (error: Error, retrieveResult: any) => {
-                if (error) this.ux.error('An error has occured: ' + error.message);
-                this.ux.log(retrieveResult.status);
+                if (error) this.ux.error(`An error has occured for ${jobNumberString}: ` + error.message);
+                this.ux.log(`Job ${jobNumberString} ${retrieveResult.status}`);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
                     await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
                         map: function (file) {
@@ -86,14 +102,14 @@ export default class Backup extends SfdxCommand {
                         }
                     });
                     this.mkdir(this.flags.outputdir);
-                    this.ux.startSpinner('Converting to source format...');
+                    this.ux.startSpinner(`Converting job ${jobNumberString} to source format...`);
                     try {
                         await sfdx.mdapi.convert({
                             outputdir: this.flags.outputdir,
                             rootdir: this.retrieveFolder + '/unpackaged/',
                             json: true
                         });
-                        this.ux.stopSpinner('Completed!');
+                        this.ux.stopSpinner(`Job ${jobNumberString} Completed!`);
                     } catch (error) {
                         this.ux.stopSpinner('Error!');
                         this.ux.error('An error has occured: ' + error.message);
@@ -103,7 +119,7 @@ export default class Backup extends SfdxCommand {
                 } else {
                     setTimeout(() => {
                         this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus)
-                    }, this.flags.waittimemillis)
+                    }, this.flags.waittimemillis);
                 }
             }
             this.ux.log(`Job Id: ${asyncResult.id}`);
