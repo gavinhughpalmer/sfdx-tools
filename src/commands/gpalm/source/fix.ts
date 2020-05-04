@@ -55,7 +55,7 @@ export default class Fix extends SfdxCommand {
         // remove duplicates
         const duplicates = await glob('**/*.dup');
         for (let duplicateFile of duplicates) {
-            const fileName = duplicateFile.replace('.dup', '');
+            const fileName = duplicateFile.replace(/.dup$/, '');
             renameSync(duplicateFile, fileName);
         }
         return results;
