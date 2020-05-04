@@ -40,7 +40,7 @@ export default class Backup extends SfdxCommand {
         outputdir: flags.string({ char: 'd', description: 'The directory where the source format should be output to', default: 'force-app' }),
         waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 }),
         ignoretypes: flags.array({ char: 'i', description: 'Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is recieved'}),
-        secondaryretrieve: flags.array({ char: 's', description: 'Comma seperated list of values that should be included fro a secondary retrieve, useful if the retrieve is too large for a single retrieve job'})
+        secondaryretrieve: flags.array({ char: 's', default: [], description: 'Comma seperated list of values that should be included fro a secondary retrieve, useful if the retrieve is too large for a single retrieve job'})
     };
     protected static requiresUsername = true;
     protected static supportsDevhubUsername = false;
