@@ -94,7 +94,7 @@ export default class Backup extends SfdxCommand {
                 if (error) this.ux.error(`An error has occured for ${jobNumberString}: ` + error.message);
                 this.ux.log(`Job ${jobNumberString} ${retrieveResult.status}`);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
-                    await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder, {
+                    await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder + jobDetails.jobNumber, {
                         map: function (file) {
                           const filePaths = file.path.split('/');
                           file.path = filePaths.join('/');
@@ -106,7 +106,7 @@ export default class Backup extends SfdxCommand {
                     try {
                         await sfdx.mdapi.convert({
                             outputdir: this.flags.outputdir,
-                            rootdir: this.retrieveFolder + '/unpackaged/',
+                            rootdir: this.retrieveFolder + jobDetails.jobNumber + '/unpackaged/',
                             json: true
                         });
                         this.ux.stopSpinner(`Job ${jobNumberString} Completed!`);
