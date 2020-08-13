@@ -22,7 +22,7 @@ $ npm install -g sfdx-git
 $ sfdx-git COMMAND
 running command...
 $ sfdx-git (-v|--version|version)
-sfdx-git/0.0.0 darwin-x64 node-v13.7.0
+sfdx-git/0.0.0 darwin-x64 node-v14.4.0
 $ sfdx-git --help [COMMAND]
 USAGE
   $ sfdx-git COMMAND
