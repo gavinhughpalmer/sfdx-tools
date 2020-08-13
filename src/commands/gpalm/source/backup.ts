@@ -8,9 +8,6 @@ import * as types from './types.json';
 
 const sfdx = client.Client.createUsingPath('sfdx');
 
-// Initialize Messages with the current plugin directory
-core.Messages.importMessagesDirectory(__dirname);
-
 // TODO Refactoring and test classes...
 
 interface MetadataType {
