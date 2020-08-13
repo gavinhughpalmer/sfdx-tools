@@ -1,12 +1,9 @@
-import { core, SfdxCommand } from '@salesforce/command';
+import { SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
 import { readFileSync, renameSync, unlinkSync } from 'fs';
 import * as glob from 'glob-promise';
 
 // TODO Refactor...
-
-// Initialize Messages with the current plugin directory
-core.Messages.importMessagesDirectory(__dirname);
 
 export default class Fix extends SfdxCommand {
     public static description = 'This command is intended to convert the flow files from metadata format to the source format, that is without the version numebr in the file name and without the flow definition file. The command will delete all flow definition files and any flow files with the number in them, maintaining the active flow file';

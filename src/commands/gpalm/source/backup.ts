@@ -185,19 +185,17 @@ export default class Backup extends SfdxCommand {
 
         const metadataMembers = await this.connection.metadata.list(metadataTypes, this.packageVersion);
 
-        if (metadataMembers) {
+        if (metadataMembers && metadataMembers instanceof Array) {
             const members = packageMap[metadataComponent.xmlName] || [];
             const promises = [];
-            for (const member of metadataMembers) {
-                if (member.fullName && !metadataComponent.inFolder) {
-                    members.push(member.fullName);
-                } else if (member.fullName && metadataComponent.inFolder) {
-                    promises.push(
-                        this.listFolder(packageMap, metadataComponent.xmlName, member.fullName)
-                    );
-                }
-            }
-            packageMap[metadataComponent.xmlName] = members;
+            const isInFolder = metadataComponent.inFolder;
+            const metadataList = metadataMembers.filter(member => member.fullName).map(member => member.fullName);
+            metadataList.filter(() => isInFolder).map((metadataName) => {
+                promises.push(
+                    this.listFolder(packageMap, metadataComponent.xmlName, metadataName)
+                );
+            });
+            packageMap[metadataComponent.xmlName] = members.concat(metadataList.filter(() => !isInFolder));
             if (promises.length !== 0) {
                 await Promise.all(promises);
             }
@@ -207,15 +205,12 @@ export default class Backup extends SfdxCommand {
     private async listFolder(packageMap: object, typeName: string, folderName: string): Promise<void> {
         const metadataTypes = [{ type: typeName, folder: folderName }];
         const metadataMembers = await this.connection.metadata.list(metadataTypes, this.packageVersion);
-        if (!metadataMembers) return;
-        const members = packageMap[typeName] || [];
-        members.push(folderName);
-        for (const metadataMember of metadataMembers) {
-            if (metadataMember.fullName) {
-                members.push(metadataMember.fullName);
-            }
+        if (metadataMembers && metadataMembers instanceof Array) {
+            const members = packageMap[typeName] || [];
+            members.push(folderName);
+            const metadataNames = metadataMembers.filter(metadataMember => metadataMember.fullName).map(metadataMember => metadataMember.fullName);
+            packageMap[typeName] = members.concat(metadataNames);
         }
-        packageMap[typeName] = members;
     }
 
     private mkdir(path: string) {
