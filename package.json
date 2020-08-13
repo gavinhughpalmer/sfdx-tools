@@ -11,7 +11,7 @@
     "@salesforce/command": "2.2.0",
     "@salesforce/core": "2.10.0",
     "decompress": "4.2.1",
-    "fs": "0.0.1-security",
+    "fs": "0.0.2",
     "glob": "7.1.6",
     "glob-promise": "3.4.0",
     "sfdx-js": "4.5.0",
