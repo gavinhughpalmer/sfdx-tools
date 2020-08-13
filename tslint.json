@@ -1,3 +1,8 @@
 {
-    "extends": "@salesforce/dev-config/tslint"
+    "extends": "@salesforce/dev-config/tslint",
+    "rules": {
+        "no-any": {
+            "severity": "warning"
+        }
+    }
 }

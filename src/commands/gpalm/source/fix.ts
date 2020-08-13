@@ -1,7 +1,7 @@
 import { core, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
-import * as glob from 'glob-promise';
 import { readFileSync, renameSync, unlinkSync } from 'fs';
+import * as glob from 'glob-promise';
 
 // TODO Refactor...
 
@@ -28,7 +28,7 @@ export default class Fix extends SfdxCommand {
 
         // Fix flows
         const flowDefinitions = await glob('**/*' + Fix.flowDefinitionExtention);
-        for (let flowDefinitionPath of flowDefinitions) {
+        for (const flowDefinitionPath of flowDefinitions) {
 
             const flowDefContents = readFileSync(flowDefinitionPath, 'utf8');
             const versionNumberMatches = flowDefContents.match(/<activeVersionNumber>(\d+)<\/activeVersionNumber>/);
@@ -44,7 +44,7 @@ export default class Fix extends SfdxCommand {
                 results.newFiles.push(newFlowPath);
             }
             const flowVersionsToDelete = await glob(flowPathPattern);
-            for (let flowVersion of flowVersionsToDelete) {
+            for (const flowVersion of flowVersionsToDelete) {
                 unlinkSync(flowVersion);
                 results.deletedFiles.push(flowVersion);
             }
@@ -54,7 +54,7 @@ export default class Fix extends SfdxCommand {
 
         // remove duplicates
         const duplicates = await glob('**/*.dup');
-        for (let duplicateFile of duplicates) {
+        for (const duplicateFile of duplicates) {
             const fileName = duplicateFile.replace(/.dup$/, '');
             renameSync(duplicateFile, fileName);
         }

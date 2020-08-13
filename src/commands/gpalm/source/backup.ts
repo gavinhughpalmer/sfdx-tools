@@ -1,10 +1,12 @@
 import { core, flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
-import * as types from './types.json';
-import {tmpdir} from 'os';
-import decompress = require('decompress');
+import decompress from 'decompress';
 import * as fs from 'fs';
-const sfdx = require('sfdx-js').Client.createUsingPath('sfdx');
+import {tmpdir} from 'os';
+import * as client from 'sfdx-js';
+import * as types from './types.json';
+
+const sfdx = client.Client.createUsingPath('sfdx');
 
 // Initialize Messages with the current plugin directory
 core.Messages.importMessagesDirectory(__dirname);
@@ -12,17 +14,17 @@ core.Messages.importMessagesDirectory(__dirname);
 // TODO Refactoring and test classes...
 
 interface MetadataType {
-    name: string,
-    members: string[]
+    name: string;
+    members: string[];
 }
 interface Package {
-    version: string,
-    types: MetadataType[]
+    version: string;
+    types: MetadataType[];
 }
 
 interface JobDetails {
-    totalJobs: number,
-    jobNumber: number
+    totalJobs: number;
+    jobNumber: number;
 }
 
 export default class Backup extends SfdxCommand {
@@ -58,8 +60,8 @@ export default class Backup extends SfdxCommand {
         this.ux.log('Ignoring: ' + types.ignore + ' from the backup job');
         this.ux.log('Generating package...');
         const fullPackage = await this.buildPackage();
-        const secondaryRetrieveTypes = new Set(this.flags.secondaryretrieve.map((type : string) => type.toLowerCase()));
-        let splitTypes : any;
+        const secondaryRetrieveTypes = new Set(this.flags.secondaryretrieve.map((type: string) => type.toLowerCase()));
+        let splitTypes: any;
         let secondaryJobDetails: JobDetails;
         if (secondaryRetrieveTypes.size !== 0) {
             splitTypes = fullPackage.types.reduce((result: any, type: MetadataType) => {
@@ -88,14 +90,14 @@ export default class Backup extends SfdxCommand {
         };
         const jobNumberString = `(${jobDetails.jobNumber} of ${jobDetails.totalJobs})`;
         this.ux.log(`Retrieving package ${jobNumberString} contining: ` + JSON.stringify(retrieveRequest.unpackaged, null, 2));
-        this.connection.metadata.retrieve(retrieveRequest, (error, asyncResult) => {
-            if (error) this.ux.error(`An error has occured for ${jobNumberString}: ` + error.message);
-            const checkStatus = async (error: Error, retrieveResult: any) => {
-                if (error) this.ux.error(`An error has occured for ${jobNumberString}: ` + error.message);
+        this.connection.metadata.retrieve(retrieveRequest, async (retrieveError, asyncResult) => {
+            if (retrieveError) this.ux.error(`An error has occured for ${jobNumberString}: ` + retrieveError.message);
+            const checkStatus = async (checkStatusError: Error, retrieveResult: any) => {
+                if (checkStatusError) this.ux.error(`An error has occured for ${jobNumberString}: ` + checkStatusError.message);
                 this.ux.log(`Job ${jobNumberString} ${retrieveResult.status}`);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
                     await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder + jobDetails.jobNumber, {
-                        map: function (file) {
+                        map:file => {
                           const filePaths = file.path.split('/');
                           file.path = filePaths.join('/');
                           return file;
@@ -117,13 +119,13 @@ export default class Backup extends SfdxCommand {
                 } else if (retrieveResult.done === 'true' && retrieveResult.status === 'Failed') {
                     this.ux.error('An error has occured: ' + retrieveResult.errorMessage);
                 } else {
-                    setTimeout(() => {
-                        this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus)
+                    setTimeout(async () => {
+                        await this.connection.metadata.checkRetrieveStatus(retrieveResult.id, checkStatus);
                     }, this.flags.waittimemillis);
                 }
-            }
+            };
             this.ux.log(`Job Id: ${asyncResult.id}`);
-            this.connection.metadata.checkRetrieveStatus(asyncResult.id, checkStatus);
+            await this.connection.metadata.checkRetrieveStatus(asyncResult.id, checkStatus);
         });
     }
 
@@ -140,8 +142,7 @@ export default class Backup extends SfdxCommand {
         const packageMap = {};
         const metadataList = metadataDescribe.metadataObjects;
         const promises = [];
-        for (let index in metadataList) {
-            const metadataComponent = metadataList[index];
+        for (const metadataComponent of metadataList) {
             const metadataTypeName = metadataComponent.xmlName.toLowerCase();
             if (ignoreTypes.has(metadataTypeName)) {
                 continue;
@@ -166,11 +167,13 @@ export default class Backup extends SfdxCommand {
     }
 
     private buildPackageFromMap(metadataPackage, packageMap: object): void {
-        for (let typeName in packageMap) {
-            metadataPackage.types.push({
-                name: typeName,
-                members: packageMap[typeName]
-            });
+        for (const typeName in packageMap) {
+            if (packageMap.hasOwnProperty(typeName)) {
+                metadataPackage.types.push({
+                    name: typeName,
+                    members: packageMap[typeName]
+                });
+            }
         }
     }
 
@@ -181,15 +184,14 @@ export default class Backup extends SfdxCommand {
             typeName =
                 typeName === 'EmailTemplate' ? 'EmailFolder' : typeName + 'Folder';
         }
-        const types = [{ type: typeName, folder: null }];
+        const metadataTypes = [{ type: typeName, folder: null }];
 
-        const metadataMembers = await this.connection.metadata.list(types, this.packageVersion);
+        const metadataMembers = await this.connection.metadata.list(metadataTypes, this.packageVersion);
 
         if (metadataMembers) {
             const members = packageMap[metadataComponent.xmlName] || [];
             const promises = [];
-            for (let index in metadataMembers) {
-                const member = metadataMembers[index];
+            for (const member of metadataMembers) {
                 if (member.fullName && !metadataComponent.inFolder) {
                     members.push(member.fullName);
                 } else if (member.fullName && metadataComponent.inFolder) {
@@ -206,14 +208,14 @@ export default class Backup extends SfdxCommand {
     }
 
     private async listFolder(packageMap: object, typeName: string, folderName: string): Promise<void> {
-        const types = [{ type: typeName, folder: folderName }];
-        const metadataMembers = await this.connection.metadata.list(types, this.packageVersion);
+        const metadataTypes = [{ type: typeName, folder: folderName }];
+        const metadataMembers = await this.connection.metadata.list(metadataTypes, this.packageVersion);
         if (!metadataMembers) return;
         const members = packageMap[typeName] || [];
         members.push(folderName);
-        for (let index in metadataMembers) {
-            if (metadataMembers[index].fullName) {
-                members.push(metadataMembers[index].fullName);
+        for (const metadataMember of metadataMembers) {
+            if (metadataMember.fullName) {
+                members.push(metadataMember.fullName);
             }
         }
         packageMap[typeName] = members;
