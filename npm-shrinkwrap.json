@@ -6,6 +6,7 @@
   "dependencies": {
     "@babel/code-frame": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/highlight": "^7.10.4"
@@ -13,6 +14,7 @@
     },
     "@babel/core": {
       "version": "7.11.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/code-frame": "^7.10.4",
@@ -35,6 +37,7 @@
     },
     "@babel/generator": {
       "version": "7.11.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/types": "^7.11.0",
@@ -44,6 +47,7 @@
     },
     "@babel/helper-function-name": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/helper-get-function-arity": "^7.10.4",
@@ -53,6 +57,7 @@
     },
     "@babel/helper-get-function-arity": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/types": "^7.10.4"
@@ -60,6 +65,7 @@
     },
     "@babel/helper-member-expression-to-functions": {
       "version": "7.11.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/types": "^7.11.0"
@@ -67,6 +73,7 @@
     },
     "@babel/helper-module-imports": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/types": "^7.10.4"
@@ -74,6 +81,7 @@
     },
     "@babel/helper-module-transforms": {
       "version": "7.11.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/helper-module-imports": "^7.10.4",
@@ -87,6 +95,7 @@
     },
     "@babel/helper-optimise-call-expression": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/types": "^7.10.4"
@@ -94,6 +103,7 @@
     },
     "@babel/helper-replace-supers": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/helper-member-expression-to-functions": "^7.10.4",
@@ -104,6 +114,7 @@
     },
     "@babel/helper-simple-access": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/template": "^7.10.4",
@@ -112,6 +123,7 @@
     },
     "@babel/helper-split-export-declaration": {
       "version": "7.11.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/types": "^7.11.0"
@@ -119,10 +131,12 @@
     },
     "@babel/helper-validator-identifier": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true
     },
     "@babel/helpers": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/template": "^7.10.4",
@@ -132,6 +146,7 @@
     },
     "@babel/highlight": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/helper-validator-identifier": "^7.10.4",
@@ -141,10 +156,12 @@
     },
     "@babel/parser": {
       "version": "7.11.3",
+      "resolved": "",
       "dev": true
     },
     "@babel/template": {
       "version": "7.10.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/code-frame": "^7.10.4",
@@ -154,6 +171,7 @@
     },
     "@babel/traverse": {
       "version": "7.11.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/code-frame": "^7.10.4",
@@ -169,6 +187,7 @@
     },
     "@babel/types": {
       "version": "7.11.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/helper-validator-identifier": "^7.10.4",
@@ -178,6 +197,7 @@
     },
     "@istanbuljs/load-nyc-config": {
       "version": "1.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "camelcase": "^5.3.1",
@@ -189,10 +209,12 @@
     },
     "@istanbuljs/schema": {
       "version": "0.1.2",
+      "resolved": "",
       "dev": true
     },
     "@mrmlnc/readdir-enhanced": {
       "version": "2.2.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "call-me-maybe": "^1.0.1",
@@ -201,16 +223,19 @@
     },
     "@nodelib/fs.scandir": {
       "version": "2.1.3",
+      "resolved": "",
       "requires": {
         "@nodelib/fs.stat": "2.0.3",
         "run-parallel": "^1.1.9"
       }
     },
     "@nodelib/fs.stat": {
-      "version": "2.0.3"
+      "version": "2.0.3",
+      "resolved": ""
     },
     "@nodelib/fs.walk": {
       "version": "1.2.4",
+      "resolved": "",
       "requires": {
         "@nodelib/fs.scandir": "2.1.3",
         "fastq": "^1.6.0"
@@ -218,6 +243,7 @@
     },
     "@oclif/command": {
       "version": "1.8.0",
+      "resolved": "",
       "requires": {
         "@oclif/config": "^1.15.1",
         "@oclif/errors": "^1.3.3",
@@ -228,12 +254,14 @@
       },
       "dependencies": {
         "semver": {
-          "version": "7.3.2"
+          "version": "7.3.2",
+          "resolved": ""
         }
       }
     },
     "@oclif/config": {
       "version": "1.17.0",
+      "resolved": "",
       "requires": {
         "@oclif/errors": "^1.3.3",
         "@oclif/parser": "^3.8.0",
@@ -245,6 +273,7 @@
       "dependencies": {
         "fast-glob": {
           "version": "3.2.4",
+          "resolved": "",
           "requires": {
             "@nodelib/fs.stat": "^2.0.2",
             "@nodelib/fs.walk": "^1.2.3",
@@ -256,6 +285,7 @@
         },
         "globby": {
           "version": "11.0.1",
+          "resolved": "",
           "requires": {
             "array-union": "^2.1.0",
             "dir-glob": "^3.0.1",
@@ -266,10 +296,12 @@
           }
         },
         "ignore": {
-          "version": "5.1.8"
+          "version": "5.1.8",
+          "resolved": ""
         },
         "is-wsl": {
           "version": "2.2.0",
+          "resolved": "",
           "requires": {
             "is-docker": "^2.0.0"
           }
@@ -278,6 +310,7 @@
     },
     "@oclif/dev-cli": {
       "version": "1.22.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@oclif/command": "^1.5.13",
@@ -296,6 +329,7 @@
       "dependencies": {
         "@oclif/command": {
           "version": "1.5.20",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@oclif/config": "^1",
@@ -308,6 +342,7 @@
           "dependencies": {
             "@oclif/config": {
               "version": "1.17.0",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "@oclif/errors": "^1.3.3",
@@ -320,6 +355,7 @@
               "dependencies": {
                 "@oclif/errors": {
                   "version": "1.3.3",
+                  "resolved": "",
                   "dev": true,
                   "requires": {
                     "clean-stack": "^3.0.0",
@@ -331,6 +367,7 @@
                   "dependencies": {
                     "clean-stack": {
                       "version": "3.0.0",
+                      "resolved": "",
                       "dev": true,
                       "requires": {
                         "escape-string-regexp": "4.0.0"
@@ -338,6 +375,7 @@
                     },
                     "fs-extra": {
                       "version": "9.0.1",
+                      "resolved": "",
                       "dev": true,
                       "requires": {
                         "at-least-node": "^1.0.0",
@@ -348,6 +386,7 @@
                       "dependencies": {
                         "jsonfile": {
                           "version": "6.0.1",
+                          "resolved": "",
                           "dev": true,
                           "requires": {
                             "graceful-fs": "^4.1.6",
@@ -356,16 +395,19 @@
                         },
                         "universalify": {
                           "version": "1.0.0",
+                          "resolved": "",
                           "dev": true
                         }
                       }
                     },
                     "indent-string": {
                       "version": "4.0.0",
+                      "resolved": "",
                       "dev": true
                     },
                     "strip-ansi": {
                       "version": "6.0.0",
+                      "resolved": "",
                       "dev": true,
                       "requires": {
                         "ansi-regex": "^5.0.0"
@@ -373,12 +415,14 @@
                       "dependencies": {
                         "ansi-regex": {
                           "version": "5.0.0",
+                          "resolved": "",
                           "dev": true
                         }
                       }
                     },
                     "wrap-ansi": {
                       "version": "7.0.0",
+                      "resolved": "",
                       "dev": true,
                       "requires": {
                         "ansi-styles": "^4.0.0",
@@ -388,10 +432,12 @@
                       "dependencies": {
                         "ansi-regex": {
                           "version": "5.0.0",
+                          "resolved": "",
                           "dev": true
                         },
                         "ansi-styles": {
                           "version": "4.2.1",
+                          "resolved": "",
                           "dev": true,
                           "requires": {
                             "@types/color-name": "^1.1.1",
@@ -400,6 +446,7 @@
                           "dependencies": {
                             "color-convert": {
                               "version": "2.0.1",
+                              "resolved": "",
                               "dev": true,
                               "requires": {
                                 "color-name": "~1.1.4"
@@ -407,6 +454,7 @@
                               "dependencies": {
                                 "color-name": {
                                   "version": "1.1.4",
+                                  "resolved": "",
                                   "dev": true
                                 }
                               }
@@ -415,6 +463,7 @@
                         },
                         "string-width": {
                           "version": "4.2.0",
+                          "resolved": "",
                           "dev": true,
                           "requires": {
                             "emoji-regex": "^8.0.0",
@@ -424,6 +473,7 @@
                           "dependencies": {
                             "strip-ansi": {
                               "version": "6.0.0",
+                              "resolved": "",
                               "dev": true,
                               "requires": {
                                 "ansi-regex": "^5.0.0"
@@ -437,47 +487,34 @@
                 },
                 "is-fullwidth-code-point": {
                   "version": "3.0.0",
+                  "resolved": "",
                   "dev": true
                 },
                 "tslib": {
                   "version": "2.0.1",
+                  "resolved": "",
                   "dev": true
                 }
               }
             },
-            "ansi-regex": {},
             "emoji-regex": {
               "version": "8.0.0",
+              "resolved": "",
               "dev": true
             },
             "is-wsl": {
               "version": "2.2.0",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "is-docker": "^2.0.0"
-              }
-            },
-            "string-width": {
-              "requires": {
-                "is-fullwidth-code-point": "^2.0.0",
-                "strip-ansi": "^4.0.0"
-              },
-              "dependencies": {
-                "ansi-regex": {
-                  "version": "3.0.0"
-                },
-                "strip-ansi": {
-                  "version": "4.0.0",
-                  "requires": {
-                    "ansi-regex": "^3.0.0"
-                  }
-                }
               }
             }
           }
         },
         "@oclif/config": {
           "version": "1.15.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@oclif/errors": "^1.0.0",
@@ -488,6 +525,7 @@
         },
         "@oclif/errors": {
           "version": "1.2.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "clean-stack": "^1.3.0",
@@ -499,6 +537,7 @@
         },
         "@oclif/plugin-help": {
           "version": "2.2.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@oclif/command": "^1.5.13",
@@ -513,20 +552,24 @@
           "dependencies": {
             "indent-string": {
               "version": "4.0.0",
+              "resolved": "",
               "dev": true
             }
           }
         },
         "ansi-regex": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true
         },
         "clean-stack": {
           "version": "1.3.0",
+          "resolved": "",
           "dev": true
         },
         "cli-ux": {
           "version": "5.4.5",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@oclif/command": "^1.5.1",
@@ -559,24 +602,29 @@
           "dependencies": {
             "clean-stack": {
               "version": "2.2.0",
+              "resolved": "",
               "dev": true
             },
             "indent-string": {
               "version": "4.0.0",
+              "resolved": "",
               "dev": true
             }
           }
         },
         "emoji-regex": {
           "version": "7.0.3",
+          "resolved": "",
           "dev": true
         },
         "escape-string-regexp": {
           "version": "4.0.0",
+          "resolved": "",
           "dev": true
         },
         "fast-glob": {
           "version": "3.2.4",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@nodelib/fs.stat": "^2.0.2",
@@ -589,6 +637,7 @@
         },
         "globby": {
           "version": "11.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "array-union": "^2.1.0",
@@ -601,14 +650,17 @@
         },
         "ignore": {
           "version": "5.1.8",
+          "resolved": "",
           "dev": true
         },
         "indent-string": {
           "version": "3.2.0",
+          "resolved": "",
           "dev": true
         },
         "string-width": {
           "version": "3.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "emoji-regex": "^7.0.1",
@@ -618,10 +670,12 @@
         },
         "tslib": {
           "version": "1.11.1",
+          "resolved": "",
           "dev": true
         },
         "widest-line": {
           "version": "2.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "string-width": "^2.1.1"
@@ -629,6 +683,7 @@
           "dependencies": {
             "string-width": {
               "version": "2.1.1",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "is-fullwidth-code-point": "^2.0.0",
@@ -637,6 +692,7 @@
             },
             "strip-ansi": {
               "version": "4.0.0",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "ansi-regex": "^3.0.0"
@@ -648,6 +704,7 @@
     },
     "@oclif/errors": {
       "version": "1.3.3",
+      "resolved": "",
       "requires": {
         "clean-stack": "^3.0.0",
         "fs-extra": "^9.0.1",
@@ -657,10 +714,12 @@
       },
       "dependencies": {
         "ansi-regex": {
-          "version": "5.0.0"
+          "version": "5.0.0",
+          "resolved": ""
         },
         "ansi-styles": {
           "version": "4.2.1",
+          "resolved": "",
           "requires": {
             "@types/color-name": "^1.1.1",
             "color-convert": "^2.0.1"
@@ -668,24 +727,29 @@
         },
         "clean-stack": {
           "version": "3.0.0",
+          "resolved": "",
           "requires": {
             "escape-string-regexp": "4.0.0"
           }
         },
         "color-convert": {
           "version": "2.0.1",
+          "resolved": "",
           "requires": {
             "color-name": "~1.1.4"
           }
         },
         "color-name": {
-          "version": "1.1.4"
+          "version": "1.1.4",
+          "resolved": ""
         },
         "escape-string-regexp": {
-          "version": "4.0.0"
+          "version": "4.0.0",
+          "resolved": ""
         },
         "fs-extra": {
           "version": "9.0.1",
+          "resolved": "",
           "requires": {
             "at-least-node": "^1.0.0",
             "graceful-fs": "^4.2.0",
@@ -695,6 +759,7 @@
         },
         "jsonfile": {
           "version": "6.0.1",
+          "resolved": "",
           "requires": {
             "graceful-fs": "^4.1.6",
             "universalify": "^1.0.0"
@@ -702,15 +767,18 @@
         },
         "strip-ansi": {
           "version": "6.0.0",
+          "resolved": "",
           "requires": {
             "ansi-regex": "^5.0.0"
           }
         },
         "universalify": {
-          "version": "1.0.0"
+          "version": "1.0.0",
+          "resolved": ""
         },
         "wrap-ansi": {
           "version": "7.0.0",
+          "resolved": "",
           "requires": {
             "ansi-styles": "^4.0.0",
             "string-width": "^4.1.0",
@@ -720,10 +788,12 @@
       }
     },
     "@oclif/linewrap": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "@oclif/parser": {
       "version": "3.8.4",
+      "resolved": "",
       "requires": {
         "@oclif/linewrap": "^1.0.0",
         "chalk": "^2.4.2",
@@ -731,12 +801,14 @@
       },
       "dependencies": {
         "tslib": {
-          "version": "1.11.1"
+          "version": "1.11.1",
+          "resolved": ""
         }
       }
     },
     "@oclif/plugin-help": {
       "version": "3.2.0",
+      "resolved": "",
       "requires": {
         "@oclif/command": "^1.5.20",
         "@oclif/config": "^1.15.1",
@@ -750,10 +822,12 @@
       },
       "dependencies": {
         "ansi-regex": {
-          "version": "5.0.0"
+          "version": "5.0.0",
+          "resolved": ""
         },
         "strip-ansi": {
           "version": "6.0.0",
+          "resolved": "",
           "requires": {
             "ansi-regex": "^5.0.0"
           }
@@ -761,10 +835,12 @@
       }
     },
     "@oclif/screen": {
-      "version": "1.0.4"
+      "version": "1.0.4",
+      "resolved": ""
     },
     "@oclif/test": {
       "version": "1.2.6",
+      "resolved": "",
       "dev": true,
       "requires": {
         "fancy-test": "^1.4.3"
@@ -772,6 +848,7 @@
     },
     "@salesforce/bunyan": {
       "version": "2.0.0",
+      "resolved": "",
       "requires": {
         "dayjs": "^1.8.16",
         "dayjs-plugin-utc": "^0.1.2",
@@ -782,6 +859,7 @@
     },
     "@salesforce/command": {
       "version": "3.0.1",
+      "resolved": "",
       "requires": {
         "@oclif/command": "^1.5.17",
         "@oclif/errors": "^1.2.2",
@@ -797,6 +875,7 @@
       "dependencies": {
         "@oclif/command": {
           "version": "1.5.20",
+          "resolved": "",
           "requires": {
             "@oclif/config": "^1",
             "@oclif/errors": "^1.2.2",
@@ -808,6 +887,7 @@
         },
         "@oclif/errors": {
           "version": "1.2.2",
+          "resolved": "",
           "requires": {
             "clean-stack": "^1.3.0",
             "fs-extra": "^7.0.0",
@@ -818,6 +898,7 @@
         },
         "@oclif/plugin-help": {
           "version": "2.2.3",
+          "resolved": "",
           "requires": {
             "@oclif/command": "^1.5.13",
             "chalk": "^2.4.1",
@@ -830,30 +911,37 @@
           },
           "dependencies": {
             "indent-string": {
-              "version": "4.0.0"
+              "version": "4.0.0",
+              "resolved": ""
             }
           }
         },
         "@oclif/test": {
           "version": "1.2.5",
+          "resolved": "",
           "requires": {
             "fancy-test": "^1.4.3"
           }
         },
         "ansi-regex": {
-          "version": "3.0.0"
+          "version": "3.0.0",
+          "resolved": ""
         },
         "clean-stack": {
-          "version": "1.3.0"
+          "version": "1.3.0",
+          "resolved": ""
         },
         "emoji-regex": {
-          "version": "7.0.3"
+          "version": "7.0.3",
+          "resolved": ""
         },
         "indent-string": {
-          "version": "3.2.0"
+          "version": "3.2.0",
+          "resolved": ""
         },
         "string-width": {
           "version": "3.1.0",
+          "resolved": "",
           "requires": {
             "emoji-regex": "^7.0.1",
             "is-fullwidth-code-point": "^2.0.0",
@@ -862,12 +950,14 @@
         },
         "widest-line": {
           "version": "2.0.1",
+          "resolved": "",
           "requires": {
             "string-width": "^2.1.1"
           },
           "dependencies": {
             "string-width": {
               "version": "2.1.1",
+              "resolved": "",
               "requires": {
                 "is-fullwidth-code-point": "^2.0.0",
                 "strip-ansi": "^4.0.0"
@@ -875,6 +965,7 @@
             },
             "strip-ansi": {
               "version": "4.0.0",
+              "resolved": "",
               "requires": {
                 "ansi-regex": "^3.0.0"
               }
@@ -885,6 +976,7 @@
     },
     "@salesforce/core": {
       "version": "2.10.0",
+      "resolved": "",
       "requires": {
         "@salesforce/bunyan": "^2.0.0",
         "@salesforce/kit": "^1.2.2",
@@ -903,17 +995,20 @@
       "dependencies": {
         "debug": {
           "version": "3.2.6",
+          "resolved": "",
           "requires": {
             "ms": "^2.1.1"
           }
         },
         "mkdirp": {
-          "version": "1.0.4"
+          "version": "1.0.4",
+          "resolved": ""
         }
       }
     },
     "@salesforce/dev-config": {
       "version": "1.6.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "tslint": "^5.18.0",
@@ -923,6 +1018,7 @@
       "dependencies": {
         "@babel/code-frame": {
           "version": "7.8.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/highlight": "^7.8.3"
@@ -930,10 +1026,12 @@
         },
         "@babel/helper-validator-identifier": {
           "version": "7.9.5",
+          "resolved": "",
           "dev": true
         },
         "@babel/highlight": {
           "version": "7.9.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/helper-validator-identifier": "^7.9.0",
@@ -943,10 +1041,12 @@
         },
         "tslib": {
           "version": "1.11.1",
+          "resolved": "",
           "dev": true
         },
         "tslint": {
           "version": "5.20.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/code-frame": "^7.0.0",
@@ -966,18 +1066,17 @@
           "dependencies": {
             "tsutils": {
               "version": "2.29.0",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "tslib": "^1.8.1"
-              },
-              "dependencies": {
-                "typescript": {}
               }
             }
           }
         },
         "tslint-microsoft-contrib": {
           "version": "5.2.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "tsutils": "^2.27.2 <2.29.0"
@@ -985,6 +1084,7 @@
         },
         "tsutils": {
           "version": "2.28.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "tslib": "^1.8.1"
@@ -992,12 +1092,14 @@
         },
         "typescript": {
           "version": "3.7.5",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "@salesforce/kit": {
       "version": "1.3.2",
+      "resolved": "",
       "requires": {
         "@salesforce/ts-types": "^1.4.2",
         "tslib": "^1.10.0"
@@ -1005,31 +1107,37 @@
       "dependencies": {
         "@salesforce/ts-types": {
           "version": "1.4.2",
+          "resolved": "",
           "requires": {
             "tslib": "^1.10.0"
           }
         },
         "tslib": {
-          "version": "1.11.1"
+          "version": "1.11.1",
+          "resolved": ""
         }
       }
     },
     "@salesforce/schemas": {
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "resolved": ""
     },
     "@salesforce/ts-types": {
       "version": "1.2.2",
+      "resolved": "",
       "requires": {
         "tslib": "^1.10.0"
       },
       "dependencies": {
         "tslib": {
-          "version": "1.11.1"
+          "version": "1.11.1",
+          "resolved": ""
         }
       }
     },
     "@sinonjs/commons": {
       "version": "1.7.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "type-detect": "4.0.8"
@@ -1037,6 +1145,7 @@
     },
     "@sinonjs/formatio": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "samsam": "1.3.0"
@@ -1044,6 +1153,7 @@
     },
     "@sinonjs/samsam": {
       "version": "3.3.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@sinonjs/commons": "^1.3.0",
@@ -1053,20 +1163,25 @@
     },
     "@sinonjs/text-encoding": {
       "version": "0.7.1",
+      "resolved": "",
       "dev": true
     },
     "@types/chai": {
       "version": "4.2.12",
+      "resolved": "",
       "dev": true
     },
     "@types/color-name": {
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "resolved": ""
     },
     "@types/events": {
-      "version": "3.0.0"
+      "version": "3.0.0",
+      "resolved": ""
     },
     "@types/glob": {
       "version": "7.1.1",
+      "resolved": "",
       "requires": {
         "@types/events": "*",
         "@types/minimatch": "*",
@@ -1074,49 +1189,60 @@
       },
       "dependencies": {
         "@types/node": {
-          "version": "13.13.4"
+          "version": "13.13.4",
+          "resolved": ""
         }
       }
     },
     "@types/graceful-fs": {
       "version": "4.1.3",
+      "resolved": "",
       "requires": {
         "@types/node": "*"
       },
       "dependencies": {
         "@types/node": {
-          "version": "13.13.4"
+          "version": "13.13.4",
+          "resolved": ""
         }
       }
     },
     "@types/jsforce": {
-      "version": "1.9.2"
+      "version": "1.9.2",
+      "resolved": ""
     },
     "@types/lodash": {
-      "version": "4.14.150"
+      "version": "4.14.150",
+      "resolved": ""
     },
     "@types/minimatch": {
-      "version": "3.0.3"
+      "version": "3.0.3",
+      "resolved": ""
     },
     "@types/mocha": {
       "version": "5.2.7",
+      "resolved": "",
       "dev": true
     },
     "@types/node": {
       "version": "10.17.28",
+      "resolved": "",
       "dev": true
     },
     "@types/sinon": {
       "version": "9.0.0",
+      "resolved": "",
       "requires": {
         "@types/sinonjs__fake-timers": "*"
       }
     },
     "@types/sinonjs__fake-timers": {
-      "version": "6.0.1"
+      "version": "6.0.1",
+      "resolved": ""
     },
     "aggregate-error": {
       "version": "3.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "clean-stack": "^2.0.0",
@@ -1125,6 +1251,7 @@
     },
     "ajv": {
       "version": "6.12.2",
+      "resolved": "",
       "requires": {
         "fast-deep-equal": "^3.1.1",
         "fast-json-stable-stringify": "^2.0.0",
@@ -1134,25 +1261,31 @@
     },
     "ansi-colors": {
       "version": "4.1.1",
+      "resolved": "",
       "dev": true
     },
     "ansi-escapes": {
-      "version": "3.2.0"
+      "version": "3.2.0",
+      "resolved": ""
     },
     "ansi-regex": {
-      "version": "4.1.0"
+      "version": "4.1.0",
+      "resolved": ""
     },
     "ansi-styles": {
       "version": "3.2.1",
+      "resolved": "",
       "requires": {
         "color-convert": "^1.9.0"
       }
     },
     "ansicolors": {
-      "version": "0.3.2"
+      "version": "0.3.2",
+      "resolved": ""
     },
     "anymatch": {
       "version": "3.1.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "normalize-path": "^3.0.0",
@@ -1161,6 +1294,7 @@
     },
     "append-transform": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "default-require-extensions": "^3.0.0"
@@ -1168,14 +1302,17 @@
     },
     "archy": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true
     },
     "arg": {
       "version": "4.1.3",
+      "resolved": "",
       "dev": true
     },
     "argparse": {
       "version": "1.0.10",
+      "resolved": "",
       "dev": true,
       "requires": {
         "sprintf-js": "~1.0.2"
@@ -1183,33 +1320,41 @@
     },
     "arr-diff": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true
     },
     "arr-flatten": {
       "version": "1.1.0",
+      "resolved": "",
       "dev": true
     },
     "arr-union": {
       "version": "3.1.0",
+      "resolved": "",
       "dev": true
     },
     "array-from": {
       "version": "2.1.1",
+      "resolved": "",
       "dev": true
     },
     "array-union": {
-      "version": "2.1.0"
+      "version": "2.1.0",
+      "resolved": ""
     },
     "array-uniq": {
       "version": "1.0.3",
+      "resolved": "",
       "dev": true
     },
     "array-unique": {
       "version": "0.3.2",
+      "resolved": "",
       "dev": true
     },
     "array.prototype.map": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "define-properties": "^1.1.3",
@@ -1220,49 +1365,62 @@
     },
     "arrify": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true
     },
     "asap": {
-      "version": "2.0.6"
+      "version": "2.0.6",
+      "resolved": ""
     },
     "asn1": {
       "version": "0.2.4",
+      "resolved": "",
       "requires": {
         "safer-buffer": "~2.1.0"
       }
     },
     "assert-plus": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "assertion-error": {
       "version": "1.1.0",
+      "resolved": "",
       "dev": true
     },
     "assign-symbols": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true
     },
     "asynckit": {
-      "version": "0.4.0"
+      "version": "0.4.0",
+      "resolved": ""
     },
     "at-least-node": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "atob": {
       "version": "2.1.2",
+      "resolved": "",
       "dev": true
     },
     "aws-sign2": {
-      "version": "0.7.0"
+      "version": "0.7.0",
+      "resolved": ""
     },
     "aws4": {
-      "version": "1.9.1"
+      "version": "1.9.1",
+      "resolved": ""
     },
     "balanced-match": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "base": {
       "version": "0.11.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "cache-base": "^1.0.1",
@@ -1276,6 +1434,7 @@
       "dependencies": {
         "define-property": {
           "version": "1.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-descriptor": "^1.0.0"
@@ -1284,23 +1443,28 @@
       }
     },
     "base64-js": {
-      "version": "1.3.1"
+      "version": "1.3.1",
+      "resolved": ""
     },
     "base64-url": {
-      "version": "2.3.3"
+      "version": "2.3.3",
+      "resolved": ""
     },
     "bcrypt-pbkdf": {
       "version": "1.0.2",
+      "resolved": "",
       "requires": {
         "tweetnacl": "^0.14.3"
       }
     },
     "binary-extensions": {
       "version": "2.1.0",
+      "resolved": "",
       "dev": true
     },
     "bl": {
       "version": "1.2.2",
+      "resolved": "",
       "requires": {
         "readable-stream": "^2.3.5",
         "safe-buffer": "^5.1.1"
@@ -1308,6 +1472,7 @@
     },
     "brace-expansion": {
       "version": "1.1.11",
+      "resolved": "",
       "requires": {
         "balanced-match": "^1.0.0",
         "concat-map": "0.0.1"
@@ -1315,16 +1480,19 @@
     },
     "braces": {
       "version": "3.0.2",
+      "resolved": "",
       "requires": {
         "fill-range": "^7.0.1"
       }
     },
     "browser-stdout": {
       "version": "1.3.1",
+      "resolved": "",
       "dev": true
     },
     "buffer": {
       "version": "5.6.0",
+      "resolved": "",
       "requires": {
         "base64-js": "^1.0.2",
         "ieee754": "^1.1.4"
@@ -1332,33 +1500,41 @@
     },
     "buffer-alloc": {
       "version": "1.2.0",
+      "resolved": "",
       "requires": {
         "buffer-alloc-unsafe": "^1.1.0",
         "buffer-fill": "^1.0.0"
       }
     },
     "buffer-alloc-unsafe": {
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "resolved": ""
     },
     "buffer-crc32": {
-      "version": "0.2.13"
+      "version": "0.2.13",
+      "resolved": ""
     },
     "buffer-equal-constant-time": {
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "resolved": ""
     },
     "buffer-fill": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "buffer-from": {
       "version": "1.1.1",
+      "resolved": "",
       "dev": true
     },
     "builtin-modules": {
       "version": "1.1.1",
+      "resolved": "",
       "dev": true
     },
     "cache-base": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "collection-visit": "^1.0.0",
@@ -1374,6 +1550,7 @@
     },
     "caching-transform": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "hasha": "^5.0.0",
@@ -1384,24 +1561,29 @@
     },
     "call-me-maybe": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true
     },
     "camelcase": {
       "version": "5.3.1",
+      "resolved": "",
       "dev": true
     },
     "cardinal": {
       "version": "2.1.1",
+      "resolved": "",
       "requires": {
         "ansicolors": "~0.3.2",
         "redeyed": "~2.1.0"
       }
     },
     "caseless": {
-      "version": "0.12.0"
+      "version": "0.12.0",
+      "resolved": ""
     },
     "chai": {
       "version": "4.2.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "assertion-error": "^1.1.0",
@@ -1414,6 +1596,7 @@
     },
     "chalk": {
       "version": "2.4.2",
+      "resolved": "",
       "requires": {
         "ansi-styles": "^3.2.1",
         "escape-string-regexp": "^1.0.5",
@@ -1422,10 +1605,12 @@
     },
     "check-error": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true
     },
     "chokidar": {
       "version": "3.3.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "anymatch": "~3.1.1",
@@ -1440,10 +1625,12 @@
     },
     "chownr": {
       "version": "1.1.4",
+      "resolved": "",
       "dev": true
     },
     "class-utils": {
       "version": "0.3.6",
+      "resolved": "",
       "dev": true,
       "requires": {
         "arr-union": "^3.1.0",
@@ -1453,10 +1640,12 @@
       }
     },
     "clean-stack": {
-      "version": "2.2.0"
+      "version": "2.2.0",
+      "resolved": ""
     },
     "cli-progress": {
       "version": "3.8.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "colors": "^1.1.2",
@@ -1465,6 +1654,7 @@
     },
     "cli-ux": {
       "version": "4.9.3",
+      "resolved": "",
       "requires": {
         "@oclif/errors": "^1.2.2",
         "@oclif/linewrap": "^1.0.0",
@@ -1491,6 +1681,7 @@
       "dependencies": {
         "@oclif/errors": {
           "version": "1.2.2",
+          "resolved": "",
           "requires": {
             "clean-stack": "^1.3.0",
             "fs-extra": "^7.0.0",
@@ -1500,20 +1691,24 @@
           },
           "dependencies": {
             "clean-stack": {
-              "version": "1.3.0"
+              "version": "1.3.0",
+              "resolved": ""
             }
           }
         },
         "indent-string": {
-          "version": "3.2.0"
+          "version": "3.2.0",
+          "resolved": ""
         },
         "tslib": {
-          "version": "1.11.1"
+          "version": "1.11.1",
+          "resolved": ""
         }
       }
     },
     "cliui": {
       "version": "5.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "string-width": "^3.1.0",
@@ -1523,10 +1718,12 @@
       "dependencies": {
         "emoji-regex": {
           "version": "7.0.3",
+          "resolved": "",
           "dev": true
         },
         "string-width": {
           "version": "3.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "emoji-regex": "^7.0.1",
@@ -1536,6 +1733,7 @@
         },
         "wrap-ansi": {
           "version": "5.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "ansi-styles": "^3.2.0",
@@ -1547,15 +1745,18 @@
     },
     "co-prompt": {
       "version": "1.0.0",
+      "resolved": "",
       "requires": {
         "keypress": "~0.2.1"
       }
     },
     "coffeescript": {
-      "version": "1.12.7"
+      "version": "1.12.7",
+      "resolved": ""
     },
     "collection-visit": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "map-visit": "^1.0.0",
@@ -1564,43 +1765,53 @@
     },
     "color-convert": {
       "version": "1.9.3",
+      "resolved": "",
       "requires": {
         "color-name": "1.1.3"
       }
     },
     "color-name": {
-      "version": "1.1.3"
+      "version": "1.1.3",
+      "resolved": ""
     },
     "colors": {
       "version": "1.4.0",
+      "resolved": "",
       "dev": true
     },
     "combined-stream": {
       "version": "1.0.8",
+      "resolved": "",
       "requires": {
         "delayed-stream": "~1.0.0"
       }
     },
     "commander": {
-      "version": "2.20.3"
+      "version": "2.20.3",
+      "resolved": ""
     },
     "commondir": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true
     },
     "component-emitter": {
       "version": "1.3.0",
+      "resolved": "",
       "dev": true
     },
     "concat-map": {
-      "version": "0.0.1"
+      "version": "0.0.1",
+      "resolved": ""
     },
     "content-type": {
       "version": "1.0.4",
+      "resolved": "",
       "dev": true
     },
     "convert-source-map": {
       "version": "1.7.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "safe-buffer": "~5.1.1"
@@ -1608,19 +1819,23 @@
       "dependencies": {
         "safe-buffer": {
           "version": "5.1.2",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "copy-descriptor": {
       "version": "0.1.1",
+      "resolved": "",
       "dev": true
     },
     "core-util-is": {
-      "version": "1.0.2"
+      "version": "1.0.2",
+      "resolved": ""
     },
     "cross-spawn": {
       "version": "6.0.5",
+      "resolved": "",
       "requires": {
         "nice-try": "^1.0.4",
         "path-key": "^2.0.1",
@@ -1631,6 +1846,7 @@
       "dependencies": {
         "which": {
           "version": "1.3.1",
+          "resolved": "",
           "requires": {
             "isexe": "^2.0.0"
           }
@@ -1639,47 +1855,57 @@
     },
     "csprng": {
       "version": "0.1.2",
+      "resolved": "",
       "requires": {
         "sequin": "*"
       }
     },
     "csv-parse": {
-      "version": "4.9.0"
+      "version": "4.9.0",
+      "resolved": ""
     },
     "csv-stringify": {
       "version": "1.1.2",
+      "resolved": "",
       "requires": {
         "lodash.get": "~4.4.2"
       }
     },
     "dashdash": {
       "version": "1.14.1",
+      "resolved": "",
       "requires": {
         "assert-plus": "^1.0.0"
       }
     },
     "dayjs": {
-      "version": "1.8.26"
+      "version": "1.8.26",
+      "resolved": ""
     },
     "dayjs-plugin-utc": {
-      "version": "0.1.2"
+      "version": "0.1.2",
+      "resolved": ""
     },
     "debug": {
       "version": "4.1.1",
+      "resolved": "",
       "requires": {
         "ms": "^2.1.1"
       }
     },
     "decamelize": {
       "version": "1.2.0",
+      "resolved": "",
       "dev": true
     },
     "decode-uri-component": {
       "version": "0.2.0",
+      "resolved": "",
       "dev": true
     },
     "decompress": {
       "version": "4.2.1",
+      "resolved": "",
       "requires": {
         "decompress-tar": "^4.0.0",
         "decompress-tarbz2": "^4.0.0",
@@ -1693,22 +1919,26 @@
       "dependencies": {
         "make-dir": {
           "version": "1.3.0",
+          "resolved": "",
           "requires": {
             "pify": "^3.0.0"
           },
           "dependencies": {
             "pify": {
-              "version": "3.0.0"
+              "version": "3.0.0",
+              "resolved": ""
             }
           }
         },
         "pify": {
-          "version": "2.3.0"
+          "version": "2.3.0",
+          "resolved": ""
         }
       }
     },
     "decompress-tar": {
       "version": "4.1.1",
+      "resolved": "",
       "requires": {
         "file-type": "^5.2.0",
         "is-stream": "^1.1.0",
@@ -1717,6 +1947,7 @@
     },
     "decompress-tarbz2": {
       "version": "4.1.1",
+      "resolved": "",
       "requires": {
         "decompress-tar": "^4.1.0",
         "file-type": "^6.1.0",
@@ -1726,12 +1957,14 @@
       },
       "dependencies": {
         "file-type": {
-          "version": "6.2.0"
+          "version": "6.2.0",
+          "resolved": ""
         }
       }
     },
     "decompress-targz": {
       "version": "4.1.1",
+      "resolved": "",
       "requires": {
         "decompress-tar": "^4.1.1",
         "file-type": "^5.2.0",
@@ -1740,6 +1973,7 @@
     },
     "decompress-unzip": {
       "version": "4.0.1",
+      "resolved": "",
       "requires": {
         "file-type": "^3.8.0",
         "get-stream": "^2.2.0",
@@ -1748,15 +1982,18 @@
       },
       "dependencies": {
         "file-type": {
-          "version": "3.9.0"
+          "version": "3.9.0",
+          "resolved": ""
         },
         "pify": {
-          "version": "2.3.0"
+          "version": "2.3.0",
+          "resolved": ""
         }
       }
     },
     "deep-eql": {
       "version": "3.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "type-detect": "^4.0.0"
@@ -1764,6 +2001,7 @@
     },
     "default-require-extensions": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "strip-bom": "^4.0.0"
@@ -1771,6 +2009,7 @@
     },
     "define-properties": {
       "version": "1.1.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "object-keys": "^1.0.12"
@@ -1778,6 +2017,7 @@
     },
     "define-property": {
       "version": "0.2.5",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-descriptor": "^0.1.0"
@@ -1785,6 +2025,7 @@
       "dependencies": {
         "is-accessor-descriptor": {
           "version": "0.1.6",
+          "resolved": "",
           "dev": true,
           "requires": {
             "kind-of": "^3.0.2"
@@ -1792,6 +2033,7 @@
           "dependencies": {
             "kind-of": {
               "version": "3.2.2",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "is-buffer": "^1.1.5"
@@ -1801,6 +2043,7 @@
         },
         "is-data-descriptor": {
           "version": "0.1.4",
+          "resolved": "",
           "dev": true,
           "requires": {
             "kind-of": "^3.0.2"
@@ -1808,6 +2051,7 @@
           "dependencies": {
             "kind-of": {
               "version": "3.2.2",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "is-buffer": "^1.1.5"
@@ -1817,6 +2061,7 @@
         },
         "is-descriptor": {
           "version": "0.1.6",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-accessor-descriptor": "^0.1.6",
@@ -1826,29 +2071,35 @@
         },
         "kind-of": {
           "version": "5.1.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "delayed-stream": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "detect-indent": {
       "version": "6.0.0",
+      "resolved": "",
       "dev": true
     },
     "diff": {
       "version": "4.0.2",
+      "resolved": "",
       "dev": true
     },
     "dir-glob": {
       "version": "3.0.1",
+      "resolved": "",
       "requires": {
         "path-type": "^4.0.0"
       }
     },
     "dtrace-provider": {
       "version": "0.6.0",
+      "resolved": "",
       "optional": true,
       "requires": {
         "nan": "^2.0.8"
@@ -1856,6 +2107,7 @@
     },
     "ecc-jsbn": {
       "version": "0.1.2",
+      "resolved": "",
       "requires": {
         "jsbn": "~0.1.0",
         "safer-buffer": "^2.1.0"
@@ -1863,21 +2115,25 @@
     },
     "ecdsa-sig-formatter": {
       "version": "1.0.11",
+      "resolved": "",
       "requires": {
         "safe-buffer": "^5.0.1"
       }
     },
     "emoji-regex": {
-      "version": "8.0.0"
+      "version": "8.0.0",
+      "resolved": ""
     },
     "end-of-stream": {
       "version": "1.4.4",
+      "resolved": "",
       "requires": {
         "once": "^1.4.0"
       }
     },
     "error-ex": {
       "version": "1.3.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-arrayish": "^0.2.1"
@@ -1885,6 +2141,7 @@
     },
     "es-abstract": {
       "version": "1.17.6",
+      "resolved": "",
       "dev": true,
       "requires": {
         "es-to-primitive": "^1.2.1",
@@ -1902,10 +2159,12 @@
     },
     "es-array-method-boxes-properly": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true
     },
     "es-get-iterator": {
       "version": "1.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "es-abstract": "^1.17.4",
@@ -1919,12 +2178,14 @@
       "dependencies": {
         "isarray": {
           "version": "2.0.5",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "es-to-primitive": {
       "version": "1.2.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-callable": "^1.1.4",
@@ -1934,16 +2195,20 @@
     },
     "es6-error": {
       "version": "4.1.1",
+      "resolved": "",
       "dev": true
     },
     "escape-string-regexp": {
-      "version": "1.0.5"
+      "version": "1.0.5",
+      "resolved": ""
     },
     "esprima": {
-      "version": "4.0.1"
+      "version": "4.0.1",
+      "resolved": ""
     },
     "execa": {
       "version": "0.10.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "cross-spawn": "^6.0.0",
@@ -1957,12 +2222,14 @@
       "dependencies": {
         "get-stream": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "expand-brackets": {
       "version": "2.1.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "debug": "^2.3.3",
@@ -1976,6 +2243,7 @@
       "dependencies": {
         "debug": {
           "version": "2.6.9",
+          "resolved": "",
           "dev": true,
           "requires": {
             "ms": "2.0.0"
@@ -1983,15 +2251,18 @@
         },
         "ms": {
           "version": "2.0.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "extend": {
-      "version": "3.0.2"
+      "version": "3.0.2",
+      "resolved": ""
     },
     "extend-shallow": {
       "version": "2.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-extendable": "^0.1.0"
@@ -1999,6 +2270,7 @@
     },
     "extglob": {
       "version": "2.0.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "array-unique": "^0.3.2",
@@ -2013,6 +2285,7 @@
       "dependencies": {
         "define-property": {
           "version": "1.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-descriptor": "^1.0.0"
@@ -2021,13 +2294,16 @@
       }
     },
     "extract-stack": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "extsprintf": {
-      "version": "1.3.0"
+      "version": "1.3.0",
+      "resolved": ""
     },
     "fancy-test": {
       "version": "1.4.7",
+      "resolved": "",
       "requires": {
         "@types/chai": "*",
         "@types/lodash": "*",
@@ -2040,21 +2316,26 @@
       },
       "dependencies": {
         "@types/chai": {
-          "version": "4.2.11"
+          "version": "4.2.11",
+          "resolved": ""
         },
         "@types/mocha": {
-          "version": "7.0.2"
+          "version": "7.0.2",
+          "resolved": ""
         },
         "@types/node": {
-          "version": "13.13.4"
+          "version": "13.13.4",
+          "resolved": ""
         }
       }
     },
     "fast-deep-equal": {
-      "version": "3.1.1"
+      "version": "3.1.1",
+      "resolved": ""
     },
     "fast-glob": {
       "version": "2.2.7",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@mrmlnc/readdir-enhanced": "^2.2.1",
@@ -2067,10 +2348,12 @@
       "dependencies": {
         "@nodelib/fs.stat": {
           "version": "1.1.3",
+          "resolved": "",
           "dev": true
         },
         "braces": {
           "version": "2.3.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "arr-flatten": "^1.1.0",
@@ -2087,6 +2370,7 @@
           "dependencies": {
             "extend-shallow": {
               "version": "2.0.1",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "is-extendable": "^0.1.0"
@@ -2094,12 +2378,14 @@
             },
             "is-extendable": {
               "version": "0.1.1",
+              "resolved": "",
               "dev": true
             }
           }
         },
         "define-property": {
           "version": "2.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-descriptor": "^1.0.2",
@@ -2108,6 +2394,7 @@
         },
         "extend-shallow": {
           "version": "3.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "assign-symbols": "^1.0.0",
@@ -2116,6 +2403,7 @@
         },
         "fill-range": {
           "version": "4.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "extend-shallow": "^2.0.1",
@@ -2126,6 +2414,7 @@
           "dependencies": {
             "extend-shallow": {
               "version": "2.0.1",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "is-extendable": "^0.1.0"
@@ -2133,12 +2422,14 @@
             },
             "is-extendable": {
               "version": "0.1.1",
+              "resolved": "",
               "dev": true
             }
           }
         },
         "glob-parent": {
           "version": "3.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-glob": "^3.1.0",
@@ -2147,6 +2438,7 @@
           "dependencies": {
             "is-glob": {
               "version": "3.1.0",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "is-extglob": "^2.1.0"
@@ -2156,6 +2448,7 @@
         },
         "is-extendable": {
           "version": "1.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-plain-object": "^2.0.4"
@@ -2163,10 +2456,12 @@
         },
         "kind-of": {
           "version": "6.0.3",
+          "resolved": "",
           "dev": true
         },
         "micromatch": {
           "version": "3.1.10",
+          "resolved": "",
           "dev": true,
           "requires": {
             "arr-diff": "^4.0.0",
@@ -2186,6 +2481,7 @@
         },
         "to-regex-range": {
           "version": "2.1.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-number": "^3.0.0",
@@ -2195,16 +2491,19 @@
       }
     },
     "fast-json-stable-stringify": {
-      "version": "2.1.0"
+      "version": "2.1.0",
+      "resolved": ""
     },
     "fastq": {
       "version": "1.7.0",
+      "resolved": "",
       "requires": {
         "reusify": "^1.0.4"
       }
     },
     "faye": {
       "version": "1.2.5",
+      "resolved": "",
       "requires": {
         "asap": "*",
         "csprng": "*",
@@ -2215,12 +2514,14 @@
       "dependencies": {
         "faye-websocket": {
           "version": "0.11.3",
+          "resolved": "",
           "requires": {
             "websocket-driver": ">=0.5.1"
           }
         },
         "tough-cookie": {
           "version": "4.0.0",
+          "resolved": "",
           "requires": {
             "psl": "^1.1.33",
             "punycode": "^2.1.1",
@@ -2231,27 +2532,32 @@
     },
     "faye-websocket": {
       "version": "0.9.4",
+      "resolved": "",
       "requires": {
         "websocket-driver": ">=0.5.1"
       }
     },
     "fd-slicer": {
       "version": "1.1.0",
+      "resolved": "",
       "requires": {
         "pend": "~1.2.0"
       }
     },
     "file-type": {
-      "version": "5.2.0"
+      "version": "5.2.0",
+      "resolved": ""
     },
     "fill-range": {
       "version": "7.0.1",
+      "resolved": "",
       "requires": {
         "to-regex-range": "^5.0.1"
       }
     },
     "find-cache-dir": {
       "version": "3.3.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "commondir": "^1.0.1",
@@ -2261,6 +2567,7 @@
     },
     "find-up": {
       "version": "4.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "locate-path": "^5.0.0",
@@ -2269,6 +2576,7 @@
     },
     "flat": {
       "version": "4.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-buffer": "~2.0.3"
@@ -2276,16 +2584,19 @@
       "dependencies": {
         "is-buffer": {
           "version": "2.0.4",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "for-in": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true
     },
     "foreground-child": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "cross-spawn": "^7.0.0",
@@ -2294,6 +2605,7 @@
       "dependencies": {
         "cross-spawn": {
           "version": "7.0.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "path-key": "^3.1.0",
@@ -2303,10 +2615,12 @@
         },
         "path-key": {
           "version": "3.1.1",
+          "resolved": "",
           "dev": true
         },
         "shebang-command": {
           "version": "2.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "shebang-regex": "^3.0.0"
@@ -2314,15 +2628,18 @@
         },
         "shebang-regex": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "forever-agent": {
-      "version": "0.6.1"
+      "version": "0.6.1",
+      "resolved": ""
     },
     "form-data": {
       "version": "2.3.3",
+      "resolved": "",
       "requires": {
         "asynckit": "^0.4.0",
         "combined-stream": "^1.0.6",
@@ -2331,6 +2648,7 @@
     },
     "fragment-cache": {
       "version": "0.2.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "map-cache": "^0.2.2"
@@ -2338,16 +2656,20 @@
     },
     "fromentries": {
       "version": "1.2.1",
+      "resolved": "",
       "dev": true
     },
     "fs": {
-      "version": "0.0.2"
+      "version": "0.0.2",
+      "resolved": ""
     },
     "fs-constants": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "fs-extra": {
       "version": "7.0.1",
+      "resolved": "",
       "requires": {
         "graceful-fs": "^4.1.2",
         "jsonfile": "^4.0.0",
@@ -2355,35 +2677,43 @@
       }
     },
     "fs.realpath": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "fsevents": {
       "version": "2.1.3",
+      "resolved": "",
       "dev": true,
       "optional": true
     },
     "function-bind": {
       "version": "1.1.1",
+      "resolved": "",
       "dev": true
     },
     "gensync": {
       "version": "1.0.0-beta.1",
+      "resolved": "",
       "dev": true
     },
     "get-caller-file": {
       "version": "2.0.5",
+      "resolved": "",
       "dev": true
     },
     "get-func-name": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true
     },
     "get-package-type": {
       "version": "0.1.0",
+      "resolved": "",
       "dev": true
     },
     "get-stream": {
       "version": "2.3.1",
+      "resolved": "",
       "requires": {
         "object-assign": "^4.0.1",
         "pinkie-promise": "^2.0.0"
@@ -2391,16 +2721,19 @@
     },
     "get-value": {
       "version": "2.0.6",
+      "resolved": "",
       "dev": true
     },
     "getpass": {
       "version": "0.1.7",
+      "resolved": "",
       "requires": {
         "assert-plus": "^1.0.0"
       }
     },
     "github-slugger": {
       "version": "1.3.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "emoji-regex": ">=6.0.0 <=6.1.1"
@@ -2408,12 +2741,14 @@
       "dependencies": {
         "emoji-regex": {
           "version": "6.1.1",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "glob": {
       "version": "7.1.6",
+      "resolved": "",
       "requires": {
         "fs.realpath": "^1.0.0",
         "inflight": "^1.0.4",
@@ -2425,26 +2760,31 @@
     },
     "glob-parent": {
       "version": "5.1.1",
+      "resolved": "",
       "requires": {
         "is-glob": "^4.0.1"
       }
     },
     "glob-promise": {
       "version": "3.4.0",
+      "resolved": "",
       "requires": {
         "@types/glob": "*"
       }
     },
     "glob-to-regexp": {
       "version": "0.3.0",
+      "resolved": "",
       "dev": true
     },
     "globals": {
       "version": "11.12.0",
+      "resolved": "",
       "dev": true
     },
     "globby": {
       "version": "8.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "array-union": "^1.0.1",
@@ -2458,6 +2798,7 @@
       "dependencies": {
         "array-union": {
           "version": "1.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "array-uniq": "^1.0.1"
@@ -2465,6 +2806,7 @@
         },
         "dir-glob": {
           "version": "2.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "arrify": "^1.0.1",
@@ -2473,6 +2815,7 @@
         },
         "path-type": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "pify": "^3.0.0"
@@ -2480,25 +2823,31 @@
         },
         "slash": {
           "version": "1.0.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "graceful-fs": {
-      "version": "4.2.4"
+      "version": "4.2.4",
+      "resolved": ""
     },
     "graceful-readlink": {
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "resolved": ""
     },
     "growl": {
       "version": "1.10.5",
+      "resolved": "",
       "dev": true
     },
     "har-schema": {
-      "version": "2.0.0"
+      "version": "2.0.0",
+      "resolved": ""
     },
     "har-validator": {
       "version": "5.1.3",
+      "resolved": "",
       "requires": {
         "ajv": "^6.5.5",
         "har-schema": "^2.0.0"
@@ -2506,20 +2855,24 @@
     },
     "has": {
       "version": "1.0.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "function-bind": "^1.1.1"
       }
     },
     "has-flag": {
-      "version": "3.0.0"
+      "version": "3.0.0",
+      "resolved": ""
     },
     "has-symbols": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true
     },
     "has-value": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "get-value": "^2.0.6",
@@ -2529,6 +2882,7 @@
     },
     "has-values": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-number": "^3.0.0",
@@ -2537,6 +2891,7 @@
       "dependencies": {
         "kind-of": {
           "version": "4.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-buffer": "^1.1.5"
@@ -2546,6 +2901,7 @@
     },
     "hasha": {
       "version": "5.2.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-stream": "^2.0.0",
@@ -2554,28 +2910,34 @@
       "dependencies": {
         "is-stream": {
           "version": "2.0.0",
+          "resolved": "",
           "dev": true
         },
         "type-fest": {
           "version": "0.8.1",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "he": {
       "version": "1.2.0",
+      "resolved": "",
       "dev": true
     },
     "hosted-git-info": {
       "version": "2.8.8",
+      "resolved": "",
       "dev": true
     },
     "html-escaper": {
       "version": "2.0.2",
+      "resolved": "",
       "dev": true
     },
     "http-call": {
       "version": "5.3.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "content-type": "^1.0.4",
@@ -2588,15 +2950,18 @@
       "dependencies": {
         "is-stream": {
           "version": "2.0.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "http-parser-js": {
-      "version": "0.4.10"
+      "version": "0.4.10",
+      "resolved": ""
     },
     "http-signature": {
       "version": "1.2.0",
+      "resolved": "",
       "requires": {
         "assert-plus": "^1.0.0",
         "jsprim": "^1.2.2",
@@ -2604,34 +2969,42 @@
       }
     },
     "hyperlinker": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "ieee754": {
-      "version": "1.1.13"
+      "version": "1.1.13",
+      "resolved": ""
     },
     "ignore": {
       "version": "3.3.10",
+      "resolved": "",
       "dev": true
     },
     "imurmurhash": {
       "version": "0.1.4",
+      "resolved": "",
       "dev": true
     },
     "indent-string": {
-      "version": "4.0.0"
+      "version": "4.0.0",
+      "resolved": ""
     },
     "inflight": {
       "version": "1.0.6",
+      "resolved": "",
       "requires": {
         "once": "^1.3.0",
         "wrappy": "1"
       }
     },
     "inherits": {
-      "version": "2.0.4"
+      "version": "2.0.4",
+      "resolved": ""
     },
     "is-accessor-descriptor": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "kind-of": "^6.0.0"
@@ -2639,20 +3012,24 @@
       "dependencies": {
         "kind-of": {
           "version": "6.0.3",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "is-arguments": {
       "version": "1.0.4",
+      "resolved": "",
       "dev": true
     },
     "is-arrayish": {
       "version": "0.2.1",
+      "resolved": "",
       "dev": true
     },
     "is-binary-path": {
       "version": "2.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "binary-extensions": "^2.0.0"
@@ -2660,14 +3037,17 @@
     },
     "is-buffer": {
       "version": "1.1.6",
+      "resolved": "",
       "dev": true
     },
     "is-callable": {
       "version": "1.2.0",
+      "resolved": "",
       "dev": true
     },
     "is-data-descriptor": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "kind-of": "^6.0.0"
@@ -2675,16 +3055,19 @@
       "dependencies": {
         "kind-of": {
           "version": "6.0.3",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "is-date-object": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true
     },
     "is-descriptor": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-accessor-descriptor": "^1.0.0",
@@ -2694,38 +3077,47 @@
       "dependencies": {
         "kind-of": {
           "version": "6.0.3",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "is-docker": {
-      "version": "2.1.1"
+      "version": "2.1.1",
+      "resolved": ""
     },
     "is-extendable": {
       "version": "0.1.1",
+      "resolved": "",
       "dev": true
     },
     "is-extglob": {
-      "version": "2.1.1"
+      "version": "2.1.1",
+      "resolved": ""
     },
     "is-fullwidth-code-point": {
-      "version": "2.0.0"
+      "version": "2.0.0",
+      "resolved": ""
     },
     "is-glob": {
       "version": "4.0.1",
+      "resolved": "",
       "requires": {
         "is-extglob": "^2.1.1"
       }
     },
     "is-map": {
       "version": "2.0.1",
+      "resolved": "",
       "dev": true
     },
     "is-natural-number": {
-      "version": "4.0.1"
+      "version": "4.0.1",
+      "resolved": ""
     },
     "is-number": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "kind-of": "^3.0.2"
@@ -2733,10 +3125,12 @@
     },
     "is-plain-obj": {
       "version": "2.1.0",
+      "resolved": "",
       "dev": true
     },
     "is-plain-object": {
       "version": "2.0.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "isobject": "^3.0.1"
@@ -2744,6 +3138,7 @@
     },
     "is-regex": {
       "version": "1.1.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "has-symbols": "^1.0.1"
@@ -2751,55 +3146,69 @@
     },
     "is-retry-allowed": {
       "version": "1.2.0",
+      "resolved": "",
       "dev": true
     },
     "is-set": {
       "version": "2.0.1",
+      "resolved": "",
       "dev": true
     },
     "is-stream": {
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "resolved": ""
     },
     "is-string": {
       "version": "1.0.5",
+      "resolved": "",
       "dev": true
     },
     "is-symbol": {
       "version": "1.0.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "has-symbols": "^1.0.1"
       }
     },
     "is-typedarray": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "is-windows": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true
     },
     "is-wsl": {
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "resolved": ""
     },
     "isarray": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "isexe": {
-      "version": "2.0.0"
+      "version": "2.0.0",
+      "resolved": ""
     },
     "isobject": {
       "version": "3.0.1",
+      "resolved": "",
       "dev": true
     },
     "isstream": {
-      "version": "0.1.2"
+      "version": "0.1.2",
+      "resolved": ""
     },
     "istanbul-lib-coverage": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true
     },
     "istanbul-lib-hook": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "append-transform": "^2.0.0"
@@ -2807,6 +3216,7 @@
     },
     "istanbul-lib-instrument": {
       "version": "4.0.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/core": "^7.7.5",
@@ -2817,12 +3227,14 @@
       "dependencies": {
         "semver": {
           "version": "6.3.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "istanbul-lib-processinfo": {
       "version": "2.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "archy": "^1.0.0",
@@ -2836,6 +3248,7 @@
       "dependencies": {
         "cross-spawn": {
           "version": "7.0.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "path-key": "^3.1.0",
@@ -2845,10 +3258,12 @@
         },
         "path-key": {
           "version": "3.1.1",
+          "resolved": "",
           "dev": true
         },
         "shebang-command": {
           "version": "2.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "shebang-regex": "^3.0.0"
@@ -2856,12 +3271,14 @@
         },
         "shebang-regex": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "istanbul-lib-report": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "istanbul-lib-coverage": "^3.0.0",
@@ -2871,10 +3288,12 @@
       "dependencies": {
         "has-flag": {
           "version": "4.0.0",
+          "resolved": "",
           "dev": true
         },
         "supports-color": {
           "version": "7.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "has-flag": "^4.0.0"
@@ -2884,6 +3303,7 @@
     },
     "istanbul-lib-source-maps": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "debug": "^4.1.1",
@@ -2893,12 +3313,14 @@
       "dependencies": {
         "source-map": {
           "version": "0.6.1",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "istanbul-reports": {
       "version": "3.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "html-escaper": "^2.0.0",
@@ -2907,10 +3329,12 @@
     },
     "iterate-iterator": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true
     },
     "iterate-value": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "es-get-iterator": "^1.0.2",
@@ -2919,10 +3343,12 @@
     },
     "js-tokens": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true
     },
     "js-yaml": {
       "version": "3.13.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "argparse": "^1.0.7",
@@ -2930,17 +3356,21 @@
       }
     },
     "jsbn": {
-      "version": "0.1.1"
+      "version": "0.1.1",
+      "resolved": ""
     },
     "jsen": {
-      "version": "0.6.6"
+      "version": "0.6.6",
+      "resolved": ""
     },
     "jsesc": {
       "version": "2.5.2",
+      "resolved": "",
       "dev": true
     },
     "jsforce": {
       "version": "1.9.3",
+      "resolved": "",
       "requires": {
         "base64-url": "^2.2.0",
         "co-prompt": "^1.0.0",
@@ -2961,19 +3391,24 @@
     },
     "json-parse-better-errors": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true
     },
     "json-schema": {
-      "version": "0.2.3"
+      "version": "0.2.3",
+      "resolved": ""
     },
     "json-schema-traverse": {
-      "version": "0.4.1"
+      "version": "0.4.1",
+      "resolved": ""
     },
     "json-stringify-safe": {
-      "version": "5.0.1"
+      "version": "5.0.1",
+      "resolved": ""
     },
     "json5": {
       "version": "2.1.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "minimist": "^1.2.5"
@@ -2981,12 +3416,14 @@
     },
     "jsonfile": {
       "version": "4.0.0",
+      "resolved": "",
       "requires": {
         "graceful-fs": "^4.1.6"
       }
     },
     "jsonwebtoken": {
       "version": "8.5.0",
+      "resolved": "",
       "requires": {
         "jws": "^3.2.1",
         "lodash.includes": "^4.3.0",
@@ -3002,6 +3439,7 @@
     },
     "jsprim": {
       "version": "1.4.1",
+      "resolved": "",
       "requires": {
         "assert-plus": "1.0.0",
         "extsprintf": "1.3.0",
@@ -3011,10 +3449,12 @@
     },
     "just-extend": {
       "version": "4.1.0",
+      "resolved": "",
       "dev": true
     },
     "jwa": {
       "version": "1.4.1",
+      "resolved": "",
       "requires": {
         "buffer-equal-constant-time": "1.0.1",
         "ecdsa-sig-formatter": "1.0.11",
@@ -3023,16 +3463,19 @@
     },
     "jws": {
       "version": "3.2.2",
+      "resolved": "",
       "requires": {
         "jwa": "^1.4.1",
         "safe-buffer": "^5.0.1"
       }
     },
     "keypress": {
-      "version": "0.2.1"
+      "version": "0.2.1",
+      "resolved": ""
     },
     "kind-of": {
       "version": "3.2.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-buffer": "^1.1.5"
@@ -3040,10 +3483,12 @@
     },
     "lines-and-columns": {
       "version": "1.1.6",
+      "resolved": "",
       "dev": true
     },
     "load-json-file": {
       "version": "6.2.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "graceful-fs": "^4.1.15",
@@ -3054,6 +3499,7 @@
       "dependencies": {
         "@babel/code-frame": {
           "version": "7.8.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/highlight": "^7.8.3"
@@ -3061,10 +3507,12 @@
         },
         "@babel/helper-validator-identifier": {
           "version": "7.9.5",
+          "resolved": "",
           "dev": true
         },
         "@babel/highlight": {
           "version": "7.9.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/helper-validator-identifier": "^7.9.0",
@@ -3074,6 +3522,7 @@
         },
         "parse-json": {
           "version": "5.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/code-frame": "^7.0.0",
@@ -3086,47 +3535,60 @@
     },
     "locate-path": {
       "version": "5.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "p-locate": "^4.1.0"
       }
     },
     "lodash": {
-      "version": "4.17.19"
+      "version": "4.17.19",
+      "resolved": ""
     },
     "lodash._reinterpolate": {
-      "version": "3.0.0"
+      "version": "3.0.0",
+      "resolved": ""
     },
     "lodash.flattendeep": {
       "version": "4.4.0",
+      "resolved": "",
       "dev": true
     },
     "lodash.get": {
-      "version": "4.4.2"
+      "version": "4.4.2",
+      "resolved": ""
     },
     "lodash.includes": {
-      "version": "4.3.0"
+      "version": "4.3.0",
+      "resolved": ""
     },
     "lodash.isboolean": {
-      "version": "3.0.3"
+      "version": "3.0.3",
+      "resolved": ""
     },
     "lodash.isinteger": {
-      "version": "4.0.4"
+      "version": "4.0.4",
+      "resolved": ""
     },
     "lodash.isnumber": {
-      "version": "3.0.3"
+      "version": "3.0.3",
+      "resolved": ""
     },
     "lodash.isplainobject": {
-      "version": "4.0.6"
+      "version": "4.0.6",
+      "resolved": ""
     },
     "lodash.isstring": {
-      "version": "4.0.1"
+      "version": "4.0.1",
+      "resolved": ""
     },
     "lodash.once": {
-      "version": "4.1.1"
+      "version": "4.1.1",
+      "resolved": ""
     },
     "lodash.template": {
       "version": "4.5.0",
+      "resolved": "",
       "requires": {
         "lodash._reinterpolate": "^3.0.0",
         "lodash.templatesettings": "^4.0.0"
@@ -3134,12 +3596,14 @@
     },
     "lodash.templatesettings": {
       "version": "4.2.0",
+      "resolved": "",
       "requires": {
         "lodash._reinterpolate": "^3.0.0"
       }
     },
     "log-symbols": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "chalk": "^2.4.2"
@@ -3147,10 +3611,12 @@
     },
     "lolex": {
       "version": "2.7.5",
+      "resolved": "",
       "dev": true
     },
     "make-dir": {
       "version": "3.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "semver": "^6.0.0"
@@ -3158,55 +3624,66 @@
       "dependencies": {
         "semver": {
           "version": "6.3.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "make-error": {
       "version": "1.3.6",
+      "resolved": "",
       "dev": true
     },
     "map-cache": {
       "version": "0.2.2",
+      "resolved": "",
       "dev": true
     },
     "map-visit": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "object-visit": "^1.0.0"
       }
     },
     "merge2": {
-      "version": "1.3.0"
+      "version": "1.3.0",
+      "resolved": ""
     },
     "micromatch": {
       "version": "4.0.2",
+      "resolved": "",
       "requires": {
         "braces": "^3.0.1",
         "picomatch": "^2.0.5"
       }
     },
     "mime-db": {
-      "version": "1.44.0"
+      "version": "1.44.0",
+      "resolved": ""
     },
     "mime-types": {
       "version": "2.1.27",
+      "resolved": "",
       "requires": {
         "mime-db": "1.44.0"
       }
     },
     "minimatch": {
       "version": "3.0.4",
+      "resolved": "",
       "requires": {
         "brace-expansion": "^1.1.7"
       }
     },
     "minimist": {
-      "version": "1.2.5"
+      "version": "1.2.5",
+      "resolved": ""
     },
     "mixin-deep": {
       "version": "1.3.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "for-in": "^1.0.2",
@@ -3215,6 +3692,7 @@
       "dependencies": {
         "is-extendable": {
           "version": "1.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-plain-object": "^2.0.4"
@@ -3224,16 +3702,19 @@
     },
     "mkdirp": {
       "version": "0.5.5",
+      "resolved": "",
       "requires": {
         "minimist": "^1.2.5"
       }
     },
     "mkdirp-classic": {
       "version": "0.5.2",
+      "resolved": "",
       "dev": true
     },
     "mocha": {
       "version": "8.1.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "ansi-colors": "4.1.1",
@@ -3265,6 +3746,7 @@
       "dependencies": {
         "debug": {
           "version": "3.2.6",
+          "resolved": "",
           "dev": true,
           "requires": {
             "ms": "^2.1.1"
@@ -3272,10 +3754,12 @@
         },
         "has-flag": {
           "version": "4.0.0",
+          "resolved": "",
           "dev": true
         },
         "supports-color": {
           "version": "7.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "has-flag": "^4.0.0"
@@ -3284,13 +3768,16 @@
       }
     },
     "mock-stdin": {
-      "version": "0.3.1"
+      "version": "0.3.1",
+      "resolved": ""
     },
     "ms": {
-      "version": "2.1.2"
+      "version": "2.1.2",
+      "resolved": ""
     },
     "multistream": {
       "version": "2.1.1",
+      "resolved": "",
       "requires": {
         "inherits": "^2.0.1",
         "readable-stream": "^2.0.5"
@@ -3298,6 +3785,7 @@
     },
     "mv": {
       "version": "2.1.1",
+      "resolved": "",
       "optional": true,
       "requires": {
         "mkdirp": "~0.5.1",
@@ -3307,6 +3795,7 @@
       "dependencies": {
         "glob": {
           "version": "6.0.4",
+          "resolved": "",
           "optional": true,
           "requires": {
             "inflight": "^1.0.4",
@@ -3318,6 +3807,7 @@
         },
         "rimraf": {
           "version": "2.4.5",
+          "resolved": "",
           "optional": true,
           "requires": {
             "glob": "^6.0.1"
@@ -3327,10 +3817,12 @@
     },
     "nan": {
       "version": "2.14.1",
+      "resolved": "",
       "optional": true
     },
     "nanomatch": {
       "version": "1.2.13",
+      "resolved": "",
       "dev": true,
       "requires": {
         "arr-diff": "^4.0.0",
@@ -3348,6 +3840,7 @@
       "dependencies": {
         "define-property": {
           "version": "2.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-descriptor": "^1.0.2",
@@ -3356,6 +3849,7 @@
         },
         "extend-shallow": {
           "version": "3.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "assign-symbols": "^1.0.0",
@@ -3364,6 +3858,7 @@
         },
         "is-extendable": {
           "version": "1.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-plain-object": "^2.0.4"
@@ -3371,23 +3866,28 @@
         },
         "kind-of": {
           "version": "6.0.3",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "natural-orderby": {
       "version": "2.0.3",
+      "resolved": "",
       "dev": true
     },
     "ncp": {
       "version": "2.0.0",
+      "resolved": "",
       "optional": true
     },
     "nice-try": {
-      "version": "1.0.5"
+      "version": "1.0.5",
+      "resolved": ""
     },
     "nise": {
       "version": "1.5.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@sinonjs/formatio": "^3.2.1",
@@ -3399,6 +3899,7 @@
       "dependencies": {
         "@sinonjs/formatio": {
           "version": "3.2.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@sinonjs/commons": "^1",
@@ -3407,6 +3908,7 @@
         },
         "lolex": {
           "version": "5.1.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@sinonjs/commons": "^1.7.0"
@@ -3416,6 +3918,7 @@
     },
     "node-preload": {
       "version": "0.2.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "process-on-spawn": "^1.0.0"
@@ -3423,6 +3926,7 @@
     },
     "normalize-package-data": {
       "version": "2.5.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "hosted-git-info": "^2.1.4",
@@ -3433,10 +3937,12 @@
     },
     "normalize-path": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true
     },
     "npm-run-path": {
       "version": "2.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "path-key": "^2.0.0"
@@ -3444,6 +3950,7 @@
     },
     "nyc": {
       "version": "15.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@istanbuljs/load-nyc-config": "^1.0.0",
@@ -3477,10 +3984,12 @@
       "dependencies": {
         "ansi-regex": {
           "version": "5.0.0",
+          "resolved": "",
           "dev": true
         },
         "ansi-styles": {
           "version": "4.2.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@types/color-name": "^1.1.1",
@@ -3489,6 +3998,7 @@
         },
         "cliui": {
           "version": "6.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "string-width": "^4.2.0",
@@ -3498,6 +4008,7 @@
         },
         "color-convert": {
           "version": "2.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "color-name": "~1.1.4"
@@ -3505,10 +4016,12 @@
         },
         "color-name": {
           "version": "1.1.4",
+          "resolved": "",
           "dev": true
         },
         "strip-ansi": {
           "version": "6.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "ansi-regex": "^5.0.0"
@@ -3516,6 +4029,7 @@
         },
         "wrap-ansi": {
           "version": "6.2.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "ansi-styles": "^4.0.0",
@@ -3525,6 +4039,7 @@
         },
         "yargs": {
           "version": "15.4.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "cliui": "^6.0.0",
@@ -3542,6 +4057,7 @@
         },
         "yargs-parser": {
           "version": "18.1.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "camelcase": "^5.0.0",
@@ -3551,13 +4067,16 @@
       }
     },
     "oauth-sign": {
-      "version": "0.9.0"
+      "version": "0.9.0",
+      "resolved": ""
     },
     "object-assign": {
-      "version": "4.1.1"
+      "version": "4.1.1",
+      "resolved": ""
     },
     "object-copy": {
       "version": "0.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "copy-descriptor": "^0.1.0",
@@ -3567,14 +4086,17 @@
     },
     "object-inspect": {
       "version": "1.8.0",
+      "resolved": "",
       "dev": true
     },
     "object-keys": {
       "version": "1.1.1",
+      "resolved": "",
       "dev": true
     },
     "object-visit": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "isobject": "^3.0.0"
@@ -3582,6 +4104,7 @@
     },
     "object.assign": {
       "version": "4.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "define-properties": "^1.1.2",
@@ -3592,6 +4115,7 @@
     },
     "object.pick": {
       "version": "1.3.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "isobject": "^3.0.1"
@@ -3599,22 +4123,26 @@
     },
     "once": {
       "version": "1.4.0",
+      "resolved": "",
       "requires": {
         "wrappy": "1"
       }
     },
     "opn": {
       "version": "5.5.0",
+      "resolved": "",
       "requires": {
         "is-wsl": "^1.1.0"
       }
     },
     "p-finally": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true
     },
     "p-limit": {
       "version": "2.3.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "p-try": "^2.0.0"
@@ -3622,6 +4150,7 @@
     },
     "p-locate": {
       "version": "4.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "p-limit": "^2.2.0"
@@ -3629,6 +4158,7 @@
     },
     "p-map": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "aggregate-error": "^3.0.0"
@@ -3636,10 +4166,12 @@
     },
     "p-try": {
       "version": "2.2.0",
+      "resolved": "",
       "dev": true
     },
     "package-hash": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "graceful-fs": "^4.1.15",
@@ -3650,6 +4182,7 @@
     },
     "parse-json": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "error-ex": "^1.3.1",
@@ -3658,10 +4191,12 @@
     },
     "pascalcase": {
       "version": "0.1.1",
+      "resolved": "",
       "dev": true
     },
     "password-prompt": {
       "version": "1.1.2",
+      "resolved": "",
       "requires": {
         "ansi-escapes": "^3.1.0",
         "cross-spawn": "^6.0.5"
@@ -3669,24 +4204,30 @@
     },
     "path-dirname": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true
     },
     "path-exists": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true
     },
     "path-is-absolute": {
-      "version": "1.0.1"
+      "version": "1.0.1",
+      "resolved": ""
     },
     "path-key": {
-      "version": "2.0.1"
+      "version": "2.0.1",
+      "resolved": ""
     },
     "path-parse": {
       "version": "1.0.6",
+      "resolved": "",
       "dev": true
     },
     "path-to-regexp": {
       "version": "1.8.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "isarray": "0.0.1"
@@ -3694,41 +4235,51 @@
       "dependencies": {
         "isarray": {
           "version": "0.0.1",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "path-type": {
-      "version": "4.0.0"
+      "version": "4.0.0",
+      "resolved": ""
     },
     "pathval": {
       "version": "1.1.0",
+      "resolved": "",
       "dev": true
     },
     "pend": {
-      "version": "1.2.0"
+      "version": "1.2.0",
+      "resolved": ""
     },
     "performance-now": {
-      "version": "2.1.0"
+      "version": "2.1.0",
+      "resolved": ""
     },
     "picomatch": {
-      "version": "2.2.2"
+      "version": "2.2.2",
+      "resolved": ""
     },
     "pify": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true
     },
     "pinkie": {
-      "version": "2.0.4"
+      "version": "2.0.4",
+      "resolved": ""
     },
     "pinkie-promise": {
       "version": "2.0.1",
+      "resolved": "",
       "requires": {
         "pinkie": "^2.0.0"
       }
     },
     "pkg-dir": {
       "version": "4.2.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "find-up": "^4.0.0"
@@ -3736,13 +4287,16 @@
     },
     "posix-character-classes": {
       "version": "0.1.1",
+      "resolved": "",
       "dev": true
     },
     "process-nextick-args": {
-      "version": "2.0.1"
+      "version": "2.0.1",
+      "resolved": ""
     },
     "process-on-spawn": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "fromentries": "^1.2.0"
@@ -3750,12 +4304,14 @@
     },
     "promise": {
       "version": "7.3.1",
+      "resolved": "",
       "requires": {
         "asap": "~2.0.3"
       }
     },
     "promise.allsettled": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "array.prototype.map": "^1.0.1",
@@ -3766,10 +4322,12 @@
       }
     },
     "psl": {
-      "version": "1.8.0"
+      "version": "1.8.0",
+      "resolved": ""
     },
     "pump": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "end-of-stream": "^1.1.0",
@@ -3777,10 +4335,12 @@
       }
     },
     "punycode": {
-      "version": "2.1.1"
+      "version": "2.1.1",
+      "resolved": ""
     },
     "qqjs": {
       "version": "0.3.11",
+      "resolved": "",
       "dev": true,
       "requires": {
         "chalk": "^2.4.1",
@@ -3800,6 +4360,7 @@
       "dependencies": {
         "fast-glob": {
           "version": "3.2.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@nodelib/fs.stat": "^2.0.2",
@@ -3812,6 +4373,7 @@
         },
         "fs-extra": {
           "version": "6.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "graceful-fs": "^4.1.2",
@@ -3821,6 +4383,7 @@
         },
         "get-stream": {
           "version": "5.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "pump": "^3.0.0"
@@ -3828,6 +4391,7 @@
         },
         "globby": {
           "version": "10.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@types/glob": "^7.1.1",
@@ -3842,15 +4406,18 @@
         },
         "ignore": {
           "version": "5.1.4",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "qs": {
-      "version": "6.5.2"
+      "version": "6.5.2",
+      "resolved": ""
     },
     "randombytes": {
       "version": "2.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "safe-buffer": "^5.1.0"
@@ -3858,12 +4425,14 @@
       "dependencies": {
         "safe-buffer": {
           "version": "5.2.1",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "readable-stream": {
       "version": "2.3.7",
+      "resolved": "",
       "requires": {
         "core-util-is": "~1.0.0",
         "inherits": "~2.0.3",
@@ -3875,12 +4444,14 @@
       },
       "dependencies": {
         "safe-buffer": {
-          "version": "5.1.2"
+          "version": "5.1.2",
+          "resolved": ""
         }
       }
     },
     "readdirp": {
       "version": "3.3.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "picomatch": "^2.0.7"
@@ -3888,15 +4459,18 @@
     },
     "redeyed": {
       "version": "2.1.1",
+      "resolved": "",
       "requires": {
         "esprima": "~4.0.0"
       }
     },
     "reflect-metadata": {
-      "version": "0.1.13"
+      "version": "0.1.13",
+      "resolved": ""
     },
     "regex-not": {
       "version": "1.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "extend-shallow": "^3.0.2",
@@ -3905,6 +4479,7 @@
       "dependencies": {
         "extend-shallow": {
           "version": "3.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "assign-symbols": "^1.0.0",
@@ -3913,6 +4488,7 @@
         },
         "is-extendable": {
           "version": "1.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-plain-object": "^2.0.4"
@@ -3922,6 +4498,7 @@
     },
     "release-zalgo": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "es6-error": "^4.0.1"
@@ -3929,14 +4506,17 @@
     },
     "repeat-element": {
       "version": "1.1.3",
+      "resolved": "",
       "dev": true
     },
     "repeat-string": {
       "version": "1.6.1",
+      "resolved": "",
       "dev": true
     },
     "request": {
       "version": "2.88.2",
+      "resolved": "",
       "requires": {
         "aws-sign2": "~0.7.0",
         "aws4": "^1.8.0",
@@ -3962,6 +4542,7 @@
       "dependencies": {
         "tough-cookie": {
           "version": "2.5.0",
+          "resolved": "",
           "requires": {
             "psl": "^1.1.28",
             "punycode": "^2.1.1"
@@ -3971,14 +4552,17 @@
     },
     "require-directory": {
       "version": "2.1.1",
+      "resolved": "",
       "dev": true
     },
     "require-main-filename": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true
     },
     "resolve": {
       "version": "1.17.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "path-parse": "^1.0.6"
@@ -3986,61 +4570,75 @@
     },
     "resolve-from": {
       "version": "5.0.0",
+      "resolved": "",
       "dev": true
     },
     "resolve-url": {
       "version": "0.2.1",
+      "resolved": "",
       "dev": true
     },
     "ret": {
       "version": "0.1.15",
+      "resolved": "",
       "dev": true
     },
     "reusify": {
-      "version": "1.0.4"
+      "version": "1.0.4",
+      "resolved": ""
     },
     "rimraf": {
       "version": "3.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "glob": "^7.1.3"
       }
     },
     "run-parallel": {
-      "version": "1.1.9"
+      "version": "1.1.9",
+      "resolved": ""
     },
     "safe-buffer": {
-      "version": "5.2.0"
+      "version": "5.2.0",
+      "resolved": ""
     },
     "safe-json-stringify": {
       "version": "1.2.0",
+      "resolved": "",
       "optional": true
     },
     "safe-regex": {
       "version": "1.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "ret": "~0.1.10"
       }
     },
     "safer-buffer": {
-      "version": "2.1.2"
+      "version": "2.1.2",
+      "resolved": ""
     },
     "samsam": {
       "version": "1.3.0",
+      "resolved": "",
       "dev": true
     },
     "sax": {
-      "version": "1.2.4"
+      "version": "1.2.4",
+      "resolved": ""
     },
     "seek-bzip": {
       "version": "1.0.5",
+      "resolved": "",
       "requires": {
         "commander": "~2.8.1"
       },
       "dependencies": {
         "commander": {
           "version": "2.8.1",
+          "resolved": "",
           "requires": {
             "graceful-readlink": ">= 1.0.0"
           }
@@ -4048,13 +4646,16 @@
       }
     },
     "semver": {
-      "version": "5.7.1"
+      "version": "5.7.1",
+      "resolved": ""
     },
     "sequin": {
-      "version": "0.1.1"
+      "version": "0.1.1",
+      "resolved": ""
     },
     "serialize-javascript": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "randombytes": "^2.1.0"
@@ -4062,10 +4663,12 @@
     },
     "set-blocking": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true
     },
     "set-value": {
       "version": "2.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "extend-shallow": "^2.0.1",
@@ -4076,6 +4679,7 @@
     },
     "sfdx-faye": {
       "version": "1.0.9",
+      "resolved": "",
       "requires": {
         "asap": "~2.0.6",
         "csprng": "~0.1.2",
@@ -4086,6 +4690,7 @@
     },
     "sfdx-js": {
       "version": "4.5.0",
+      "resolved": "",
       "requires": {
         "reflect-metadata": "^0.1.12",
         "underscore": "^1.9.1"
@@ -4093,19 +4698,23 @@
     },
     "shebang-command": {
       "version": "1.2.0",
+      "resolved": "",
       "requires": {
         "shebang-regex": "^1.0.0"
       }
     },
     "shebang-regex": {
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "resolved": ""
     },
     "signal-exit": {
       "version": "3.0.3",
+      "resolved": "",
       "dev": true
     },
     "sinon": {
       "version": "5.1.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@sinonjs/formatio": "^2.0.0",
@@ -4119,15 +4728,18 @@
       "dependencies": {
         "diff": {
           "version": "3.5.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "slash": {
-      "version": "3.0.0"
+      "version": "3.0.0",
+      "resolved": ""
     },
     "snapdragon": {
       "version": "0.8.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "base": "^0.11.1",
@@ -4142,6 +4754,7 @@
       "dependencies": {
         "debug": {
           "version": "2.6.9",
+          "resolved": "",
           "dev": true,
           "requires": {
             "ms": "2.0.0"
@@ -4149,12 +4762,14 @@
         },
         "ms": {
           "version": "2.0.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "snapdragon-node": {
       "version": "2.1.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "define-property": "^1.0.0",
@@ -4164,6 +4779,7 @@
       "dependencies": {
         "define-property": {
           "version": "1.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-descriptor": "^1.0.0"
@@ -4173,6 +4789,7 @@
     },
     "snapdragon-util": {
       "version": "3.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "kind-of": "^3.2.0"
@@ -4180,6 +4797,7 @@
     },
     "sort-keys": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-plain-obj": "^2.0.0"
@@ -4187,10 +4805,12 @@
     },
     "source-map": {
       "version": "0.5.7",
+      "resolved": "",
       "dev": true
     },
     "source-map-resolve": {
       "version": "0.5.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "atob": "^2.1.2",
@@ -4202,6 +4822,7 @@
     },
     "source-map-support": {
       "version": "0.5.19",
+      "resolved": "",
       "dev": true,
       "requires": {
         "buffer-from": "^1.0.0",
@@ -4210,16 +4831,19 @@
       "dependencies": {
         "source-map": {
           "version": "0.6.1",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "source-map-url": {
       "version": "0.4.0",
+      "resolved": "",
       "dev": true
     },
     "spawn-wrap": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "foreground-child": "^2.0.0",
@@ -4232,6 +4856,7 @@
     },
     "spdx-correct": {
       "version": "3.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "spdx-expression-parse": "^3.0.0",
@@ -4240,10 +4865,12 @@
     },
     "spdx-exceptions": {
       "version": "2.3.0",
+      "resolved": "",
       "dev": true
     },
     "spdx-expression-parse": {
       "version": "3.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "spdx-exceptions": "^2.1.0",
@@ -4252,10 +4879,12 @@
     },
     "spdx-license-ids": {
       "version": "3.0.5",
+      "resolved": "",
       "dev": true
     },
     "split-string": {
       "version": "3.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "extend-shallow": "^3.0.0"
@@ -4263,6 +4892,7 @@
       "dependencies": {
         "extend-shallow": {
           "version": "3.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "assign-symbols": "^1.0.0",
@@ -4271,6 +4901,7 @@
         },
         "is-extendable": {
           "version": "1.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-plain-object": "^2.0.4"
@@ -4280,10 +4911,12 @@
     },
     "sprintf-js": {
       "version": "1.0.3",
+      "resolved": "",
       "dev": true
     },
     "sshpk": {
       "version": "1.16.1",
+      "resolved": "",
       "requires": {
         "asn1": "~0.2.3",
         "assert-plus": "^1.0.0",
@@ -4298,6 +4931,7 @@
     },
     "static-extend": {
       "version": "0.1.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "define-property": "^0.2.5",
@@ -4306,16 +4940,19 @@
     },
     "stdout-stderr": {
       "version": "0.1.13",
+      "resolved": "",
       "requires": {
         "debug": "^4.1.1",
         "strip-ansi": "^6.0.0"
       },
       "dependencies": {
         "ansi-regex": {
-          "version": "5.0.0"
+          "version": "5.0.0",
+          "resolved": ""
         },
         "strip-ansi": {
           "version": "6.0.0",
+          "resolved": "",
           "requires": {
             "ansi-regex": "^5.0.0"
           }
@@ -4324,6 +4961,7 @@
     },
     "string-width": {
       "version": "4.2.0",
+      "resolved": "",
       "requires": {
         "emoji-regex": "^8.0.0",
         "is-fullwidth-code-point": "^3.0.0",
@@ -4331,13 +4969,16 @@
       },
       "dependencies": {
         "ansi-regex": {
-          "version": "5.0.0"
+          "version": "5.0.0",
+          "resolved": ""
         },
         "is-fullwidth-code-point": {
-          "version": "3.0.0"
+          "version": "3.0.0",
+          "resolved": ""
         },
         "strip-ansi": {
           "version": "6.0.0",
+          "resolved": "",
           "requires": {
             "ansi-regex": "^5.0.0"
           }
@@ -4346,6 +4987,7 @@
     },
     "string.prototype.trimend": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "define-properties": "^1.1.3",
@@ -4354,6 +4996,7 @@
     },
     "string.prototype.trimstart": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "define-properties": "^1.1.3",
@@ -4362,59 +5005,70 @@
     },
     "string_decoder": {
       "version": "1.1.1",
+      "resolved": "",
       "requires": {
         "safe-buffer": "~5.1.0"
       },
       "dependencies": {
         "safe-buffer": {
-          "version": "5.1.2"
+          "version": "5.1.2",
+          "resolved": ""
         }
       }
     },
     "strip-ansi": {
       "version": "5.2.0",
+      "resolved": "",
       "requires": {
         "ansi-regex": "^4.1.0"
       }
     },
     "strip-bom": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true
     },
     "strip-dirs": {
       "version": "2.1.0",
+      "resolved": "",
       "requires": {
         "is-natural-number": "^4.0.1"
       }
     },
     "strip-eof": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true
     },
     "strip-json-comments": {
       "version": "3.0.1",
+      "resolved": "",
       "dev": true
     },
     "supports-color": {
       "version": "5.5.0",
+      "resolved": "",
       "requires": {
         "has-flag": "^3.0.0"
       }
     },
     "supports-hyperlinks": {
       "version": "1.0.1",
+      "resolved": "",
       "requires": {
         "has-flag": "^2.0.0",
         "supports-color": "^5.0.0"
       },
       "dependencies": {
         "has-flag": {
-          "version": "2.0.0"
+          "version": "2.0.0",
+          "resolved": ""
         }
       }
     },
     "tar-fs": {
       "version": "2.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "chownr": "^1.1.1",
@@ -4425,6 +5079,7 @@
       "dependencies": {
         "bl": {
           "version": "4.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "buffer": "^5.5.0",
@@ -4434,6 +5089,7 @@
         },
         "readable-stream": {
           "version": "3.6.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "inherits": "^2.0.3",
@@ -4443,6 +5099,7 @@
         },
         "string_decoder": {
           "version": "1.3.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "safe-buffer": "~5.2.0"
@@ -4450,6 +5107,7 @@
         },
         "tar-stream": {
           "version": "2.1.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "bl": "^4.0.1",
@@ -4463,6 +5121,7 @@
     },
     "tar-stream": {
       "version": "1.6.2",
+      "resolved": "",
       "requires": {
         "bl": "^1.0.0",
         "buffer-alloc": "^1.2.0",
@@ -4475,6 +5134,7 @@
     },
     "test-exclude": {
       "version": "6.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@istanbuljs/schema": "^0.1.2",
@@ -4483,10 +5143,12 @@
       }
     },
     "through": {
-      "version": "2.3.8"
+      "version": "2.3.8",
+      "resolved": ""
     },
     "tmp": {
       "version": "0.1.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "rimraf": "^2.6.3"
@@ -4494,6 +5156,7 @@
       "dependencies": {
         "rimraf": {
           "version": "2.7.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "glob": "^7.1.3"
@@ -4502,14 +5165,17 @@
       }
     },
     "to-buffer": {
-      "version": "1.1.1"
+      "version": "1.1.1",
+      "resolved": ""
     },
     "to-fast-properties": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true
     },
     "to-object-path": {
       "version": "0.3.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "kind-of": "^3.0.2"
@@ -4517,6 +5183,7 @@
     },
     "to-regex": {
       "version": "3.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "define-property": "^2.0.2",
@@ -4527,6 +5194,7 @@
       "dependencies": {
         "define-property": {
           "version": "2.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-descriptor": "^1.0.2",
@@ -4535,6 +5203,7 @@
         },
         "extend-shallow": {
           "version": "3.0.2",
+          "resolved": "",
           "dev": true,
           "requires": {
             "assign-symbols": "^1.0.0",
@@ -4543,6 +5212,7 @@
         },
         "is-extendable": {
           "version": "1.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-plain-object": "^2.0.4"
@@ -4552,32 +5222,38 @@
     },
     "to-regex-range": {
       "version": "5.0.1",
+      "resolved": "",
       "requires": {
         "is-number": "^7.0.0"
       },
       "dependencies": {
         "is-number": {
-          "version": "7.0.0"
+          "version": "7.0.0",
+          "resolved": ""
         }
       }
     },
     "tough-cookie": {
       "version": "2.4.3",
+      "resolved": "",
       "requires": {
         "psl": "^1.1.24",
         "punycode": "^1.4.1"
       },
       "dependencies": {
         "punycode": {
-          "version": "1.4.1"
+          "version": "1.4.1",
+          "resolved": ""
         }
       }
     },
     "treeify": {
-      "version": "1.1.0"
+      "version": "1.1.0",
+      "resolved": ""
     },
     "ts-node": {
       "version": "8.10.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "arg": "^4.1.0",
@@ -4588,10 +5264,12 @@
       }
     },
     "tslib": {
-      "version": "2.0.1"
+      "version": "2.0.1",
+      "resolved": ""
     },
     "tslint": {
       "version": "6.1.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "@babel/code-frame": "^7.0.0",
@@ -4611,6 +5289,7 @@
       "dependencies": {
         "@babel/code-frame": {
           "version": "7.8.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/highlight": "^7.8.3"
@@ -4618,10 +5297,12 @@
         },
         "@babel/helper-validator-identifier": {
           "version": "7.9.5",
+          "resolved": "",
           "dev": true
         },
         "@babel/highlight": {
           "version": "7.9.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "@babel/helper-validator-identifier": "^7.9.0",
@@ -4631,12 +5312,14 @@
         },
         "tslib": {
           "version": "1.13.0",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "tsutils": {
       "version": "2.29.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "tslib": "^1.8.1"
@@ -4644,29 +5327,35 @@
       "dependencies": {
         "tslib": {
           "version": "1.11.1",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "tunnel-agent": {
       "version": "0.6.0",
+      "resolved": "",
       "requires": {
         "safe-buffer": "^5.0.1"
       }
     },
     "tweetnacl": {
-      "version": "0.14.5"
+      "version": "0.14.5",
+      "resolved": ""
     },
     "type-detect": {
       "version": "4.0.8",
+      "resolved": "",
       "dev": true
     },
     "type-fest": {
       "version": "0.6.0",
+      "resolved": "",
       "dev": true
     },
     "typedarray-to-buffer": {
       "version": "3.1.5",
+      "resolved": "",
       "dev": true,
       "requires": {
         "is-typedarray": "^1.0.0"
@@ -4674,20 +5363,24 @@
     },
     "typescript": {
       "version": "3.9.7",
+      "resolved": "",
       "dev": true
     },
     "unbzip2-stream": {
       "version": "1.4.2",
+      "resolved": "",
       "requires": {
         "buffer": "^5.2.1",
         "through": "^2.3.8"
       }
     },
     "underscore": {
-      "version": "1.10.2"
+      "version": "1.10.2",
+      "resolved": ""
     },
     "union-value": {
       "version": "1.0.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "arr-union": "^3.1.0",
@@ -4697,10 +5390,12 @@
       }
     },
     "universalify": {
-      "version": "0.1.2"
+      "version": "0.1.2",
+      "resolved": ""
     },
     "unset-value": {
       "version": "1.0.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "has-value": "^0.3.1",
@@ -4709,6 +5404,7 @@
       "dependencies": {
         "has-value": {
           "version": "0.3.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "get-value": "^2.0.3",
@@ -4718,6 +5414,7 @@
           "dependencies": {
             "isobject": {
               "version": "2.1.0",
+              "resolved": "",
               "dev": true,
               "requires": {
                 "isarray": "1.0.0"
@@ -4727,32 +5424,39 @@
         },
         "has-values": {
           "version": "0.1.4",
+          "resolved": "",
           "dev": true
         }
       }
     },
     "uri-js": {
       "version": "4.2.2",
+      "resolved": "",
       "requires": {
         "punycode": "^2.1.0"
       }
     },
     "urix": {
       "version": "0.1.0",
+      "resolved": "",
       "dev": true
     },
     "use": {
       "version": "3.1.1",
+      "resolved": "",
       "dev": true
     },
     "util-deprecate": {
-      "version": "1.0.2"
+      "version": "1.0.2",
+      "resolved": ""
     },
     "uuid": {
-      "version": "3.4.0"
+      "version": "3.4.0",
+      "resolved": ""
     },
     "validate-npm-package-license": {
       "version": "3.0.4",
+      "resolved": "",
       "dev": true,
       "requires": {
         "spdx-correct": "^3.0.0",
@@ -4761,6 +5465,7 @@
     },
     "verror": {
       "version": "1.10.0",
+      "resolved": "",
       "requires": {
         "assert-plus": "^1.0.0",
         "core-util-is": "1.0.2",
@@ -4768,12 +5473,14 @@
       },
       "dependencies": {
         "extsprintf": {
-          "version": "1.4.0"
+          "version": "1.4.0",
+          "resolved": ""
         }
       }
     },
     "websocket-driver": {
       "version": "0.7.3",
+      "resolved": "",
       "requires": {
         "http-parser-js": ">=0.4.0 <0.4.11",
         "safe-buffer": ">=5.1.0",
@@ -4781,10 +5488,12 @@
       }
     },
     "websocket-extensions": {
-      "version": "0.1.4"
+      "version": "0.1.4",
+      "resolved": ""
     },
     "which": {
       "version": "2.0.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "isexe": "^2.0.0"
@@ -4792,10 +5501,12 @@
     },
     "which-module": {
       "version": "2.0.0",
+      "resolved": "",
       "dev": true
     },
     "wide-align": {
       "version": "1.1.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "string-width": "^1.0.2 || 2"
@@ -4803,10 +5514,12 @@
       "dependencies": {
         "ansi-regex": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true
         },
         "string-width": {
           "version": "2.1.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "is-fullwidth-code-point": "^2.0.0",
@@ -4815,6 +5528,7 @@
         },
         "strip-ansi": {
           "version": "4.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "ansi-regex": "^3.0.0"
@@ -4824,16 +5538,19 @@
     },
     "widest-line": {
       "version": "3.1.0",
+      "resolved": "",
       "requires": {
         "string-width": "^4.0.0"
       }
     },
     "workerpool": {
       "version": "6.0.0",
+      "resolved": "",
       "dev": true
     },
     "wrap-ansi": {
       "version": "4.0.0",
+      "resolved": "",
       "requires": {
         "ansi-styles": "^3.2.0",
         "string-width": "^2.1.1",
@@ -4841,10 +5558,12 @@
       },
       "dependencies": {
         "ansi-regex": {
-          "version": "3.0.0"
+          "version": "3.0.0",
+          "resolved": ""
         },
         "string-width": {
           "version": "2.1.1",
+          "resolved": "",
           "requires": {
             "is-fullwidth-code-point": "^2.0.0",
             "strip-ansi": "^4.0.0"
@@ -4852,6 +5571,7 @@
         },
         "strip-ansi": {
           "version": "4.0.0",
+          "resolved": "",
           "requires": {
             "ansi-regex": "^3.0.0"
           }
@@ -4859,10 +5579,12 @@
       }
     },
     "wrappy": {
-      "version": "1.0.2"
+      "version": "1.0.2",
+      "resolved": ""
     },
     "write-file-atomic": {
       "version": "3.0.3",
+      "resolved": "",
       "dev": true,
       "requires": {
         "imurmurhash": "^0.1.4",
@@ -4873,6 +5595,7 @@
     },
     "write-json-file": {
       "version": "4.3.0",
+      "resolved": "",
       "dev": true,
       "requires": {
         "detect-indent": "^6.0.0",
@@ -4885,23 +5608,28 @@
     },
     "xml2js": {
       "version": "0.4.23",
+      "resolved": "",
       "requires": {
         "sax": ">=0.6.0",
         "xmlbuilder": "~11.0.0"
       }
     },
     "xmlbuilder": {
-      "version": "11.0.1"
+      "version": "11.0.1",
+      "resolved": ""
     },
     "xtend": {
-      "version": "4.0.2"
+      "version": "4.0.2",
+      "resolved": ""
     },
     "y18n": {
       "version": "4.0.0",
+      "resolved": "",
       "dev": true
     },
     "yargs": {
       "version": "13.3.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "cliui": "^5.0.0",
@@ -4918,10 +5646,12 @@
       "dependencies": {
         "emoji-regex": {
           "version": "7.0.3",
+          "resolved": "",
           "dev": true
         },
         "find-up": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "locate-path": "^3.0.0"
@@ -4929,6 +5659,7 @@
         },
         "locate-path": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "p-locate": "^3.0.0",
@@ -4937,6 +5668,7 @@
         },
         "p-locate": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "p-limit": "^2.0.0"
@@ -4944,10 +5676,12 @@
         },
         "path-exists": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true
         },
         "string-width": {
           "version": "3.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "emoji-regex": "^7.0.1",
@@ -4959,6 +5693,7 @@
     },
     "yargs-parser": {
       "version": "13.1.2",
+      "resolved": "",
       "dev": true,
       "requires": {
         "camelcase": "^5.0.0",
@@ -4967,6 +5702,7 @@
     },
     "yargs-unparser": {
       "version": "1.6.1",
+      "resolved": "",
       "dev": true,
       "requires": {
         "camelcase": "^5.3.1",
@@ -4978,10 +5714,12 @@
       "dependencies": {
         "emoji-regex": {
           "version": "7.0.3",
+          "resolved": "",
           "dev": true
         },
         "find-up": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "locate-path": "^3.0.0"
@@ -4989,10 +5727,12 @@
         },
         "is-plain-obj": {
           "version": "1.1.0",
+          "resolved": "",
           "dev": true
         },
         "locate-path": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "p-locate": "^3.0.0",
@@ -5001,6 +5741,7 @@
         },
         "p-locate": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "p-limit": "^2.0.0"
@@ -5008,10 +5749,12 @@
         },
         "path-exists": {
           "version": "3.0.0",
+          "resolved": "",
           "dev": true
         },
         "string-width": {
           "version": "3.1.0",
+          "resolved": "",
           "dev": true,
           "requires": {
             "emoji-regex": "^7.0.1",
@@ -5021,6 +5764,7 @@
         },
         "yargs": {
           "version": "14.2.3",
+          "resolved": "",
           "dev": true,
           "requires": {
             "cliui": "^5.0.0",
@@ -5038,6 +5782,7 @@
         },
         "yargs-parser": {
           "version": "15.0.1",
+          "resolved": "",
           "dev": true,
           "requires": {
             "camelcase": "^5.0.0",
@@ -5048,6 +5793,7 @@
     },
     "yauzl": {
       "version": "2.10.0",
+      "resolved": "",
       "requires": {
         "buffer-crc32": "~0.2.3",
         "fd-slicer": "~1.1.0"
@@ -5055,6 +5801,7 @@
     },
     "yn": {
       "version": "3.1.1",
+      "resolved": "",
       "dev": true
     }
   }
