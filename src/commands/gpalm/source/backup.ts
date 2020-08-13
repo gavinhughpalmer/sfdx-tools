@@ -190,7 +190,7 @@ export default class Backup extends SfdxCommand {
             const promises = [];
             const isInFolder = metadataComponent.inFolder;
             const metadataList = metadataMembers.filter(member => member.fullName).map(member => member.fullName);
-            metadataList.filter(() => isInFolder).map((metadataName) => {
+            metadataList.filter(() => isInFolder).map(metadataName => {
                 promises.push(
                     this.listFolder(packageMap, metadataComponent.xmlName, metadataName)
                 );
