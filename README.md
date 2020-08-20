@@ -3,11 +3,11 @@ sfdx-tools
 
 A collection of tools for
 
-[![Version](https://img.shields.io/npm/v/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools)
+<!-- [![Version](https://img.shields.io/npm/v/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools) -->
 [![CircleCI](https://circleci.com/gh/gavinhughpalmer/sfdx-tools/tree/master.svg?style=shield)](https://circleci.com/gh/gavinhughpalmer/sfdx-tools/tree/master)
-[![Codecov](https://codecov.io/gh/gavinhughpalmer/sfdx-tools/branch/master/graph/badge.svg)](https://codecov.io/gh/gavinhughpalmer/sfdx-tools)
+<!-- [![Codecov](https://codecov.io/gh/gavinhughpalmer/sfdx-tools/branch/master/graph/badge.svg)](https://codecov.io/gh/gavinhughpalmer/sfdx-tools) -->
 [![Known Vulnerabilities](https://snyk.io/test/github/gavinhughpalmer/sfdx-tools/badge.svg)](https://snyk.io/test/github/gavinhughpalmer/sfdx-tools)
-[![Downloads/week](https://img.shields.io/npm/dw/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools)
+<!-- [![Downloads/week](https://img.shields.io/npm/dw/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools) -->
 [![License](https://img.shields.io/npm/l/sfdx-tools.svg)](https://github.com/gavinhughpalmer/sfdx-tools/blob/master/package.json)
 
 <!-- toc -->
@@ -84,7 +84,8 @@ This command is intended to convert the flow files from metadata format to the s
 
 ```
 USAGE
-  $ sfdx-tools gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx-tools gpalm:source:fix [--json] [--loglevel
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
   --json                                                                            format output as json
