@@ -25,7 +25,7 @@ jobs:
 
 workflows:
   version: 2
-  "sfdx-git":
+  "sfdx-tools":
     jobs:
       - node-latest
       - cache:

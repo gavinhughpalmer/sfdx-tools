@@ -1,16 +1,14 @@
-sfdx-git
+sfdx-tools
 ========
 
-A plugin to compare changes in a sfdx repo to deploy only what has changed for a deployment
+A collection of tools for
 
-[![Version](https://img.shields.io/npm/v/sfdx-git.svg)](https://npmjs.org/package/sfdx-git)
-[![CircleCI](https://circleci.com/gh/gavinhughpalmer/sfdx-git/tree/master.svg?style=shield)](https://circleci.com/gh/gavinhughpalmer/sfdx-git/tree/master)
-[![Appveyor CI](https://ci.appveyor.com/api/projects/status/github/gavinhughpalmer/sfdx-git?branch=master&svg=true)](https://ci.appveyor.com/project/heroku/sfdx-git/branch/master)
-[![Codecov](https://codecov.io/gh/gavinhughpalmer/sfdx-git/branch/master/graph/badge.svg)](https://codecov.io/gh/gavinhughpalmer/sfdx-git)
-[![Greenkeeper](https://badges.greenkeeper.io/gavinhughpalmer/sfdx-git.svg)](https://greenkeeper.io/)
-[![Known Vulnerabilities](https://snyk.io/test/github/gavinhughpalmer/sfdx-git/badge.svg)](https://snyk.io/test/github/gavinhughpalmer/sfdx-git)
-[![Downloads/week](https://img.shields.io/npm/dw/sfdx-git.svg)](https://npmjs.org/package/sfdx-git)
-[![License](https://img.shields.io/npm/l/sfdx-git.svg)](https://github.com/gavinhughpalmer/sfdx-git/blob/master/package.json)
+[![Version](https://img.shields.io/npm/v/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools)
+[![CircleCI](https://circleci.com/gh/gavinhughpalmer/sfdx-tools/tree/master.svg?style=shield)](https://circleci.com/gh/gavinhughpalmer/sfdx-tools/tree/master)
+[![Codecov](https://codecov.io/gh/gavinhughpalmer/sfdx-tools/branch/master/graph/badge.svg)](https://codecov.io/gh/gavinhughpalmer/sfdx-tools)
+[![Known Vulnerabilities](https://snyk.io/test/github/gavinhughpalmer/sfdx-tools/badge.svg)](https://snyk.io/test/github/gavinhughpalmer/sfdx-tools)
+[![Downloads/week](https://img.shields.io/npm/dw/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools)
+[![License](https://img.shields.io/npm/l/sfdx-tools.svg)](https://github.com/gavinhughpalmer/sfdx-tools/blob/master/package.json)
 
 <!-- toc -->
 * [Debugging your plugin](#debugging-your-plugin)
@@ -18,28 +16,28 @@ A plugin to compare changes in a sfdx repo to deploy only what has changed for a
 <!-- install -->
 <!-- usage -->
 ```sh-session
-$ npm install -g sfdx-git
-$ sfdx-git COMMAND
+$ npm install -g sfdx-tools
+$ sfdx-tools COMMAND
 running command...
-$ sfdx-git (-v|--version|version)
-sfdx-git/0.0.0 darwin-x64 node-v14.4.0
-$ sfdx-git --help [COMMAND]
+$ sfdx-tools (-v|--version|version)
+sfdx-tools/0.0.0 darwin-x64 node-v14.4.0
+$ sfdx-tools --help [COMMAND]
 USAGE
-  $ sfdx-git COMMAND
+  $ sfdx-tools COMMAND
 ...
 ```
 <!-- usagestop -->
 <!-- commands -->
-* [`sfdx-git gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-git-gpalmsourcebackup--v-number--d-string--w-integer--i-array--s-array--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
-* [`sfdx-git gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-git-gpalmsourcefix---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx-tools gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-tools-gpalmsourcebackup--v-number--d-string--w-integer--i-array--s-array--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+* [`sfdx-tools gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-tools-gpalmsourcefix---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 
-## `sfdx-git gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx-tools gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 This command will perform a full backup of a given orgs metadata, simply provide the org and a full backup of metadata will be pulled into provided project folder
 
 ```
 USAGE
-  $ sfdx-git gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] 
+  $ sfdx-tools gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>]
   [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -47,12 +45,12 @@ OPTIONS
       [default: force-app] The directory where the source format should be output to
 
   -i, --ignoretypes=ignoretypes
-      Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if 
-      the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is 
+      Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if
+      the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is
       recieved
 
   -s, --secondaryretrieve=secondaryretrieve
-      [default: ] Comma seperated list of values that should be included fro a secondary retrieve, useful if the retrieve 
+      [default: ] Comma seperated list of values that should be included fro a secondary retrieve, useful if the retrieve
       is too large for a single retrieve job
 
   -u, --targetusername=targetusername
@@ -78,15 +76,15 @@ EXAMPLE
      Backup completed!
 ```
 
-_See code: [src/commands/gpalm/source/backup.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/source/backup.ts)_
+_See code: [src/commands/gpalm/source/backup.ts](https://github.com/gavinhughpalmer/sfdx-tools/blob/v0.0.0/src/commands/gpalm/source/backup.ts)_
 
-## `sfdx-git gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+## `sfdx-tools gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
 This command is intended to convert the flow files from metadata format to the source format, that is without the version numebr in the file name and without the flow definition file. The command will delete all flow definition files and any flow files with the number in them, maintaining the active flow file
 
 ```
 USAGE
-  $ sfdx-git gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+  $ sfdx-tools gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
   --json                                                                            format output as json
@@ -99,7 +97,7 @@ EXAMPLE
      Backup completed!
 ```
 
-_See code: [src/commands/gpalm/source/fix.ts](https://github.com/gavinhughpalmer/sfdx-git/blob/v0.0.0/src/commands/gpalm/source/fix.ts)_
+_See code: [src/commands/gpalm/source/fix.ts](https://github.com/gavinhughpalmer/sfdx-tools/blob/v0.0.0/src/commands/gpalm/source/fix.ts)_
 <!-- commandsstop -->
 <!-- debugging-your-plugin -->
 # Debugging your plugin

@@ -1,9 +1,9 @@
 {
-  "name": "sfdx-git",
+  "name": "sfdx-tools",
   "description": "A plugin to compare changes in a sfdx repo to deploy only what has changed for a deployment",
   "version": "0.0.0",
   "author": "Gavin Palmer @gavinhughpalmer",
-  "bugs": "https://github.com/gavinhughpalmer/sfdx-git/issues",
+  "bugs": "https://github.com/gavinhughpalmer/sfdx-tools/issues",
   "dependencies": {
     "@oclif/command": "1.8.0",
     "@oclif/config": "1.17.0",
@@ -43,7 +43,7 @@
     "/npm-shrinkwrap.json",
     "/oclif.manifest.json"
   ],
-  "homepage": "https://github.com/gavinhughpalmer/sfdx-git",
+  "homepage": "https://github.com/gavinhughpalmer/sfdx-tools",
   "keywords": [
     "sfdx-plugin"
   ],
@@ -59,7 +59,7 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "gavinhughpalmer/sfdx-git",
+  "repository": "gavinhughpalmer/sfdx-tools",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "tslint -p test -t stylish",
