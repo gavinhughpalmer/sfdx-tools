@@ -8,7 +8,7 @@ A collection of tools for
 <!-- [![Codecov](https://codecov.io/gh/gavinhughpalmer/sfdx-tools/branch/master/graph/badge.svg)](https://codecov.io/gh/gavinhughpalmer/sfdx-tools) -->
 [![Known Vulnerabilities](https://snyk.io/test/github/gavinhughpalmer/sfdx-tools/badge.svg)](https://snyk.io/test/github/gavinhughpalmer/sfdx-tools)
 <!-- [![Downloads/week](https://img.shields.io/npm/dw/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools) -->
-[![License](https://img.shields.io/npm/l/sfdx-tools.svg)](https://github.com/gavinhughpalmer/sfdx-tools/blob/master/package.json)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 <!-- toc -->
 * [Debugging your plugin](#debugging-your-plugin)
