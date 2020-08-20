@@ -1,7 +1,7 @@
 sfdx-tools
 ========
 
-A collection of tools for
+A collection of tools for working with Salesforce source format based projects, extending the SFDX CLI plugin framework
 
 <!-- [![Version](https://img.shields.io/npm/v/sfdx-tools.svg)](https://npmjs.org/package/sfdx-tools) -->
 [![CircleCI](https://circleci.com/gh/gavinhughpalmer/sfdx-tools/tree/master.svg?style=shield)](https://circleci.com/gh/gavinhughpalmer/sfdx-tools/tree/master)
