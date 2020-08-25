@@ -20,7 +20,7 @@ $ npm install -g sfdx-tools
 $ sfdx-tools COMMAND
 running command...
 $ sfdx-tools (-v|--version|version)
-sfdx-tools/0.0.0 darwin-x64 node-v14.4.0
+sfdx-tools/0.0.0 darwin-x64 node-v12.18.3
 $ sfdx-tools --help [COMMAND]
 USAGE
   $ sfdx-tools COMMAND
@@ -28,8 +28,35 @@ USAGE
 ```
 <!-- usagestop -->
 <!-- commands -->
+* [`sfdx-tools gpalm:org:prune [-d] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-tools-gpalmorgprune--d---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx-tools gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-tools-gpalmsourcebackup--v-number--d-string--w-integer--i-array--s-array--u-string---apiversion-string---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
 * [`sfdx-tools gpalm:source:fix [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`](#sfdx-tools-gpalmsourcefix---json---loglevel-tracedebuginfowarnerrorfataltracedebuginfowarnerrorfatal)
+
+## `sfdx-tools gpalm:org:prune [-d] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
+
+This coommand allows for pruning out some of the scratch org files that can start to build up, these don't typically get deleted so this command is useful to run every now and then as a housekeeping excersise
+
+```
+USAGE
+  $ sfdx-tools gpalm:org:prune [-d] [--json] [--loglevel 
+  trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
+
+OPTIONS
+  -d, --dryrun                                                                      List out the scratch orgs that can
+                                                                                    be pruned out of the folder for
+                                                                                    available scratch orgs
+
+  --json                                                                            format output as json
+
+  --loglevel=(trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL)  [default: warn] logging level for
+                                                                                    this command invocation
+
+EXAMPLE
+  $ sfdx gpalm:org:prune --dryrun true
+           test-hi51rwfgi974@example.com
+```
+
+_See code: [src/commands/gpalm/org/prune.ts](https://github.com/gavinhughpalmer/sfdx-tools/blob/v0.0.0/src/commands/gpalm/org/prune.ts)_
 
 ## `sfdx-tools gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
@@ -37,7 +64,7 @@ This command will perform a full backup of a given orgs metadata, simply provide
 
 ```
 USAGE
-  $ sfdx-tools gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>]
+  $ sfdx-tools gpalm:source:backup [-v <number>] [-d <string>] [-w <integer>] [-i <array>] [-s <array>] [-u <string>] 
   [--apiversion <string>] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
@@ -45,12 +72,12 @@ OPTIONS
       [default: force-app] The directory where the source format should be output to
 
   -i, --ignoretypes=ignoretypes
-      Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if
-      the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is
+      Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if 
+      the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is 
       recieved
 
   -s, --secondaryretrieve=secondaryretrieve
-      [default: ] Comma seperated list of values that should be included fro a secondary retrieve, useful if the retrieve
+      [default: ] Comma seperated list of values that should be included fro a secondary retrieve, useful if the retrieve 
       is too large for a single retrieve job
 
   -u, --targetusername=targetusername
@@ -84,7 +111,7 @@ This command is intended to convert the flow files from metadata format to the s
 
 ```
 USAGE
-  $ sfdx-tools gpalm:source:fix [--json] [--loglevel
+  $ sfdx-tools gpalm:source:fix [--json] [--loglevel 
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
