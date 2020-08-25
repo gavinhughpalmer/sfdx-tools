@@ -1,6 +1,6 @@
 import { flags, SfdxCommand } from '@salesforce/command';
-import { AnyJson } from '@salesforce/ts-types';
 import { fs } from '@salesforce/core';
+import { AnyJson } from '@salesforce/ts-types';
 import { homedir } from 'os';
 
 export default class Prune extends SfdxCommand {
@@ -44,7 +44,7 @@ export default class Prune extends SfdxCommand {
         } else {
             const deleteFilePromises = inactiveScratchOrgs.map(org => fs.unlink(`${sfdxDir}/${org['username']}.json`));
             await Promise.all(deleteFilePromises);
-            const aliasFileName = `${sfdxDir}/alias.json`
+            const aliasFileName = `${sfdxDir}/alias.json`;
             const aliases = await fs.readJson(aliasFileName);
             const refreshsedSfdxFiles = new Set(await fs.readdir(sfdxDir));
             const orgAliases = aliases['orgs'];
