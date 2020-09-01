@@ -1,8 +1,8 @@
 import { core, flags, SfdxCommand } from '@salesforce/command';
 import { AnyJson } from '@salesforce/ts-types';
-import decompress from 'decompress';
+import decompress = require('decompress');
 import * as fs from 'fs';
-import {tmpdir} from 'os';
+import { tmpdir } from 'os';
 import * as client from 'sfdx-js';
 import * as types from './types.json';
 
@@ -94,7 +94,7 @@ export default class Backup extends SfdxCommand {
                 this.ux.log(`Job ${jobNumberString} ${retrieveResult.status}`);
                 if (retrieveResult.done === 'true' && retrieveResult.status !== 'Failed') {
                     await decompress(Buffer.from(retrieveResult.zipFile, 'base64'), this.retrieveFolder + jobDetails.jobNumber, {
-                        map:file => {
+                        map: file => {
                           const filePaths = file.path.split('/');
                           file.path = filePaths.join('/');
                           return file;
