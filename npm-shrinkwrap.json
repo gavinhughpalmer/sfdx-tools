@@ -703,7 +703,7 @@
       "version": "1.0.4"
     },
     "@oclif/test": {
-      "version": "1.2.6",
+      "version": "1.2.7",
       "dev": true,
       "requires": {
         "fancy-test": "^1.4.3"
@@ -1059,7 +1059,7 @@
       "dev": true
     },
     "@types/node": {
-      "version": "10.17.28",
+      "version": "10.17.30",
       "dev": true
     },
     "@types/sinon": {

@@ -20,7 +20,7 @@ $ npm install -g sfdx-tools
 $ sfdx-tools COMMAND
 running command...
 $ sfdx-tools (-v|--version|version)
-sfdx-tools/0.0.0 darwin-x64 node-v12.18.3
+sfdx-tools/0.0.0 darwin-x64 node-v14.4.0
 $ sfdx-tools --help [COMMAND]
 USAGE
   $ sfdx-tools COMMAND
@@ -34,7 +34,7 @@ USAGE
 
 ## `sfdx-tools gpalm:org:prune [-d] [--json] [--loglevel trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]`
 
-This coommand allows for pruning out some of the scratch org files that can start to build up, these don't typically get deleted so this command is useful to run every now and then as a housekeeping excersise
+This command allows for pruning out some of the scratch org files that can start to build up, these don't typically get deleted so this command is useful to run every now and then as a housekeeping excersise
 
 ```
 USAGE
@@ -42,9 +42,9 @@ USAGE
   trace|debug|info|warn|error|fatal|TRACE|DEBUG|INFO|WARN|ERROR|FATAL]
 
 OPTIONS
-  -d, --dryrun                                                                      List out the scratch orgs that can
-                                                                                    be pruned out of the folder for
-                                                                                    available scratch orgs
+  -d, --dryrun                                                                      Displays the scrath org files that
+                                                                                    will be pruned out as part of the
+                                                                                    process
 
   --json                                                                            format output as json
 
@@ -52,7 +52,7 @@ OPTIONS
                                                                                     this command invocation
 
 EXAMPLE
-  $ sfdx gpalm:org:prune --dryrun true
+  $ sfdx gpalm:org:prune --dryrun
            test-hi51rwfgi974@example.com
 ```
 
