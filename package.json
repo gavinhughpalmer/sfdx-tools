@@ -24,7 +24,7 @@
     "@salesforce/dev-config": "1.6.0",
     "@types/chai": "4.2.12",
     "@types/mocha": "8.0.3",
-    "@types/node": "10.17.30",
+    "@types/node": "10.17.43",
     "chai": "4.2.0",
     "globby": "11.0.1",
     "mocha": "8.1.3",
