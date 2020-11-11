@@ -23,7 +23,7 @@
     "@oclif/test": "1.2.7",
     "@salesforce/dev-config": "1.6.0",
     "@types/chai": "4.2.14",
-    "@types/mocha": "8.0.3",
+    "@types/mocha": "8.0.4",
     "@types/node": "10.17.44",
     "chai": "4.2.0",
     "globby": "11.0.1",
