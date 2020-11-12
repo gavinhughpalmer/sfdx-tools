@@ -394,10 +394,10 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@salesforce/command@3.0.3":
-  version "3.0.3"
-  resolved "https://registry.npmjs.org/@salesforce/command/-/command-3.0.3.tgz"
-  integrity sha512-ntHH64Badr46/S3J1wT8GTQ5LBnxHkrXreby5t/IV+06ZaUQMQgpdaijKBAvTGI7jtLh5sG0gnXLt6+mGsDC6A==
+"@salesforce/command@3.0.4":
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/@salesforce/command/-/command-3.0.4.tgz"
+  integrity sha512-1tkhoIpnf/Fu+fG2ITBU9wfjGVtnhFkORIlYRgceydRS2P66JkgQ2Tb+kteiA8I+YsqxkBZK1w+5m9VIlTRcrw==
   dependencies:
     "@oclif/command" "^1.5.17"
     "@oclif/errors" "^1.2.2"
