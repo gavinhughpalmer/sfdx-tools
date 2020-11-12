@@ -10,7 +10,7 @@
       "dependencies": {
         "@oclif/command": "1.8.0",
         "@oclif/config": "1.17.0",
-        "@oclif/errors": "1.3.3",
+        "@oclif/errors": "1.3.4",
         "@salesforce/command": "3.0.4",
         "@salesforce/core": "2.15.2",
         "decompress": "4.2.1",
@@ -674,22 +674,6 @@
         "node": ">=8.0.0"
       }
     },
-    "node_modules/@oclif/dev-cli/node_modules/@oclif/errors": {
-      "version": "1.2.2",
-      "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.2.2.tgz",
-      "integrity": "sha512-Eq8BFuJUQcbAPVofDxwdE0bL14inIiwt5EaKRVY9ZDIG11jwdXZqiQEECJx0VfnLyUZdYfRd/znDI/MytdJoKg==",
-      "dev": true,
-      "dependencies": {
-        "clean-stack": "^1.3.0",
-        "fs-extra": "^7.0.0",
-        "indent-string": "^3.2.0",
-        "strip-ansi": "^5.0.0",
-        "wrap-ansi": "^4.0.0"
-      },
-      "engines": {
-        "node": ">=8.0.0"
-      }
-    },
     "node_modules/@oclif/dev-cli/node_modules/@oclif/plugin-help": {
       "version": "2.2.3",
       "resolved": "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-2.2.3.tgz",
@@ -722,15 +706,6 @@
       "version": "3.0.0",
       "resolved": "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz",
       "integrity": "sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=",
-      "dev": true,
-      "engines": {
-        "node": ">=4"
-      }
-    },
-    "node_modules/@oclif/dev-cli/node_modules/clean-stack": {
-      "version": "1.3.0",
-      "resolved": "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz",
-      "integrity": "sha1-noIVAa6XmYbEax1m0tQy2y/UrjE=",
       "dev": true,
       "engines": {
         "node": ">=4"
@@ -809,15 +784,6 @@
         "url": "https://github.com/sponsors/sindresorhus"
       }
     },
-    "node_modules/@oclif/dev-cli/node_modules/indent-string": {
-      "version": "3.2.0",
-      "resolved": "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz",
-      "integrity": "sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok=",
-      "dev": true,
-      "engines": {
-        "node": ">=4"
-      }
-    },
     "node_modules/@oclif/dev-cli/node_modules/string-width": {
       "version": "3.1.0",
       "resolved": "https://registry.yarnpkg.com/string-width/-/string-width-3.1.0.tgz",
@@ -876,12 +842,12 @@
       }
     },
     "node_modules/@oclif/errors": {
-      "version": "1.3.3",
-      "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.3.3.tgz",
-      "integrity": "sha512-EJR6AIOEkt/NnARNIVAskPDVtdhtO5TTNXmhDrGqMoWVsr0R6DkkLrMyq95BmHvlVWM1nduoq4fQPuCyuF2jaA==",
+      "version": "1.3.4",
+      "resolved": "https://registry.npmjs.org/@oclif/errors/-/errors-1.3.4.tgz",
+      "integrity": "sha512-pJKXyEqwdfRTUdM8n5FIHiQQHg5ETM0Wlso8bF9GodczO40mF5Z3HufnYWJE7z8sGKxOeJCdbAVZbS8Y+d5GCw==",
       "dependencies": {
         "clean-stack": "^3.0.0",
-        "fs-extra": "^9.0.1",
+        "fs-extra": "^8.1",
         "indent-string": "^4.0.0",
         "strip-ansi": "^6.0.0",
         "wrap-ansi": "^7.0.0"
@@ -955,29 +921,16 @@
       }
     },
     "node_modules/@oclif/errors/node_modules/fs-extra": {
-      "version": "9.0.1",
-      "resolved": "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz",
-      "integrity": "sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==",
+      "version": "8.1.0",
+      "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-8.1.0.tgz",
+      "integrity": "sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==",
       "dependencies": {
-        "at-least-node": "^1.0.0",
         "graceful-fs": "^4.2.0",
-        "jsonfile": "^6.0.1",
-        "universalify": "^1.0.0"
+        "jsonfile": "^4.0.0",
+        "universalify": "^0.1.0"
       },
       "engines": {
-        "node": ">=10"
-      }
-    },
-    "node_modules/@oclif/errors/node_modules/jsonfile": {
-      "version": "6.0.1",
-      "resolved": "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.0.1.tgz",
-      "integrity": "sha512-jR2b5v7d2vIOust+w3wtFKZIfpC2pnRmFAhAC/BuweZFQR8qZzxH1OyrQ10HmdVYiXWkYUqPVsz91cG7EL2FBg==",
-      "dependencies": {
-        "graceful-fs": "^4.1.6",
-        "universalify": "^1.0.0"
-      },
-      "optionalDependencies": {
-        "graceful-fs": "^4.1.6"
+        "node": ">=6 <7 || >=8"
       }
     },
     "node_modules/@oclif/errors/node_modules/strip-ansi": {
@@ -989,14 +942,6 @@
       },
       "engines": {
         "node": ">=8"
-      }
-    },
-    "node_modules/@oclif/errors/node_modules/universalify": {
-      "version": "1.0.0",
-      "resolved": "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz",
-      "integrity": "sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug==",
-      "engines": {
-        "node": ">= 10.0.0"
       }
     },
     "node_modules/@oclif/errors/node_modules/wrap-ansi": {
@@ -1156,21 +1101,6 @@
         "@oclif/plugin-help": "^2"
       }
     },
-    "node_modules/@salesforce/command/node_modules/@oclif/errors": {
-      "version": "1.2.2",
-      "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.2.2.tgz",
-      "integrity": "sha512-Eq8BFuJUQcbAPVofDxwdE0bL14inIiwt5EaKRVY9ZDIG11jwdXZqiQEECJx0VfnLyUZdYfRd/znDI/MytdJoKg==",
-      "dependencies": {
-        "clean-stack": "^1.3.0",
-        "fs-extra": "^7.0.0",
-        "indent-string": "^3.2.0",
-        "strip-ansi": "^5.0.0",
-        "wrap-ansi": "^4.0.0"
-      },
-      "engines": {
-        "node": ">=8.0.0"
-      }
-    },
     "node_modules/@salesforce/command/node_modules/@oclif/plugin-help": {
       "version": "2.2.3",
       "resolved": "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-2.2.3.tgz",
@@ -1216,26 +1146,10 @@
         "node": ">=4"
       }
     },
-    "node_modules/@salesforce/command/node_modules/clean-stack": {
-      "version": "1.3.0",
-      "resolved": "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz",
-      "integrity": "sha1-noIVAa6XmYbEax1m0tQy2y/UrjE=",
-      "engines": {
-        "node": ">=4"
-      }
-    },
     "node_modules/@salesforce/command/node_modules/emoji-regex": {
       "version": "7.0.3",
       "resolved": "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz",
       "integrity": "sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA=="
-    },
-    "node_modules/@salesforce/command/node_modules/indent-string": {
-      "version": "3.2.0",
-      "resolved": "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz",
-      "integrity": "sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok=",
-      "engines": {
-        "node": ">=4"
-      }
     },
     "node_modules/@salesforce/command/node_modules/string-width": {
       "version": "3.1.0",
@@ -1779,6 +1693,7 @@
       "version": "1.0.0",
       "resolved": "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz",
       "integrity": "sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==",
+      "dev": true,
       "engines": {
         "node": ">= 4.0.0"
       }
@@ -2080,29 +1995,6 @@
       },
       "engines": {
         "node": ">=8.0.0"
-      }
-    },
-    "node_modules/cli-ux/node_modules/@oclif/errors": {
-      "version": "1.2.2",
-      "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.2.2.tgz",
-      "integrity": "sha512-Eq8BFuJUQcbAPVofDxwdE0bL14inIiwt5EaKRVY9ZDIG11jwdXZqiQEECJx0VfnLyUZdYfRd/znDI/MytdJoKg==",
-      "dependencies": {
-        "clean-stack": "^1.3.0",
-        "fs-extra": "^7.0.0",
-        "indent-string": "^3.2.0",
-        "strip-ansi": "^5.0.0",
-        "wrap-ansi": "^4.0.0"
-      },
-      "engines": {
-        "node": ">=8.0.0"
-      }
-    },
-    "node_modules/cli-ux/node_modules/@oclif/errors/node_modules/clean-stack": {
-      "version": "1.3.0",
-      "resolved": "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz",
-      "integrity": "sha1-noIVAa6XmYbEax1m0tQy2y/UrjE=",
-      "engines": {
-        "node": ">=4"
       }
     },
     "node_modules/cli-ux/node_modules/indent-string": {
@@ -6934,19 +6826,6 @@
             "tslib": "^1.9.3"
           }
         },
-        "@oclif/errors": {
-          "version": "1.2.2",
-          "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.2.2.tgz",
-          "integrity": "sha512-Eq8BFuJUQcbAPVofDxwdE0bL14inIiwt5EaKRVY9ZDIG11jwdXZqiQEECJx0VfnLyUZdYfRd/znDI/MytdJoKg==",
-          "dev": true,
-          "requires": {
-            "clean-stack": "^1.3.0",
-            "fs-extra": "^7.0.0",
-            "indent-string": "^3.2.0",
-            "strip-ansi": "^5.0.0",
-            "wrap-ansi": "^4.0.0"
-          }
-        },
         "@oclif/plugin-help": {
           "version": "2.2.3",
           "resolved": "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-2.2.3.tgz",
@@ -6975,12 +6854,6 @@
           "version": "3.0.0",
           "resolved": "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz",
           "integrity": "sha1-7QMXwyIGT3lGbAKWa922Bas32Zg=",
-          "dev": true
-        },
-        "clean-stack": {
-          "version": "1.3.0",
-          "resolved": "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz",
-          "integrity": "sha1-noIVAa6XmYbEax1m0tQy2y/UrjE=",
           "dev": true
         },
         "cli-ux": {
@@ -7043,12 +6916,6 @@
           "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==",
           "dev": true
         },
-        "indent-string": {
-          "version": "3.2.0",
-          "resolved": "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz",
-          "integrity": "sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok=",
-          "dev": true
-        },
         "string-width": {
           "version": "3.1.0",
           "resolved": "https://registry.yarnpkg.com/string-width/-/string-width-3.1.0.tgz",
@@ -7099,12 +6966,12 @@
       }
     },
     "@oclif/errors": {
-      "version": "1.3.3",
-      "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.3.3.tgz",
-      "integrity": "sha512-EJR6AIOEkt/NnARNIVAskPDVtdhtO5TTNXmhDrGqMoWVsr0R6DkkLrMyq95BmHvlVWM1nduoq4fQPuCyuF2jaA==",
+      "version": "1.3.4",
+      "resolved": "https://registry.npmjs.org/@oclif/errors/-/errors-1.3.4.tgz",
+      "integrity": "sha512-pJKXyEqwdfRTUdM8n5FIHiQQHg5ETM0Wlso8bF9GodczO40mF5Z3HufnYWJE7z8sGKxOeJCdbAVZbS8Y+d5GCw==",
       "requires": {
         "clean-stack": "^3.0.0",
-        "fs-extra": "^9.0.1",
+        "fs-extra": "^8.1",
         "indent-string": "^4.0.0",
         "strip-ansi": "^6.0.0",
         "wrap-ansi": "^7.0.0"
@@ -7151,23 +7018,13 @@
           "integrity": "sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA=="
         },
         "fs-extra": {
-          "version": "9.0.1",
-          "resolved": "https://registry.yarnpkg.com/fs-extra/-/fs-extra-9.0.1.tgz",
-          "integrity": "sha512-h2iAoN838FqAFJY2/qVpzFXy+EBxfVE220PalAqQLDVsFOHLJrZvut5puAbCdNv6WJk+B8ihI+k0c7JK5erwqQ==",
+          "version": "8.1.0",
+          "resolved": "https://registry.npmjs.org/fs-extra/-/fs-extra-8.1.0.tgz",
+          "integrity": "sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==",
           "requires": {
-            "at-least-node": "^1.0.0",
             "graceful-fs": "^4.2.0",
-            "jsonfile": "^6.0.1",
-            "universalify": "^1.0.0"
-          }
-        },
-        "jsonfile": {
-          "version": "6.0.1",
-          "resolved": "https://registry.yarnpkg.com/jsonfile/-/jsonfile-6.0.1.tgz",
-          "integrity": "sha512-jR2b5v7d2vIOust+w3wtFKZIfpC2pnRmFAhAC/BuweZFQR8qZzxH1OyrQ10HmdVYiXWkYUqPVsz91cG7EL2FBg==",
-          "requires": {
-            "graceful-fs": "^4.1.6",
-            "universalify": "^1.0.0"
+            "jsonfile": "^4.0.0",
+            "universalify": "^0.1.0"
           }
         },
         "strip-ansi": {
@@ -7177,11 +7034,6 @@
           "requires": {
             "ansi-regex": "^5.0.0"
           }
-        },
-        "universalify": {
-          "version": "1.0.0",
-          "resolved": "https://registry.yarnpkg.com/universalify/-/universalify-1.0.0.tgz",
-          "integrity": "sha512-rb6X1W158d7pRQBg5gkR8uPaSfiids68LTJQYOtEUhoJUWBdaQHsuT/EUduxXYxcrt4r5PJ4fuHW1MHT6p0qug=="
         },
         "wrap-ansi": {
           "version": "7.0.0",
@@ -7304,18 +7156,6 @@
             "semver": "^5.6.0"
           }
         },
-        "@oclif/errors": {
-          "version": "1.2.2",
-          "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.2.2.tgz",
-          "integrity": "sha512-Eq8BFuJUQcbAPVofDxwdE0bL14inIiwt5EaKRVY9ZDIG11jwdXZqiQEECJx0VfnLyUZdYfRd/znDI/MytdJoKg==",
-          "requires": {
-            "clean-stack": "^1.3.0",
-            "fs-extra": "^7.0.0",
-            "indent-string": "^3.2.0",
-            "strip-ansi": "^5.0.0",
-            "wrap-ansi": "^4.0.0"
-          }
-        },
         "@oclif/plugin-help": {
           "version": "2.2.3",
           "resolved": "https://registry.yarnpkg.com/@oclif/plugin-help/-/plugin-help-2.2.3.tgz",
@@ -7351,20 +7191,10 @@
           "resolved": "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-3.0.0.tgz",
           "integrity": "sha1-7QMXwyIGT3lGbAKWa922Bas32Zg="
         },
-        "clean-stack": {
-          "version": "1.3.0",
-          "resolved": "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz",
-          "integrity": "sha1-noIVAa6XmYbEax1m0tQy2y/UrjE="
-        },
         "emoji-regex": {
           "version": "7.0.3",
           "resolved": "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz",
           "integrity": "sha512-CwBLREIQ7LvYFB0WyRvwhq5N5qPhc6PMjD6bYggFlI5YyDgl+0vxq5VHbMOFqLg7hfWzmu8T5Z1QofhmTIhItA=="
-        },
-        "indent-string": {
-          "version": "3.2.0",
-          "resolved": "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz",
-          "integrity": "sha1-Sl/W0nzDMvN+VBmlBNu4NxBckok="
         },
         "string-width": {
           "version": "3.1.0",
@@ -7849,7 +7679,8 @@
     "at-least-node": {
       "version": "1.0.0",
       "resolved": "https://registry.yarnpkg.com/at-least-node/-/at-least-node-1.0.0.tgz",
-      "integrity": "sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg=="
+      "integrity": "sha512-+q/t7Ekv1EDY2l6Gda6LLiX14rU9TV20Wa3ofeQmwPFZbOMo9DXrLbOjFaaclkXKWidIaopwAObQDqwWtGUjqg==",
+      "dev": true
     },
     "aws-sign2": {
       "version": "0.7.0",
@@ -8099,25 +7930,6 @@
         "tslib": "^1.9.3"
       },
       "dependencies": {
-        "@oclif/errors": {
-          "version": "1.2.2",
-          "resolved": "https://registry.yarnpkg.com/@oclif/errors/-/errors-1.2.2.tgz",
-          "integrity": "sha512-Eq8BFuJUQcbAPVofDxwdE0bL14inIiwt5EaKRVY9ZDIG11jwdXZqiQEECJx0VfnLyUZdYfRd/znDI/MytdJoKg==",
-          "requires": {
-            "clean-stack": "^1.3.0",
-            "fs-extra": "^7.0.0",
-            "indent-string": "^3.2.0",
-            "strip-ansi": "^5.0.0",
-            "wrap-ansi": "^4.0.0"
-          },
-          "dependencies": {
-            "clean-stack": {
-              "version": "1.3.0",
-              "resolved": "https://registry.yarnpkg.com/clean-stack/-/clean-stack-1.3.0.tgz",
-              "integrity": "sha1-noIVAa6XmYbEax1m0tQy2y/UrjE="
-            }
-          }
-        },
         "indent-string": {
           "version": "3.2.0",
           "resolved": "https://registry.yarnpkg.com/indent-string/-/indent-string-3.2.0.tgz",
