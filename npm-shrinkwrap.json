@@ -300,9 +300,9 @@
       }
     },
     "@oclif/dev-cli": {
-      "version": "1.24.3",
-      "resolved": "https://registry.npmjs.org/@oclif/dev-cli/-/dev-cli-1.24.3.tgz",
-      "integrity": "sha512-ApW7Q/sli0UCfVuzI9/nWTGfPLXOa81ZO4ZXB6m0dhi2c3Fg4JIhBIzEzC90Uuc7j+61Z5QAaC3cRygymqtMpw==",
+      "version": "1.25.1",
+      "resolved": "https://registry.npmjs.org/@oclif/dev-cli/-/dev-cli-1.25.1.tgz",
+      "integrity": "sha512-q+ywUIRa1SB9A+hIFXlvzWc5oeYgI1sBiFyYrV775lyNC7uVldRCKJ9MVi+YBXZxp7hXeh6r0dC7K2mrOryaJQ==",
       "dev": true,
       "requires": {
         "@oclif/command": "^1.8.0",
@@ -311,12 +311,13 @@
         "@oclif/plugin-help": "^3.2.0",
         "cli-ux": "^5.2.1",
         "debug": "^4.1.1",
+        "find-yarn-workspace-root": "^2.0.0",
         "fs-extra": "^8.1",
         "github-slugger": "^1.2.1",
         "lodash": "^4.17.11",
         "normalize-package-data": "^3.0.0",
         "qqjs": "^0.3.10",
-        "tslib": "^1.9.3"
+        "tslib": "^2.0.3"
       },
       "dependencies": {
         "ansi-escapes": {
@@ -394,14 +395,6 @@
             "supports-color": "^7.1.0",
             "supports-hyperlinks": "^2.1.0",
             "tslib": "^2.0.0"
-          },
-          "dependencies": {
-            "tslib": {
-              "version": "2.0.3",
-              "resolved": "https://registry.npmjs.org/tslib/-/tslib-2.0.3.tgz",
-              "integrity": "sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==",
-              "dev": true
-            }
           }
         },
         "color-convert": {
@@ -493,12 +486,6 @@
             "has-flag": "^4.0.0",
             "supports-color": "^7.0.0"
           }
-        },
-        "tslib": {
-          "version": "1.14.1",
-          "resolved": "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz",
-          "integrity": "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==",
-          "dev": true
         }
       }
     },
@@ -2033,6 +2020,15 @@
       "requires": {
         "locate-path": "^5.0.0",
         "path-exists": "^4.0.0"
+      }
+    },
+    "find-yarn-workspace-root": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/find-yarn-workspace-root/-/find-yarn-workspace-root-2.0.0.tgz",
+      "integrity": "sha512-1IMnbjt4KzsQfnhnzNd8wUEgXZ44IzZaZmnLYx7D5FZlaHt2gW20Cri8Q+E/t5tIj4+epTBub+2Zxu/vNILzqQ==",
+      "dev": true,
+      "requires": {
+        "micromatch": "^4.0.2"
       }
     },
     "flat": {
