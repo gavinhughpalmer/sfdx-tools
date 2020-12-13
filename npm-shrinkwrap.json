@@ -731,9 +731,9 @@
       }
     },
     "@salesforce/core": {
-      "version": "2.15.3",
-      "resolved": "https://registry.npmjs.org/@salesforce/core/-/core-2.15.3.tgz",
-      "integrity": "sha512-sM+sifK8Fo9Bat/DXX7QMOCCH95QvuZxjTz3leS5ChHks7b5izRaTDNnSdNjuhRR5dDNr37/0wEwGt3fGZtCLw==",
+      "version": "2.15.4",
+      "resolved": "https://registry.npmjs.org/@salesforce/core/-/core-2.15.4.tgz",
+      "integrity": "sha512-h03QJvXGSaJUwLBp+u/nfuuIjvIyTSSj+Lg+lA7mS/k0zWtsD5mYdYvy2wyBthgyNDgOSeTrD/FIPY53zHCKAw==",
       "requires": {
         "@salesforce/bunyan": "^2.0.0",
         "@salesforce/kit": "^1.3.3",
@@ -1603,9 +1603,9 @@
       }
     },
     "dayjs": {
-      "version": "1.9.6",
-      "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.9.6.tgz",
-      "integrity": "sha512-HngNLtPEBWRo8EFVmHFmSXAjtCX8rGNqeXQI0Gh7wCTSqwaKgPIDqu9m07wABVopNwzvOeCb+2711vQhDlcIXw=="
+      "version": "1.9.7",
+      "resolved": "https://registry.npmjs.org/dayjs/-/dayjs-1.9.7.tgz",
+      "integrity": "sha512-IC877KBdMhBrCfBfJXHQlo0G8keZ0Opy7YIIq5QKtUbCuHMzim8S4PyiVK4YmihI3iOF9lhfUBW4AQWHTR5WHA=="
     },
     "dayjs-plugin-utc": {
       "version": "0.1.2",
