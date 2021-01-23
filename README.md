@@ -20,7 +20,7 @@ $ npm install -g sfdx-tools
 $ sfdx-tools COMMAND
 running command...
 $ sfdx-tools (-v|--version|version)
-sfdx-tools/0.0.0 darwin-x64 node-v14.4.0
+sfdx-tools/0.0.0 darwin-x64 node-v15.5.1
 $ sfdx-tools --help [COMMAND]
 USAGE
   $ sfdx-tools COMMAND
