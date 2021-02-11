@@ -13,7 +13,7 @@
     "decompress": "4.2.1",
     "fs": "0.0.2",
     "glob": "7.1.6",
-    "glob-promise": "3.4.0",
+    "glob-promise": "4.0.1",
     "sfdx-js": "4.5.0",
     "tslib": "2.1.0"
   },
