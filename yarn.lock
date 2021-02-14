@@ -482,10 +482,10 @@
   resolved "https://registry.npmjs.org/@types/mocha/-/mocha-8.2.0.tgz"
   integrity sha512-/Sge3BymXo4lKc31C8OINJgXLaw+7vL1/L1pGiBNpGrBiT8FQiaFpSYV0uhTaG4y78vcMBTMFsWaHDvuD+xGzQ==
 
-"@types/node@*", "@types/node@10.17.51":
-  version "10.17.51"
-  resolved "https://registry.npmjs.org/@types/node/-/node-10.17.51.tgz"
-  integrity sha512-KANw+MkL626tq90l++hGelbl67irOJzGhUJk6a1Bt8QHOeh9tztJx+L0AqttraWKinmZn7Qi5lJZJzx45Gq0dg==
+"@types/node@*", "@types/node@10.17.52":
+  version "10.17.52"
+  resolved "https://registry.npmjs.org/@types/node/-/node-10.17.52.tgz"
+  integrity sha512-bKnO8Rcj03i6JTzweabq96k29uVNcXGB0bkwjVQTFagDgxxNged18281AZ0nTMHl+aFpPPWyPrk4Z3+NtW/z5w==
 
 "@types/sinon@*":
   version "9.0.0"
