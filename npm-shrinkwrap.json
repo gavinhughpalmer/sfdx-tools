@@ -28,7 +28,7 @@
         "@types/chai": "4.2.15",
         "@types/mocha": "8.2.1",
         "@types/node": "10.17.54",
-        "chai": "4.3.0",
+        "chai": "4.3.1",
         "globby": "11.0.2",
         "mocha": "8.3.0",
         "nyc": "15.1.0",
@@ -1385,20 +1385,20 @@
       "integrity": "sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw="
     },
     "node_modules/chai": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/chai/-/chai-4.3.0.tgz",
-      "integrity": "sha512-/BFd2J30EcOwmdOgXvVsmM48l0Br0nmZPlO0uOW4XKh6kpsUumRXBgPV+IlaqFaqr9cYbeoZAM1Npx0i4A+aiA==",
+      "version": "4.3.1",
+      "resolved": "https://registry.npmjs.org/chai/-/chai-4.3.1.tgz",
+      "integrity": "sha512-JClPZFGRcSl7X8dYzlCJY7v+X1fBA+9Y339Y8EqhBVfp0QC1hTnaf7nMfR+XZ74clkBC64b0iEw2cWKHt3EVqA==",
       "dev": true,
       "dependencies": {
         "assertion-error": "^1.1.0",
         "check-error": "^1.0.2",
         "deep-eql": "^3.0.1",
         "get-func-name": "^2.0.0",
-        "pathval": "^1.1.0",
+        "pathval": "^1.1.1",
         "type-detect": "^4.0.5"
       },
       "engines": {
-        "node": ">=8"
+        "node": ">=4"
       }
     },
     "node_modules/chalk": {
@@ -3683,10 +3683,13 @@
       "integrity": "sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw=="
     },
     "node_modules/pathval": {
-      "version": "1.1.0",
-      "resolved": "https://registry.yarnpkg.com/pathval/-/pathval-1.1.0.tgz",
-      "integrity": "sha1-uULm1L3mUwBe9rcTYd74cn0GReA=",
-      "dev": true
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/pathval/-/pathval-1.1.1.tgz",
+      "integrity": "sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==",
+      "dev": true,
+      "engines": {
+        "node": "*"
+      }
     },
     "node_modules/pend": {
       "version": "1.2.0",
@@ -6261,16 +6264,16 @@
       "integrity": "sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw="
     },
     "chai": {
-      "version": "4.3.0",
-      "resolved": "https://registry.npmjs.org/chai/-/chai-4.3.0.tgz",
-      "integrity": "sha512-/BFd2J30EcOwmdOgXvVsmM48l0Br0nmZPlO0uOW4XKh6kpsUumRXBgPV+IlaqFaqr9cYbeoZAM1Npx0i4A+aiA==",
+      "version": "4.3.1",
+      "resolved": "https://registry.npmjs.org/chai/-/chai-4.3.1.tgz",
+      "integrity": "sha512-JClPZFGRcSl7X8dYzlCJY7v+X1fBA+9Y339Y8EqhBVfp0QC1hTnaf7nMfR+XZ74clkBC64b0iEw2cWKHt3EVqA==",
       "dev": true,
       "requires": {
         "assertion-error": "^1.1.0",
         "check-error": "^1.0.2",
         "deep-eql": "^3.0.1",
         "get-func-name": "^2.0.0",
-        "pathval": "^1.1.0",
+        "pathval": "^1.1.1",
         "type-detect": "^4.0.5"
       }
     },
@@ -8518,9 +8521,9 @@
       "integrity": "sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw=="
     },
     "pathval": {
-      "version": "1.1.0",
-      "resolved": "https://registry.yarnpkg.com/pathval/-/pathval-1.1.0.tgz",
-      "integrity": "sha1-uULm1L3mUwBe9rcTYd74cn0GReA=",
+      "version": "1.1.1",
+      "resolved": "https://registry.npmjs.org/pathval/-/pathval-1.1.1.tgz",
+      "integrity": "sha512-Dp6zGqpTdETdR63lehJYPeIOqpiNBNtc7BpWSLrOje7UaIsE5aY92r/AunQA7rsXvet3lrJ3JnZX29UPTKXyKQ==",
       "dev": true
     },
     "pend": {
