@@ -15,7 +15,7 @@
     "glob": "7.1.6",
     "glob-promise": "4.1.0",
     "sfdx-js": "4.5.0",
-    "tslib": "2.1.0"
+    "tslib": "2.2.0"
   },
   "devDependencies": {
     "@oclif/dev-cli": "1.26.0",
