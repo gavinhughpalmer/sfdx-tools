@@ -12,7 +12,7 @@
     "@salesforce/core": "2.20.5",
     "decompress": "4.2.1",
     "fs": "0.0.2",
-    "glob": "7.1.6",
+    "glob": "7.1.7",
     "glob-promise": "4.1.0",
     "sfdx-js": "4.5.0",
     "tslib": "2.1.0"
