@@ -30,7 +30,7 @@
         "@types/mocha": "8.2.3",
         "@types/node": "10.17.60",
         "chai": "4.3.4",
-        "globby": "11.0.4",
+        "globby": "12.0.2",
         "mocha": "8.4.0",
         "nyc": "15.1.0",
         "sinon": "10.0.0",
@@ -323,6 +323,25 @@
         "globby": "^11.0.1",
         "is-wsl": "^2.1.1",
         "tslib": "^2.0.0"
+      }
+    },
+    "node_modules/@oclif/config/node_modules/globby": {
+      "version": "11.0.4",
+      "resolved": "https://registry.npmjs.org/globby/-/globby-11.0.4.tgz",
+      "integrity": "sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==",
+      "dependencies": {
+        "array-union": "^2.1.0",
+        "dir-glob": "^3.0.1",
+        "fast-glob": "^3.1.1",
+        "ignore": "^5.1.4",
+        "merge2": "^1.3.0",
+        "slash": "^3.0.0"
+      },
+      "engines": {
+        "node": ">=10"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
       }
     },
     "node_modules/@oclif/config/node_modules/is-wsl": {
@@ -2003,16 +2022,18 @@
       "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
     },
     "node_modules/fast-glob": {
-      "version": "3.2.4",
-      "resolved": "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.4.tgz",
-      "integrity": "sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ==",
+      "version": "3.2.7",
+      "resolved": "https://registry.npmjs.org/fast-glob/-/fast-glob-3.2.7.tgz",
+      "integrity": "sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==",
       "dependencies": {
         "@nodelib/fs.stat": "^2.0.2",
         "@nodelib/fs.walk": "^1.2.3",
-        "glob-parent": "^5.1.0",
+        "glob-parent": "^5.1.2",
         "merge2": "^1.3.0",
-        "micromatch": "^4.0.2",
-        "picomatch": "^2.2.1"
+        "micromatch": "^4.0.4"
+      },
+      "engines": {
+        "node": ">=8"
       }
     },
     "node_modules/fast-json-stable-stringify": {
@@ -2284,11 +2305,14 @@
       }
     },
     "node_modules/glob-parent": {
-      "version": "5.1.1",
-      "resolved": "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.1.tgz",
-      "integrity": "sha512-FnI+VGOpnlGHWZxthPGR+QhR78fuiK0sNLkHQv+bL9fQi57lNNdquIbna/WrfROrolq8GK5Ek6BiMwqL/voRYQ==",
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
       "dependencies": {
         "is-glob": "^4.0.1"
+      },
+      "engines": {
+        "node": ">= 6"
       }
     },
     "node_modules/glob-promise": {
@@ -2312,19 +2336,44 @@
       "dev": true
     },
     "node_modules/globby": {
-      "version": "11.0.4",
-      "resolved": "https://registry.npmjs.org/globby/-/globby-11.0.4.tgz",
-      "integrity": "sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==",
+      "version": "12.0.2",
+      "resolved": "https://registry.npmjs.org/globby/-/globby-12.0.2.tgz",
+      "integrity": "sha512-lAsmb/5Lww4r7MM9nCCliDZVIKbZTavrsunAsHLr9oHthrZP1qi7/gAnHOsUs9bLvEt2vKVJhHmxuL7QbDuPdQ==",
+      "dev": true,
       "dependencies": {
-        "array-union": "^2.1.0",
+        "array-union": "^3.0.1",
         "dir-glob": "^3.0.1",
-        "fast-glob": "^3.1.1",
-        "ignore": "^5.1.4",
-        "merge2": "^1.3.0",
-        "slash": "^3.0.0"
+        "fast-glob": "^3.2.7",
+        "ignore": "^5.1.8",
+        "merge2": "^1.4.1",
+        "slash": "^4.0.0"
       },
       "engines": {
-        "node": ">=10"
+        "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/globby/node_modules/array-union": {
+      "version": "3.0.1",
+      "resolved": "https://registry.npmjs.org/array-union/-/array-union-3.0.1.tgz",
+      "integrity": "sha512-1OvF9IbWwaeiM9VhzYXVQacMibxpXOMYVNIvMtKRyX9SImBXpKcFr8XvFDeEslCyuH/t6KRt7HEO94AlP8Iatw==",
+      "dev": true,
+      "engines": {
+        "node": ">=12"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/sindresorhus"
+      }
+    },
+    "node_modules/globby/node_modules/slash": {
+      "version": "4.0.0",
+      "resolved": "https://registry.npmjs.org/slash/-/slash-4.0.0.tgz",
+      "integrity": "sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==",
+      "dev": true,
+      "engines": {
+        "node": ">=12"
       },
       "funding": {
         "url": "https://github.com/sponsors/sindresorhus"
@@ -3078,17 +3127,23 @@
       "dev": true
     },
     "node_modules/merge2": {
-      "version": "1.3.0",
-      "resolved": "https://registry.yarnpkg.com/merge2/-/merge2-1.3.0.tgz",
-      "integrity": "sha512-2j4DAdlBOkiSZIsaXk4mTE3sRS02yBHAtfy127xRV3bQUFqXkjHCHLW6Scv7DwNRbIWNHH8zpnz9zMaKXIdvYw=="
+      "version": "1.4.1",
+      "resolved": "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz",
+      "integrity": "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==",
+      "engines": {
+        "node": ">= 8"
+      }
     },
     "node_modules/micromatch": {
-      "version": "4.0.2",
-      "resolved": "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.2.tgz",
-      "integrity": "sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q==",
+      "version": "4.0.4",
+      "resolved": "https://registry.npmjs.org/micromatch/-/micromatch-4.0.4.tgz",
+      "integrity": "sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==",
       "dependencies": {
         "braces": "^3.0.1",
-        "picomatch": "^2.0.5"
+        "picomatch": "^2.2.3"
+      },
+      "engines": {
+        "node": ">=8.6"
       }
     },
     "node_modules/mime-db": {
@@ -3735,9 +3790,15 @@
       "integrity": "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns="
     },
     "node_modules/picomatch": {
-      "version": "2.2.2",
-      "resolved": "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz",
-      "integrity": "sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg=="
+      "version": "2.3.0",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.0.tgz",
+      "integrity": "sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==",
+      "engines": {
+        "node": ">=8.6"
+      },
+      "funding": {
+        "url": "https://github.com/sponsors/jonschlinkert"
+      }
     },
     "node_modules/pify": {
       "version": "2.3.0",
@@ -5248,6 +5309,19 @@
         "tslib": "^2.0.0"
       },
       "dependencies": {
+        "globby": {
+          "version": "11.0.4",
+          "resolved": "https://registry.npmjs.org/globby/-/globby-11.0.4.tgz",
+          "integrity": "sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==",
+          "requires": {
+            "array-union": "^2.1.0",
+            "dir-glob": "^3.0.1",
+            "fast-glob": "^3.1.1",
+            "ignore": "^5.1.4",
+            "merge2": "^1.3.0",
+            "slash": "^3.0.0"
+          }
+        },
         "is-wsl": {
           "version": "2.2.0",
           "resolved": "https://registry.yarnpkg.com/is-wsl/-/is-wsl-2.2.0.tgz",
@@ -6896,16 +6970,15 @@
       "integrity": "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="
     },
     "fast-glob": {
-      "version": "3.2.4",
-      "resolved": "https://registry.yarnpkg.com/fast-glob/-/fast-glob-3.2.4.tgz",
-      "integrity": "sha512-kr/Oo6PX51265qeuCYsyGypiO5uJFgBS0jksyG7FUeCyQzNwYnzrNIMR1NXfkZXsMYXYLRAHgISHBz8gQcxKHQ==",
+      "version": "3.2.7",
+      "resolved": "https://registry.npmjs.org/fast-glob/-/fast-glob-3.2.7.tgz",
+      "integrity": "sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==",
       "requires": {
         "@nodelib/fs.stat": "^2.0.2",
         "@nodelib/fs.walk": "^1.2.3",
-        "glob-parent": "^5.1.0",
+        "glob-parent": "^5.1.2",
         "merge2": "^1.3.0",
-        "micromatch": "^4.0.2",
-        "picomatch": "^2.2.1"
+        "micromatch": "^4.0.4"
       }
     },
     "fast-json-stable-stringify": {
@@ -7168,9 +7241,9 @@
       }
     },
     "glob-parent": {
-      "version": "5.1.1",
-      "resolved": "https://registry.yarnpkg.com/glob-parent/-/glob-parent-5.1.1.tgz",
-      "integrity": "sha512-FnI+VGOpnlGHWZxthPGR+QhR78fuiK0sNLkHQv+bL9fQi57lNNdquIbna/WrfROrolq8GK5Ek6BiMwqL/voRYQ==",
+      "version": "5.1.2",
+      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
+      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
       "requires": {
         "is-glob": "^4.0.1"
       }
@@ -7190,16 +7263,31 @@
       "dev": true
     },
     "globby": {
-      "version": "11.0.4",
-      "resolved": "https://registry.npmjs.org/globby/-/globby-11.0.4.tgz",
-      "integrity": "sha512-9O4MVG9ioZJ08ffbcyVYyLOJLk5JQ688pJ4eMGLpdWLHq/Wr1D9BlriLQyL0E+jbkuePVZXYFj47QM/v093wHg==",
+      "version": "12.0.2",
+      "resolved": "https://registry.npmjs.org/globby/-/globby-12.0.2.tgz",
+      "integrity": "sha512-lAsmb/5Lww4r7MM9nCCliDZVIKbZTavrsunAsHLr9oHthrZP1qi7/gAnHOsUs9bLvEt2vKVJhHmxuL7QbDuPdQ==",
+      "dev": true,
       "requires": {
-        "array-union": "^2.1.0",
+        "array-union": "^3.0.1",
         "dir-glob": "^3.0.1",
-        "fast-glob": "^3.1.1",
-        "ignore": "^5.1.4",
-        "merge2": "^1.3.0",
-        "slash": "^3.0.0"
+        "fast-glob": "^3.2.7",
+        "ignore": "^5.1.8",
+        "merge2": "^1.4.1",
+        "slash": "^4.0.0"
+      },
+      "dependencies": {
+        "array-union": {
+          "version": "3.0.1",
+          "resolved": "https://registry.npmjs.org/array-union/-/array-union-3.0.1.tgz",
+          "integrity": "sha512-1OvF9IbWwaeiM9VhzYXVQacMibxpXOMYVNIvMtKRyX9SImBXpKcFr8XvFDeEslCyuH/t6KRt7HEO94AlP8Iatw==",
+          "dev": true
+        },
+        "slash": {
+          "version": "4.0.0",
+          "resolved": "https://registry.npmjs.org/slash/-/slash-4.0.0.tgz",
+          "integrity": "sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==",
+          "dev": true
+        }
       }
     },
     "graceful-fs": {
@@ -7965,17 +8053,17 @@
       "dev": true
     },
     "merge2": {
-      "version": "1.3.0",
-      "resolved": "https://registry.yarnpkg.com/merge2/-/merge2-1.3.0.tgz",
-      "integrity": "sha512-2j4DAdlBOkiSZIsaXk4mTE3sRS02yBHAtfy127xRV3bQUFqXkjHCHLW6Scv7DwNRbIWNHH8zpnz9zMaKXIdvYw=="
+      "version": "1.4.1",
+      "resolved": "https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz",
+      "integrity": "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg=="
     },
     "micromatch": {
-      "version": "4.0.2",
-      "resolved": "https://registry.yarnpkg.com/micromatch/-/micromatch-4.0.2.tgz",
-      "integrity": "sha512-y7FpHSbMUMoyPbYUSzO6PaZ6FyRnQOpHuKwbo1G+Knck95XVU4QAiKdGEnj5wwoS7PlOgthX/09u5iFJ+aYf5Q==",
+      "version": "4.0.4",
+      "resolved": "https://registry.npmjs.org/micromatch/-/micromatch-4.0.4.tgz",
+      "integrity": "sha512-pRmzw/XUcwXGpD9aI9q/0XOwLNygjETJ8y0ao0wdqprrzDa4YnxLcz7fQRZr8voh8V10kGhABbNcHVk5wHgWwg==",
       "requires": {
         "braces": "^3.0.1",
-        "picomatch": "^2.0.5"
+        "picomatch": "^2.2.3"
       }
     },
     "mime-db": {
@@ -8588,9 +8676,9 @@
       "integrity": "sha1-Ywn04OX6kT7BxpMHrjZLSzd8nns="
     },
     "picomatch": {
-      "version": "2.2.2",
-      "resolved": "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.2.tgz",
-      "integrity": "sha512-q0M/9eZHzmr0AulXyPwNfZjtwZ/RBZlbN3K3CErVrk50T2ASYI7Bye0EvekFY3IP1Nt2DHu0re+V2ZHIpMkuWg=="
+      "version": "2.3.0",
+      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.0.tgz",
+      "integrity": "sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw=="
     },
     "pify": {
       "version": "2.3.0",
