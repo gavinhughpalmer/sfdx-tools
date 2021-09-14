@@ -20,7 +20,7 @@ $ npm install -g sfdx-tools
 $ sfdx-tools COMMAND
 running command...
 $ sfdx-tools (-v|--version|version)
-sfdx-tools/0.0.0 darwin-x64 node-v15.5.1
+sfdx-tools/0.0.0 darwin-x64 node-v16.8.0
 $ sfdx-tools --help [COMMAND]
 USAGE
   $ sfdx-tools COMMAND
@@ -84,7 +84,7 @@ OPTIONS
       username or alias for the target org; overrides default target org
 
   -v, --packageversion=packageversion
-      [default: 42] Version number that the package.xml should use in the retrieve call
+      [default: 52] Version number that the package.xml should use in the retrieve call
 
   -w, --waittimemillis=waittimemillis
       [default: 1000] The wait time between retrieve checks

@@ -35,7 +35,7 @@ export default class Backup extends SfdxCommand {
     ];
 
     protected static flagsConfig = {
-        packageversion: flags.number({char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: 42.0 }),
+        packageversion: flags.number({char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: 52.0 }),
         outputdir: flags.string({ char: 'd', description: 'The directory where the source format should be output to', default: 'force-app' }),
         waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 }),
         ignoretypes: flags.array({ char: 'i', description: 'Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is recieved'}),
@@ -130,7 +130,6 @@ export default class Backup extends SfdxCommand {
         const makeLowerCase = (value: string) => value.toLowerCase();
         const wildcardTypes = new Set(types.wildcard.map(makeLowerCase));
         const ignoreTypes = new Set(types.ignore.map(makeLowerCase));
-
         const metadataDescribe = await this.connection.metadata.describe(this.packageVersion);
         const metadataPackage = {
             version: this.packageVersion,
@@ -138,7 +137,7 @@ export default class Backup extends SfdxCommand {
         };
         const packageMap = {};
         const metadataList = metadataDescribe.metadataObjects;
-        const promises = [];
+        const componentRetrivalPromises = [];
         for (const metadataComponent of metadataList) {
             const metadataTypeName = metadataComponent.xmlName.toLowerCase();
             if (ignoreTypes.has(metadataTypeName)) {
@@ -155,10 +154,10 @@ export default class Backup extends SfdxCommand {
                     members: types.standardValueSet
                 });
             } else {
-                promises.push(this.addComponent(packageMap, metadataComponent));
+                componentRetrivalPromises.push(this.addComponent(packageMap, metadataComponent));
             }
         }
-        await Promise.all(promises);
+        await Promise.all(componentRetrivalPromises);
         this.buildPackageFromMap(metadataPackage, packageMap);
         return metadataPackage;
     }
@@ -187,17 +186,17 @@ export default class Backup extends SfdxCommand {
 
         if (metadataMembers && metadataMembers instanceof Array) {
             const members = packageMap[metadataComponent.xmlName] || [];
-            const promises = [];
+            const listFolderPromises = [];
             const isInFolder = metadataComponent.inFolder;
             const metadataList = metadataMembers.filter(member => member.fullName).map(member => member.fullName);
             metadataList.filter(() => isInFolder).map(metadataName => {
-                promises.push(
+                listFolderPromises.push(
                     this.listFolder(packageMap, metadataComponent.xmlName, metadataName)
                 );
             });
             packageMap[metadataComponent.xmlName] = members.concat(metadataList.filter(() => !isInFolder));
-            if (promises.length !== 0) {
-                await Promise.all(promises);
+            if (listFolderPromises.length !== 0) {
+                await Promise.all(listFolderPromises);
             }
         }
     }
