@@ -15,7 +15,8 @@
     "glob": "7.1.7",
     "glob-promise": "4.1.0",
     "sfdx-js": "4.5.0",
-    "tslib": "2.2.0"
+    "tslib": "2.2.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@oclif/dev-cli": "1.26.0",
@@ -63,9 +64,11 @@
   "scripts": {
     "postpack": "rm -f oclif.manifest.json npm-shrinkwrap.json",
     "posttest": "tslint -p test -t stylish",
-    "prepare": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
+    "prepare": "yarn run snyk-protect && rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme && npm shrinkwrap",
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md",
-    "fix": "tslint -p test -t stylish --fix"
-  }
+    "fix": "tslint -p test -t stylish --fix",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
