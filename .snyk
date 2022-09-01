@@ -1,0 +1,14 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - '@salesforce/core > jsforce > lodash':
+        patched: '2022-09-01T00:28:13.727Z'
+    - '@salesforce/command > cli-ux > lodash':
+        patched: '2022-09-01T00:28:13.727Z'
+    - '@salesforce/command > @oclif/test > fancy-test > lodash':
+        patched: '2022-09-01T00:28:13.727Z'
+    - '@salesforce/command > @salesforce/core > jsforce > lodash':
+        patched: '2022-09-01T00:28:13.727Z'
