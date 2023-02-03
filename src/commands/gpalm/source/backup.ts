@@ -35,7 +35,7 @@ export default class Backup extends SfdxCommand {
     ];
 
     protected static flagsConfig = {
-        packageversion: flags.number({char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: 52.0 }),
+        packageversion: flags.number({char: 'v', description: 'Version number that the package.xml should use in the retrieve call', default: 56.0 }),
         outputdir: flags.string({ char: 'd', description: 'The directory where the source format should be output to', default: 'force-app' }),
         waittimemillis: flags.integer({ char: 'w', description: 'The wait time between retrieve checks', default: 1000 }),
         ignoretypes: flags.array({ char: 'i', description: 'Comma seperated list of any additional types that you wish to ignore from the retrieve process, this can be used if the error "The retrieved zip file exceeded the limit of 629145600 bytes. Total bytes retrieved: 629534861" is recieved'}),
@@ -51,6 +51,7 @@ export default class Backup extends SfdxCommand {
     public async run(): Promise<AnyJson> {
         this.connection = this.org.getConnection();
         this.packageVersion = this.flags.packageversion.toFixed(1);
+        this.ux.log(`Running with API version ${this.packageVersion}`);
         if (this.flags.ignoretypes) {
             types.ignore.push(...this.flags.ignoretypes);
         }
@@ -182,22 +183,21 @@ export default class Backup extends SfdxCommand {
         }
         const metadataTypes = [{ type: typeName, folder: null }];
 
-        const metadataMembers = await this.connection.metadata.list(metadataTypes, this.packageVersion);
-
-        if (metadataMembers && metadataMembers instanceof Array) {
-            const members = packageMap[metadataComponent.xmlName] || [];
-            const listFolderPromises = [];
-            const isInFolder = metadataComponent.inFolder;
-            const metadataList = metadataMembers.filter(member => member.fullName).map(member => member.fullName);
-            metadataList.filter(() => isInFolder).map(metadataName => {
-                listFolderPromises.push(
-                    this.listFolder(packageMap, metadataComponent.xmlName, metadataName)
-                );
-            });
-            packageMap[metadataComponent.xmlName] = members.concat(metadataList.filter(() => !isInFolder));
-            if (listFolderPromises.length !== 0) {
-                await Promise.all(listFolderPromises);
-            }
+        const listResult = await this.connection.metadata.list(metadataTypes, this.packageVersion);
+        if (!listResult) return;
+        const metadataMembers =  listResult instanceof Array ? listResult : [listResult];
+        const members = packageMap[metadataComponent.xmlName] || [];
+        const listFolderPromises = [];
+        const isInFolder = metadataComponent.inFolder;
+        const metadataList = metadataMembers.filter(member => member.fullName).map(member => member.fullName);
+        metadataList.filter(() => isInFolder).map(metadataName => {
+            listFolderPromises.push(
+                this.listFolder(packageMap, metadataComponent.xmlName, metadataName)
+            );
+        });
+        packageMap[metadataComponent.xmlName] = members.concat(metadataList.filter(() => !isInFolder));
+        if (listFolderPromises.length !== 0) {
+            await Promise.all(listFolderPromises);
         }
     }
 
